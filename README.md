@@ -1,2 +1,2 @@
 # FilaMed
-Fila digital para consultórios de saúde
+Fila digital para consultórios de saúde.
