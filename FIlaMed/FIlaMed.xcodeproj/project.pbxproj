@@ -26,6 +26,7 @@
 		0C2EC32024A0DE8A006E80C0 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2EC31F24A0DE8A006E80C0 /* ProfileView.swift */; };
 		0C2EC32224A0DE9D006E80C0 /* AppointmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2EC32124A0DE9D006E80C0 /* AppointmentsView.swift */; };
 		0C2EC32424A0DEAF006E80C0 /* IndividualAppointmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2EC32324A0DEAF006E80C0 /* IndividualAppointmentView.swift */; };
+		89B00D6624A0E09500FEAD73 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B00D6524A0E09500FEAD73 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		0C2EC31F24A0DE8A006E80C0 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		0C2EC32124A0DE9D006E80C0 /* AppointmentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsView.swift; sourceTree = "<group>"; };
 		0C2EC32324A0DEAF006E80C0 /* IndividualAppointmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualAppointmentView.swift; sourceTree = "<group>"; };
+		89B00D6524A0E09500FEAD73 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 				0C2EC31324A0D43A006E80C0 /* LineViewController.swift */,
 				0C2EC31524A0D454006E80C0 /* ProfileViewController.swift */,
 				0C2EC31724A0D4C5006E80C0 /* AppointmentsViewController.swift */,
+				89B00D6524A0E09500FEAD73 /* TabBarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C2EC32224A0DE9D006E80C0 /* AppointmentsView.swift in Sources */,
+				89B00D6624A0E09500FEAD73 /* TabBarController.swift in Sources */,
 				0C2EC31C24A0DE6A006E80C0 /* RegisterView.swift in Sources */,
 				0C2EC32424A0DEAF006E80C0 /* IndividualAppointmentView.swift in Sources */,
 				0C2EC32024A0DE8A006E80C0 /* ProfileView.swift in Sources */,

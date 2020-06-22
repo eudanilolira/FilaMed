@@ -12,7 +12,6 @@ class LineViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
 

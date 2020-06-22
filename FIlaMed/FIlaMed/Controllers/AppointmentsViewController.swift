@@ -9,7 +9,7 @@
 import UIKit
 
 class AppointmentsViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

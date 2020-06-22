@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = .white
         window?.makeKeyAndVisible()
         
-        let navigationController = UINavigationController(rootViewController: AppointmentsViewController())
+        let navigationController = UINavigationController(rootViewController: TabBarController())
         window?.rootViewController = navigationController
         
         return true
