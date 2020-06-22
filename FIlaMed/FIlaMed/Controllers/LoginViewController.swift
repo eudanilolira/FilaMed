@@ -12,8 +12,10 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        print("Hello Formiga!")
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.title = "Login"
+        self.view = LoginView()
+        
     }
 
 

@@ -1,5 +1,5 @@
 //
-//  LoginView.swift
+//  AppointmentsView.swift
 //  FIlaMed
 //
 //  Created by Danilo Araújo on 22/06/20.
@@ -8,16 +8,9 @@
 
 import UIKit
 
-class LoginView: UIView {
-    
+class AppointmentsView: UIView {
     public init() {
         super.init(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
-        
-        let label = UILabel()
-        label.text = "Teste"
-        label.frame = CGRect(x: 10, y: 10, width: 100, height: 100)
-        
-        self.addSubview(label)
     }
     
     required init?(coder: NSCoder) {
