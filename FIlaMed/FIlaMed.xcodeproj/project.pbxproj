@@ -9,13 +9,18 @@
 /* Begin PBXBuildFile section */
 		0C0175F6249CEA8A00FAA102 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0175F5249CEA8A00FAA102 /* AppDelegate.swift */; };
 		0C0175F8249CEA8A00FAA102 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0175F7249CEA8A00FAA102 /* SceneDelegate.swift */; };
-		0C0175FA249CEA8A00FAA102 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0175F9249CEA8A00FAA102 /* ViewController.swift */; };
-		0C0175FD249CEA8A00FAA102 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C0175FB249CEA8A00FAA102 /* Main.storyboard */; };
 		0C017600249CEA8A00FAA102 /* FIlaMed.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C0175FE249CEA8A00FAA102 /* FIlaMed.xcdatamodeld */; };
 		0C017602249CEA8B00FAA102 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C017601249CEA8B00FAA102 /* Assets.xcassets */; };
 		0C017605249CEA8B00FAA102 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C017603249CEA8B00FAA102 /* LaunchScreen.storyboard */; };
 		0C017610249CEA8B00FAA102 /* FIlaMedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C01760F249CEA8B00FAA102 /* FIlaMedTests.swift */; };
 		0C01761B249CEA8B00FAA102 /* FIlaMedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C01761A249CEA8B00FAA102 /* FIlaMedUITests.swift */; };
+		0C2EC30E24A0D3BF006E80C0 /* IndividualAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2EC30D24A0D3BF006E80C0 /* IndividualAppointmentViewController.swift */; };
+		0C2EC31024A0D3E4006E80C0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2EC30F24A0D3E4006E80C0 /* LoginViewController.swift */; };
+		0C2EC31224A0D3F6006E80C0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2EC31124A0D3F6006E80C0 /* RegisterViewController.swift */; };
+		0C2EC31424A0D43A006E80C0 /* LineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2EC31324A0D43A006E80C0 /* LineViewController.swift */; };
+		0C2EC31624A0D454006E80C0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2EC31524A0D454006E80C0 /* ProfileViewController.swift */; };
+		0C2EC31824A0D4C5006E80C0 /* AppointmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2EC31724A0D4C5006E80C0 /* AppointmentsViewController.swift */; };
+		0C2EC31A24A0D612006E80C0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2EC31924A0D612006E80C0 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +44,6 @@
 		0C0175F2249CEA8A00FAA102 /* FIlaMed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FIlaMed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C0175F5249CEA8A00FAA102 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C0175F7249CEA8A00FAA102 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0C0175F9249CEA8A00FAA102 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0C0175FC249CEA8A00FAA102 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0C0175FF249CEA8A00FAA102 /* FIlaMed.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FIlaMed.xcdatamodel; sourceTree = "<group>"; };
 		0C017601249CEA8B00FAA102 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C017604249CEA8B00FAA102 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +54,13 @@
 		0C017616249CEA8B00FAA102 /* FIlaMedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FIlaMedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C01761A249CEA8B00FAA102 /* FIlaMedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIlaMedUITests.swift; sourceTree = "<group>"; };
 		0C01761C249CEA8B00FAA102 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C2EC30D24A0D3BF006E80C0 /* IndividualAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualAppointmentViewController.swift; sourceTree = "<group>"; };
+		0C2EC30F24A0D3E4006E80C0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0C2EC31124A0D3F6006E80C0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		0C2EC31324A0D43A006E80C0 /* LineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineViewController.swift; sourceTree = "<group>"; };
+		0C2EC31524A0D454006E80C0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		0C2EC31724A0D4C5006E80C0 /* AppointmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsViewController.swift; sourceTree = "<group>"; };
+		0C2EC31924A0D612006E80C0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +111,10 @@
 		0C0175F4249CEA8A00FAA102 /* FIlaMed */ = {
 			isa = PBXGroup;
 			children = (
-				0C0175F5249CEA8A00FAA102 /* AppDelegate.swift */,
-				0C0175F7249CEA8A00FAA102 /* SceneDelegate.swift */,
-				0C0175F9249CEA8A00FAA102 /* ViewController.swift */,
-				0C0175FB249CEA8A00FAA102 /* Main.storyboard */,
-				0C017601249CEA8B00FAA102 /* Assets.xcassets */,
-				0C017603249CEA8B00FAA102 /* LaunchScreen.storyboard */,
-				0C017606249CEA8B00FAA102 /* Info.plist */,
-				0C0175FE249CEA8A00FAA102 /* FIlaMed.xcdatamodeld */,
+				0C2EC30A24A0D25A006E80C0 /* Files */,
+				0C2EC30824A0D169006E80C0 /* Controllers */,
+				0C2EC30724A0D160006E80C0 /* Views */,
+				0C2EC30624A0D155006E80C0 /* Models */,
 			);
 			path = FIlaMed;
 			sourceTree = "<group>";
@@ -116,8 +122,8 @@
 		0C01760E249CEA8B00FAA102 /* FIlaMedTests */ = {
 			isa = PBXGroup;
 			children = (
-				0C01760F249CEA8B00FAA102 /* FIlaMedTests.swift */,
 				0C017611249CEA8B00FAA102 /* Info.plist */,
+				0C01760F249CEA8B00FAA102 /* FIlaMedTests.swift */,
 			);
 			path = FIlaMedTests;
 			sourceTree = "<group>";
@@ -129,6 +135,47 @@
 				0C01761C249CEA8B00FAA102 /* Info.plist */,
 			);
 			path = FIlaMedUITests;
+			sourceTree = "<group>";
+		};
+		0C2EC30624A0D155006E80C0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0C0175FE249CEA8A00FAA102 /* FIlaMed.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0C2EC30724A0D160006E80C0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0C017603249CEA8B00FAA102 /* LaunchScreen.storyboard */,
+				0C2EC31924A0D612006E80C0 /* LoginView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0C2EC30824A0D169006E80C0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0C2EC30D24A0D3BF006E80C0 /* IndividualAppointmentViewController.swift */,
+				0C2EC30F24A0D3E4006E80C0 /* LoginViewController.swift */,
+				0C2EC31124A0D3F6006E80C0 /* RegisterViewController.swift */,
+				0C2EC31324A0D43A006E80C0 /* LineViewController.swift */,
+				0C2EC31524A0D454006E80C0 /* ProfileViewController.swift */,
+				0C2EC31724A0D4C5006E80C0 /* AppointmentsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0C2EC30A24A0D25A006E80C0 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				0C017606249CEA8B00FAA102 /* Info.plist */,
+				0C0175F5249CEA8A00FAA102 /* AppDelegate.swift */,
+				0C0175F7249CEA8A00FAA102 /* SceneDelegate.swift */,
+				0C017601249CEA8B00FAA102 /* Assets.xcassets */,
+			);
+			name = Files;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,7 +284,6 @@
 			files = (
 				0C017605249CEA8B00FAA102 /* LaunchScreen.storyboard in Resources */,
 				0C017602249CEA8B00FAA102 /* Assets.xcassets in Resources */,
-				0C0175FD249CEA8A00FAA102 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,9 +308,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C0175FA249CEA8A00FAA102 /* ViewController.swift in Sources */,
+				0C2EC31024A0D3E4006E80C0 /* LoginViewController.swift in Sources */,
+				0C2EC31424A0D43A006E80C0 /* LineViewController.swift in Sources */,
+				0C2EC31224A0D3F6006E80C0 /* RegisterViewController.swift in Sources */,
+				0C2EC31824A0D4C5006E80C0 /* AppointmentsViewController.swift in Sources */,
 				0C0175F6249CEA8A00FAA102 /* AppDelegate.swift in Sources */,
 				0C017600249CEA8A00FAA102 /* FIlaMed.xcdatamodeld in Sources */,
+				0C2EC31624A0D454006E80C0 /* ProfileViewController.swift in Sources */,
+				0C2EC30E24A0D3BF006E80C0 /* IndividualAppointmentViewController.swift in Sources */,
+				0C2EC31A24A0D612006E80C0 /* LoginView.swift in Sources */,
 				0C0175F8249CEA8A00FAA102 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,14 +353,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0C0175FB249CEA8A00FAA102 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0C0175FC249CEA8A00FAA102 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0C017603249CEA8B00FAA102 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

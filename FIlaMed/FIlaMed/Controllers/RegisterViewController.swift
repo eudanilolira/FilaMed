@@ -1,14 +1,14 @@
 //
-//  ViewController.swift
+//  RegisterViewController.swift
 //  FIlaMed
 //
-//  Created by Danilo Araújo on 19/06/20.
+//  Created by Danilo Araújo on 22/06/20.
 //  Copyright © 2020 FilaMed. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class RegisterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,4 +18,3 @@ class ViewController: UIViewController {
 
 
 }
-
