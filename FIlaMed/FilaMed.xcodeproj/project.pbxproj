@@ -26,6 +26,11 @@
 		0C2EC32024A0DE8A006E80C0 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2EC31F24A0DE8A006E80C0 /* ProfileView.swift */; };
 		0C2EC32224A0DE9D006E80C0 /* AppointmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2EC32124A0DE9D006E80C0 /* AppointmentsView.swift */; };
 		0C2EC32424A0DEAF006E80C0 /* IndividualAppointmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2EC32324A0DEAF006E80C0 /* IndividualAppointmentView.swift */; };
+		0C2EC32624A0F88E006E80C0 /* LineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2EC32524A0F88E006E80C0 /* LineTests.swift */; };
+		0C2EC32824A0F8A7006E80C0 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2EC32724A0F8A7006E80C0 /* LoginTests.swift */; };
+		0C2EC32A24A0F8BD006E80C0 /* RegisterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2EC32924A0F8BD006E80C0 /* RegisterTests.swift */; };
+		0C2EC32C24A0F8D6006E80C0 /* IndividualAppointementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2EC32B24A0F8D6006E80C0 /* IndividualAppointementTests.swift */; };
+		0C2EC32E24A0F8E7006E80C0 /* AppointmentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2EC32D24A0F8E7006E80C0 /* AppointmentsTests.swift */; };
 		89B00D6624A0E09500FEAD73 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B00D6524A0E09500FEAD73 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,17 +52,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0C0175F2249CEA8A00FAA102 /* FIlaMed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FIlaMed.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C0175F2249CEA8A00FAA102 /* FilaMed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilaMed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C0175F5249CEA8A00FAA102 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C0175F7249CEA8A00FAA102 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0C0175FF249CEA8A00FAA102 /* FIlaMed.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FIlaMed.xcdatamodel; sourceTree = "<group>"; };
 		0C017601249CEA8B00FAA102 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C017604249CEA8B00FAA102 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C017606249CEA8B00FAA102 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0C01760B249CEA8B00FAA102 /* FIlaMedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FIlaMedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C01760B249CEA8B00FAA102 /* FilaMedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FilaMedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C01760F249CEA8B00FAA102 /* FIlaMedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIlaMedTests.swift; sourceTree = "<group>"; };
 		0C017611249CEA8B00FAA102 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0C017616249CEA8B00FAA102 /* FIlaMedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FIlaMedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C017616249CEA8B00FAA102 /* FilaMedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FilaMedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C01761A249CEA8B00FAA102 /* FIlaMedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIlaMedUITests.swift; sourceTree = "<group>"; };
 		0C01761C249CEA8B00FAA102 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C2EC30D24A0D3BF006E80C0 /* IndividualAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualAppointmentViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +77,11 @@
 		0C2EC31F24A0DE8A006E80C0 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		0C2EC32124A0DE9D006E80C0 /* AppointmentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsView.swift; sourceTree = "<group>"; };
 		0C2EC32324A0DEAF006E80C0 /* IndividualAppointmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualAppointmentView.swift; sourceTree = "<group>"; };
+		0C2EC32524A0F88E006E80C0 /* LineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTests.swift; sourceTree = "<group>"; };
+		0C2EC32724A0F8A7006E80C0 /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
+		0C2EC32924A0F8BD006E80C0 /* RegisterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTests.swift; sourceTree = "<group>"; };
+		0C2EC32B24A0F8D6006E80C0 /* IndividualAppointementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualAppointementTests.swift; sourceTree = "<group>"; };
+		0C2EC32D24A0F8E7006E80C0 /* AppointmentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsTests.swift; sourceTree = "<group>"; };
 		89B00D6524A0E09500FEAD73 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,9 +123,9 @@
 		0C0175F3249CEA8A00FAA102 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0C0175F2249CEA8A00FAA102 /* FIlaMed.app */,
-				0C01760B249CEA8B00FAA102 /* FIlaMedTests.xctest */,
-				0C017616249CEA8B00FAA102 /* FIlaMedUITests.xctest */,
+				0C0175F2249CEA8A00FAA102 /* FilaMed.app */,
+				0C01760B249CEA8B00FAA102 /* FilaMedTests.xctest */,
+				0C017616249CEA8B00FAA102 /* FilaMedUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -136,6 +146,11 @@
 			children = (
 				0C017611249CEA8B00FAA102 /* Info.plist */,
 				0C01760F249CEA8B00FAA102 /* FIlaMedTests.swift */,
+				0C2EC32524A0F88E006E80C0 /* LineTests.swift */,
+				0C2EC32724A0F8A7006E80C0 /* LoginTests.swift */,
+				0C2EC32924A0F8BD006E80C0 /* RegisterTests.swift */,
+				0C2EC32B24A0F8D6006E80C0 /* IndividualAppointementTests.swift */,
+				0C2EC32D24A0F8E7006E80C0 /* AppointmentsTests.swift */,
 			);
 			path = FIlaMedTests;
 			sourceTree = "<group>";
@@ -199,9 +214,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0C0175F1249CEA8A00FAA102 /* FIlaMed */ = {
+		0C0175F1249CEA8A00FAA102 /* FilaMed */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0C01761F249CEA8B00FAA102 /* Build configuration list for PBXNativeTarget "FIlaMed" */;
+			buildConfigurationList = 0C01761F249CEA8B00FAA102 /* Build configuration list for PBXNativeTarget "FilaMed" */;
 			buildPhases = (
 				0C0175EE249CEA8A00FAA102 /* Sources */,
 				0C0175EF249CEA8A00FAA102 /* Frameworks */,
@@ -211,14 +226,14 @@
 			);
 			dependencies = (
 			);
-			name = FIlaMed;
+			name = FilaMed;
 			productName = FIlaMed;
-			productReference = 0C0175F2249CEA8A00FAA102 /* FIlaMed.app */;
+			productReference = 0C0175F2249CEA8A00FAA102 /* FilaMed.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0C01760A249CEA8B00FAA102 /* FIlaMedTests */ = {
+		0C01760A249CEA8B00FAA102 /* FilaMedTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0C017622249CEA8B00FAA102 /* Build configuration list for PBXNativeTarget "FIlaMedTests" */;
+			buildConfigurationList = 0C017622249CEA8B00FAA102 /* Build configuration list for PBXNativeTarget "FilaMedTests" */;
 			buildPhases = (
 				0C017607249CEA8B00FAA102 /* Sources */,
 				0C017608249CEA8B00FAA102 /* Frameworks */,
@@ -229,14 +244,14 @@
 			dependencies = (
 				0C01760D249CEA8B00FAA102 /* PBXTargetDependency */,
 			);
-			name = FIlaMedTests;
+			name = FilaMedTests;
 			productName = FIlaMedTests;
-			productReference = 0C01760B249CEA8B00FAA102 /* FIlaMedTests.xctest */;
+			productReference = 0C01760B249CEA8B00FAA102 /* FilaMedTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		0C017615249CEA8B00FAA102 /* FIlaMedUITests */ = {
+		0C017615249CEA8B00FAA102 /* FilaMedUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0C017625249CEA8B00FAA102 /* Build configuration list for PBXNativeTarget "FIlaMedUITests" */;
+			buildConfigurationList = 0C017625249CEA8B00FAA102 /* Build configuration list for PBXNativeTarget "FilaMedUITests" */;
 			buildPhases = (
 				0C017612249CEA8B00FAA102 /* Sources */,
 				0C017613249CEA8B00FAA102 /* Frameworks */,
@@ -247,9 +262,9 @@
 			dependencies = (
 				0C017618249CEA8B00FAA102 /* PBXTargetDependency */,
 			);
-			name = FIlaMedUITests;
+			name = FilaMedUITests;
 			productName = FIlaMedUITests;
-			productReference = 0C017616249CEA8B00FAA102 /* FIlaMedUITests.xctest */;
+			productReference = 0C017616249CEA8B00FAA102 /* FilaMedUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -275,7 +290,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0C0175ED249CEA8A00FAA102 /* Build configuration list for PBXProject "FIlaMed" */;
+			buildConfigurationList = 0C0175ED249CEA8A00FAA102 /* Build configuration list for PBXProject "FilaMed" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -288,9 +303,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0C0175F1249CEA8A00FAA102 /* FIlaMed */,
-				0C01760A249CEA8B00FAA102 /* FIlaMedTests */,
-				0C017615249CEA8B00FAA102 /* FIlaMedUITests */,
+				0C0175F1249CEA8A00FAA102 /* FilaMed */,
+				0C01760A249CEA8B00FAA102 /* FilaMedTests */,
+				0C017615249CEA8B00FAA102 /* FilaMedUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -349,7 +364,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C2EC32824A0F8A7006E80C0 /* LoginTests.swift in Sources */,
 				0C017610249CEA8B00FAA102 /* FIlaMedTests.swift in Sources */,
+				0C2EC32A24A0F8BD006E80C0 /* RegisterTests.swift in Sources */,
+				0C2EC32E24A0F8E7006E80C0 /* AppointmentsTests.swift in Sources */,
+				0C2EC32C24A0F8D6006E80C0 /* IndividualAppointementTests.swift in Sources */,
+				0C2EC32624A0F88E006E80C0 /* LineTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,12 +386,12 @@
 /* Begin PBXTargetDependency section */
 		0C01760D249CEA8B00FAA102 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0C0175F1249CEA8A00FAA102 /* FIlaMed */;
+			target = 0C0175F1249CEA8A00FAA102 /* FilaMed */;
 			targetProxy = 0C01760C249CEA8B00FAA102 /* PBXContainerItemProxy */;
 		};
 		0C017618249CEA8B00FAA102 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0C0175F1249CEA8A00FAA102 /* FIlaMed */;
+			target = 0C0175F1249CEA8A00FAA102 /* FilaMed */;
 			targetProxy = 0C017617249CEA8B00FAA102 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -513,8 +533,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.academy.FIlaMed;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.academy.FilaMed;
+				PRODUCT_NAME = FilaMed;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -531,8 +551,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.academy.FIlaMed;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.academy.FilaMed;
+				PRODUCT_NAME = FilaMed;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -556,7 +576,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FIlaMed.app/FIlaMed";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FilaMed.app/FilaMed";
 			};
 			name = Debug;
 		};
@@ -578,7 +598,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FIlaMed.app/FIlaMed";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FilaMed.app/FilaMed";
 			};
 			name = Release;
 		};
@@ -625,7 +645,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0C0175ED249CEA8A00FAA102 /* Build configuration list for PBXProject "FIlaMed" */ = {
+		0C0175ED249CEA8A00FAA102 /* Build configuration list for PBXProject "FilaMed" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0C01761D249CEA8B00FAA102 /* Debug */,
@@ -634,7 +654,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0C01761F249CEA8B00FAA102 /* Build configuration list for PBXNativeTarget "FIlaMed" */ = {
+		0C01761F249CEA8B00FAA102 /* Build configuration list for PBXNativeTarget "FilaMed" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0C017620249CEA8B00FAA102 /* Debug */,
@@ -643,7 +663,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0C017622249CEA8B00FAA102 /* Build configuration list for PBXNativeTarget "FIlaMedTests" */ = {
+		0C017622249CEA8B00FAA102 /* Build configuration list for PBXNativeTarget "FilaMedTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0C017623249CEA8B00FAA102 /* Debug */,
@@ -652,7 +672,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0C017625249CEA8B00FAA102 /* Build configuration list for PBXNativeTarget "FIlaMedUITests" */ = {
+		0C017625249CEA8B00FAA102 /* Build configuration list for PBXNativeTarget "FilaMedUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0C017626249CEA8B00FAA102 /* Debug */,

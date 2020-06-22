@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:FIlaMed.xcodeproj">
+      location = "self:/Users/danilolira/Projetos/FilaMed/FIlaMed/FilaMed.xcodeproj">
    </FileRef>
 </Workspace>
