@@ -15,7 +15,6 @@ class LoginViewController: UIViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.title = "Login"
         self.view = LoginView()
-        
     }
 
 

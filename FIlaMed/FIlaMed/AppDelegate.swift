@@ -14,12 +14,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        let appointmentsViewControler = AppointmentsViewController()
+        let lineViewController = LineViewController()
+        
+        appointmentsViewControler.title = "Consultas"
+        lineViewController.title = "Fila"
+        
+        let appointmentsItemImage = UIImage(systemName: "heart.circle.fill")
+        let lineItemImage = UIImage(systemName: "person")
+        appointmentsViewControler.tabBarItem.image = appointmentsItemImage
+        lineViewController.tabBarItem.image = lineItemImage
+        
+        
+        let AppointmentNavigationController = UINavigationController(rootViewController: appointmentsViewControler)
+        let LineNavigationController = UINavigationController(rootViewController: lineViewController)
+        
+        let tabBarControler = UITabBarController()
+        tabBarControler.viewControllers = [AppointmentNavigationController, LineNavigationController]
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white
         window?.makeKeyAndVisible()
+        window?.rootViewController = tabBarControler
         
-        let navigationController = UINavigationController(rootViewController: TabBarController())
-        window?.rootViewController = navigationController
         
         return true
     }
