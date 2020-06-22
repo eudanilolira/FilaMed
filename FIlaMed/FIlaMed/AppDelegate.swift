@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        //Perguntar a Alê ou Chico se isso faz sentido
         let appointmentsViewControler = AppointmentsViewController()
         let lineViewController = LineViewController()
         
@@ -25,7 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         appointmentsViewControler.tabBarItem.image = appointmentsItemImage
         lineViewController.tabBarItem.image = lineItemImage
         
-        
         let AppointmentNavigationController = UINavigationController(rootViewController: appointmentsViewControler)
         let LineNavigationController = UINavigationController(rootViewController: lineViewController)
         
@@ -36,7 +36,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = .white
         window?.makeKeyAndVisible()
         window?.rootViewController = tabBarControler
-        
         
         return true
     }

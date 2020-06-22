@@ -10,7 +10,7 @@ import UIKit
 
 class AppointmentsView: UIView {
     public init() {
-        super.init(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
+        super.init(frame: CGRect(x: 10, y: 100, width: 100, height: 100))
     }
     
     required init?(coder: NSCoder) {
