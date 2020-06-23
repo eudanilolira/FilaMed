@@ -38,6 +38,7 @@ extension AppointmentsViewController: UITableViewDelegate, UITableViewDataSource
         cell.content.clinicName.text = "Dra.Judith da Matta"
         cell.content.specialty.text = "Ortodontista"
         cell.content.time.text = "10:30"
+        cell.content.statusLabel.text = "Você ainda não entrou na fila"
         
         return cell
     }

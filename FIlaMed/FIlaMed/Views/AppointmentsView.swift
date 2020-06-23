@@ -75,6 +75,7 @@ class AppointmentContent: UIView {
     let time: UILabel = UILabel()
     let division: UIView = UIView()
     let accessAppointment: UIButton = UIButton()
+    let statusLabel: UILabel = UILabel()
     
     public init() {
         super.init(frame: .zero)
@@ -88,6 +89,7 @@ class AppointmentContent: UIView {
         self.addSubview(self.time)
         self.addSubview(self.division)
         self.addSubview(self.accessAppointment)
+        self.addSubview(self.statusLabel)
         
         self.setupStyles()
         
@@ -104,6 +106,7 @@ class AppointmentContent: UIView {
         self.specialty.translatesAutoresizingMaskIntoConstraints = false
         self.time.translatesAutoresizingMaskIntoConstraints = false
         self.division.translatesAutoresizingMaskIntoConstraints = false
+        self.statusLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             self.heightAnchor.constraint(equalToConstant: 88),
@@ -113,35 +116,36 @@ class AppointmentContent: UIView {
         ])
         
         NSLayoutConstraint.activate([
-            clinicName.heightAnchor.constraint(equalToConstant: 30),
             clinicName.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor),
             clinicName.topAnchor.constraint(equalTo: self.topAnchor, constant: 5)
         ])
         
         NSLayoutConstraint.activate([
-            specialty.heightAnchor.constraint(equalToConstant: 30),
             specialty.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor),
             specialty.topAnchor.constraint(equalTo: clinicName.topAnchor, constant: 26)
         ])
         
         NSLayoutConstraint.activate([
-            time.heightAnchor.constraint(equalToConstant: 30),
             time.topAnchor.constraint(equalTo: clinicName.topAnchor),
             time.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor, constant: -20),
         ])
         
         NSLayoutConstraint.activate([
-            accessAppointment.heightAnchor.constraint(equalToConstant: 20),
-            accessAppointment.widthAnchor.constraint(equalToConstant: 15),
-            accessAppointment.topAnchor.constraint(equalTo: clinicName.topAnchor, constant: 5),
+            accessAppointment.topAnchor.constraint(equalTo: time.topAnchor),
             accessAppointment.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
         ])
         
         NSLayoutConstraint.activate([
             division.heightAnchor.constraint(equalToConstant: 1),
-            division.topAnchor.constraint(equalTo: specialty.bottomAnchor),
+            division.topAnchor.constraint(equalTo: specialty.topAnchor, constant: 23),
             division.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor),
             division.trailingAnchor.constraint(equalTo: self.trailingAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            statusLabel.topAnchor.constraint(equalTo: division.topAnchor, constant: 8),
+            statusLabel.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor),
+            statusLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         ])
     }
     
@@ -157,6 +161,9 @@ class AppointmentContent: UIView {
         
         self.clinicName.font = UIFont.boldSystemFont(ofSize: 17)
         self.specialty.font = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.light)
+        
+        self.statusLabel.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.medium)
+        self.statusLabel.textColor = #colorLiteral(red: 0.9294117647, green: 0.4196078431, blue: 0.3058823529, alpha: 1)
     }
 }
 
