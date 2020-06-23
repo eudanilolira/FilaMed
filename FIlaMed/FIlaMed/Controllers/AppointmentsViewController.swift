@@ -15,11 +15,15 @@ class AppointmentsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view = self.appointmentsView
+
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.968627451, alpha: 1)
+        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.968627451, alpha: 1)
         
         self.appointmentsView.appointmentsTable.dataSource = self
         self.appointmentsView.appointmentsTable.delegate = self
     }
+    
 }
 
 extension AppointmentsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -31,9 +35,9 @@ extension AppointmentsViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "appointmentCell") as! AppointmentCell
         
-        cell.clinicName.text = "Dra.Judith da Matta"
-        cell.specialty.text = "Ortodontista"
-        cell.time.text = "10:30"
+        cell.content.clinicName.text = "Dra.Judith da Matta"
+        cell.content.specialty.text = "Ortodontista"
+        cell.content.time.text = "10:30"
         
         return cell
     }

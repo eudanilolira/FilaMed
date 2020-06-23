@@ -14,7 +14,6 @@ class AppointmentsView: UIView {
     
     public init() {
         super.init(frame: .zero)
-        self.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.968627451, alpha: 1)
         self.addSubview(self.appointmentsTable)
         self.appointmentsTable.setupConstraints()
     }
@@ -48,22 +47,41 @@ class AppointmentsTable: UITableView {
         self.register(AppointmentCell.self, forCellReuseIdentifier: "appointmentCell") //We may use more than one type of cell.
         self.separatorStyle = UITableViewCell.SeparatorStyle.none
         self.rowHeight = 104
+        self.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.968627451, alpha: 1)
     }
 }
 
 class AppointmentCell: UITableViewCell {
+    let content: AppointmentContent = AppointmentContent()
     
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.addSubview(content)
+        content.setupConstraints()
+        self.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.968627451, alpha: 1)
+        content.backgroundColor = .white
+        self.selectionStyle = .none
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+}
+
+class AppointmentContent: UIView {
     let clinicName: UILabel = UILabel()
     let specialty: UILabel = UILabel()
     let time: UILabel = UILabel()
     let division: UIView = UIView()
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    public init() {
+        super.init(frame: .zero)
         
 
         self.layer.cornerRadius = 8
-        self.backgroundColor = .systemGray
+        self.backgroundColor = .clear
         
         
         self.addSubview(self.clinicName)
@@ -71,7 +89,6 @@ class AppointmentCell: UITableViewCell {
         self.addSubview(self.time)
         self.addSubview(self.division)
         
-        self.setupConstraints()
         self.setupStyles()
         
     }
@@ -85,31 +102,41 @@ class AppointmentCell: UITableViewCell {
         self.specialty.translatesAutoresizingMaskIntoConstraints = false
         self.time.translatesAutoresizingMaskIntoConstraints = false
         self.division.translatesAutoresizingMaskIntoConstraints = false
+        self.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            self.heightAnchor.constraint(equalToConstant: 88),
+            self.topAnchor.constraint(equalTo: specialty.bottomAnchor),
+            self.leadingAnchor.constraint(equalTo: superview!.layoutMarginsGuide.leadingAnchor),
+            self.trailingAnchor.constraint(equalTo: superview!.layoutMarginsGuide.trailingAnchor)
+        ])
         
         NSLayoutConstraint.activate([
             clinicName.heightAnchor.constraint(equalToConstant: 30),
-            clinicName.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
-            clinicName.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5)
+            clinicName.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor),
+            clinicName.topAnchor.constraint(equalTo: self.topAnchor, constant: 5)
         ])
         
         NSLayoutConstraint.activate([
             specialty.heightAnchor.constraint(equalToConstant: 30),
-            specialty.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
+            specialty.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor),
             specialty.topAnchor.constraint(equalTo: clinicName.topAnchor, constant: 26)
         ])
         
         NSLayoutConstraint.activate([
             time.heightAnchor.constraint(equalToConstant: 30),
             time.topAnchor.constraint(equalTo: clinicName.topAnchor),
-            time.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor),
+            time.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor),
         ])
         
         NSLayoutConstraint.activate([
             division.heightAnchor.constraint(equalToConstant: 1),
             division.topAnchor.constraint(equalTo: specialty.bottomAnchor),
-            division.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
-            division.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            division.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor),
+            division.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         ])
+        
+        
     }
     
     //We need to correct the fonts
@@ -119,7 +146,6 @@ class AppointmentCell: UITableViewCell {
         self.clinicName.font = UIFont.boldSystemFont(ofSize: 17)
         self.specialty.font = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.light)
     }
-    
 }
 
 //Remove view behind UILabel
@@ -144,21 +170,24 @@ class AppointmentsHeader: UITableViewHeaderFooterView {
         view.translatesAutoresizingMaskIntoConstraints = false
         
         title.font = UIFont.boldSystemFont(ofSize: 22)
-        title.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        title.backgroundColor = .red
+        view.backgroundColor = .blue
 
         NSLayoutConstraint.activate([
-            view.heightAnchor.constraint(equalToConstant: 30),
+//            view.heightAnchor.constraint(equalToConstant: 50),
             view.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             view.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            view.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+            view.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            view.topAnchor.constraint(equalTo: contentView.topAnchor)
+//            title.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)
         ])
         
         NSLayoutConstraint.activate([
-            title.heightAnchor.constraint(equalToConstant: 30),
-            title.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
-            title.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor),
-            title.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+//            title.heightAnchor.constraint(equalToConstant: 30),
+            title.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
+            title.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
+            title.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            
         ])
     }
 }
