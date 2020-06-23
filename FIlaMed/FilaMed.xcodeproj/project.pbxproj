@@ -192,10 +192,10 @@
 				0C2EC30D24A0D3BF006E80C0 /* IndividualAppointmentViewController.swift */,
 				0C2EC30F24A0D3E4006E80C0 /* LoginViewController.swift */,
 				0C2EC31124A0D3F6006E80C0 /* RegisterViewController.swift */,
-				0C2EC31324A0D43A006E80C0 /* LineViewController.swift */,
 				0C2EC31524A0D454006E80C0 /* ProfileViewController.swift */,
-				0C2EC31724A0D4C5006E80C0 /* AppointmentsViewController.swift */,
 				89B00D6524A0E09500FEAD73 /* TabBarController.swift */,
+				0C2EC31724A0D4C5006E80C0 /* AppointmentsViewController.swift */,
+				0C2EC31324A0D43A006E80C0 /* LineViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -290,7 +290,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0C0175ED249CEA8A00FAA102 /* Build configuration list for PBXProject "FilaMed" */;
+			buildConfigurationList = 0C0175ED249CEA8A00FAA102 /* Build configuration list for PBXProject "FIlaMed" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -645,7 +645,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0C0175ED249CEA8A00FAA102 /* Build configuration list for PBXProject "FilaMed" */ = {
+		0C0175ED249CEA8A00FAA102 /* Build configuration list for PBXProject "FIlaMed" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0C01761D249CEA8B00FAA102 /* Debug */,
