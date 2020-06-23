@@ -57,17 +57,16 @@ class AppointmentCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.addSubview(content)
-        content.setupConstraints()
         self.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.968627451, alpha: 1)
-        content.backgroundColor = .white
         self.selectionStyle = .none
+        self.content.backgroundColor = .white
+        
+        content.setupConstraints()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
 }
 
 class AppointmentContent: UIView {
@@ -75,6 +74,7 @@ class AppointmentContent: UIView {
     let specialty: UILabel = UILabel()
     let time: UILabel = UILabel()
     let division: UIView = UIView()
+    let accessAppointment: UIButton = UIButton()
     
     public init() {
         super.init(frame: .zero)
@@ -87,6 +87,7 @@ class AppointmentContent: UIView {
         self.addSubview(self.specialty)
         self.addSubview(self.time)
         self.addSubview(self.division)
+        self.addSubview(self.accessAppointment)
         
         self.setupStyles()
         
@@ -98,6 +99,7 @@ class AppointmentContent: UIView {
     
     func setupConstraints() {
         self.translatesAutoresizingMaskIntoConstraints = false
+        self.accessAppointment.translatesAutoresizingMaskIntoConstraints = false
         self.clinicName.translatesAutoresizingMaskIntoConstraints = false
         self.specialty.translatesAutoresizingMaskIntoConstraints = false
         self.time.translatesAutoresizingMaskIntoConstraints = false
@@ -125,7 +127,14 @@ class AppointmentContent: UIView {
         NSLayoutConstraint.activate([
             time.heightAnchor.constraint(equalToConstant: 30),
             time.topAnchor.constraint(equalTo: clinicName.topAnchor),
-            time.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor),
+            time.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor, constant: -20),
+        ])
+        
+        NSLayoutConstraint.activate([
+            accessAppointment.heightAnchor.constraint(equalToConstant: 20),
+            accessAppointment.widthAnchor.constraint(equalToConstant: 15),
+            accessAppointment.topAnchor.constraint(equalTo: clinicName.topAnchor, constant: 5),
+            accessAppointment.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
         ])
         
         NSLayoutConstraint.activate([
@@ -139,6 +148,12 @@ class AppointmentContent: UIView {
     //We need to correct the fonts
     func setupStyles(){
         self.division.backgroundColor = .gray
+        
+        let ultraLightConfiguration = UIImage.SymbolConfiguration(weight: .regular)
+        let ultraLightSymbolImage = UIImage(systemName: "chevron.right", withConfiguration: ultraLightConfiguration)
+        
+        self.accessAppointment.setBackgroundImage(ultraLightSymbolImage, for: .normal)
+        self.accessAppointment.setTitleColor(.blue, for: .normal)
         
         self.clinicName.font = UIFont.boldSystemFont(ofSize: 17)
         self.specialty.font = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.light)
