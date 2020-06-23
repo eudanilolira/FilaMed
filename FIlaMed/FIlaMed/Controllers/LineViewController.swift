@@ -9,12 +9,17 @@
 import UIKit
 
 class LineViewController: UIViewController {
+    
+    let lineView = LineView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.largeTitleDisplayMode = .always
-
+        self.view = self.lineView
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.title = "Fila"
     }
 
 
