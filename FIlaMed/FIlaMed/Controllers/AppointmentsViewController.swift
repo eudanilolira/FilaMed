@@ -102,14 +102,27 @@ extension AppointmentsViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "appointmentCell") as! AppointmentCell
-        
-        cell.content.clinicName.text = "Dra.Judith da Matta"
-        cell.content.specialty.text = "Ortodontista"
-        cell.content.time.text = "10:30"
-        cell.content.statusLabel.text = "Você ainda não entrou na fila"
-        
-        return cell
+        if (indexPath.section == 0) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "appointmentCell", for: indexPath) as! AppointmentCell
+            
+            cell.content.clinicName.text = "Dra.Judith da Matta"
+            cell.content.specialty.text = "Ortodontista"
+            cell.content.time.text = "10:30"
+            cell.content.statusLabel.text = "Você ainda não entrou na fila"
+            
+            return cell
+        }
+        else if(indexPath.section == 1) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "futureAppointmentCell", for: indexPath) as! FutureAppointmentCell
+            
+            cell.content.clinicName.text = "Dr.Marcio Danilo"
+            cell.content.specialty.text = "Ortodontista"
+            cell.content.time.text = "10:30"
+            cell.content.dateLabel.text = "26/06/2020"
+            
+            return cell
+        }
+        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
