@@ -107,7 +107,7 @@ extension AppointmentsViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if (indexPath.section == 0) {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "appointmentCell", for: indexPath) as! AppointmentCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "appointmentCell", for: indexPath) as! AppointmentCell<TodayAppointmentContent>
             
             cell.content.clinicName.text = "Dra.Judith da Matta"
             cell.content.specialty.text = "Ortodontista"
@@ -117,7 +117,7 @@ extension AppointmentsViewController: UITableViewDelegate, UITableViewDataSource
             return cell
         }
         else if(indexPath.section == 1) {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "futureAppointmentCell", for: indexPath) as! FutureAppointmentCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "futureAppointmentCell", for: indexPath) as! AppointmentCell<FutureAppointmentContent>
             
             cell.content.clinicName.text = "Dr.Marcio Danilo"
             cell.content.specialty.text = "Ortodontista"

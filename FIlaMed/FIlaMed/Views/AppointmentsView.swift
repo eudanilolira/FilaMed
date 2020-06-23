@@ -49,15 +49,15 @@ class AppointmentsTable: UITableView {
     
     func setupStyle() {
         self.register(AppointmentsHeader.self, forHeaderFooterViewReuseIdentifier: "appointmentsHeader")
-        self.register(AppointmentCell.self, forCellReuseIdentifier: "appointmentCell") //We may use more than one type of cell.
-        self.register(FutureAppointmentCell.self, forCellReuseIdentifier: "futureAppointmentCell")
+        self.register(AppointmentCell<TodayAppointmentContent>.self, forCellReuseIdentifier: "appointmentCell") //We may use more than one type of cell.
+        self.register(AppointmentCell<FutureAppointmentContent>.self, forCellReuseIdentifier: "futureAppointmentCell")
         self.separatorStyle = UITableViewCell.SeparatorStyle.none
         self.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.968627451, alpha: 1)
     }
 }
 
-class AppointmentCell: UITableViewCell {
-    let content: AppointmentContent = AppointmentContent()
+class AppointmentCell<Content: HaveConstraints>: UITableViewCell {
+    let content: Content = Content()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -74,27 +74,28 @@ class AppointmentCell: UITableViewCell {
     }
 }
 
-class AppointmentContent: UIView {
+protocol HaveConstraints: UIView {
+    func setupConstraints()
+}
+
+class AppointmentContent: UIView, HaveConstraints {
     let clinicName: UILabel = UILabel()
     let specialty: UILabel = UILabel()
     let time: UILabel = UILabel()
     let division: UIView = UIView()
     let accessAppointment: UIButton = UIButton()
-    let statusLabel: UILabel = UILabel()
     
     public init() {
         super.init(frame: .zero)
         
         self.layer.cornerRadius = 8
         self.backgroundColor = .clear
-        
-        
+    
         self.addSubview(self.clinicName)
         self.addSubview(self.specialty)
         self.addSubview(self.time)
         self.addSubview(self.division)
         self.addSubview(self.accessAppointment)
-        self.addSubview(self.statusLabel)
         
         self.setupStyles()
         
@@ -111,10 +112,8 @@ class AppointmentContent: UIView {
         self.specialty.translatesAutoresizingMaskIntoConstraints = false
         self.time.translatesAutoresizingMaskIntoConstraints = false
         self.division.translatesAutoresizingMaskIntoConstraints = false
-        self.statusLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            self.heightAnchor.constraint(equalToConstant: 88),
             self.topAnchor.constraint(equalTo: superview!.topAnchor, constant: 16),
             self.leadingAnchor.constraint(equalTo: superview!.layoutMarginsGuide.leadingAnchor),
             self.trailingAnchor.constraint(equalTo: superview!.layoutMarginsGuide.trailingAnchor)
@@ -131,12 +130,7 @@ class AppointmentContent: UIView {
         ])
         
         NSLayoutConstraint.activate([
-            time.topAnchor.constraint(equalTo: clinicName.topAnchor),
-            time.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor, constant: -20),
-        ])
-        
-        NSLayoutConstraint.activate([
-            accessAppointment.topAnchor.constraint(equalTo: time.topAnchor),
+            accessAppointment.topAnchor.constraint(equalTo: clinicName.topAnchor),
             accessAppointment.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
         ])
         
@@ -146,15 +140,8 @@ class AppointmentContent: UIView {
             division.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor),
             division.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         ])
-        
-        NSLayoutConstraint.activate([
-            statusLabel.topAnchor.constraint(equalTo: division.topAnchor, constant: 8),
-            statusLabel.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor),
-            statusLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor)
-        ])
     }
     
-    //We need to correct the fonts
     func setupStyles(){
         self.division.backgroundColor = .gray
         
@@ -166,9 +153,6 @@ class AppointmentContent: UIView {
         
         self.clinicName.font = UIFont.boldSystemFont(ofSize: 17)
         self.specialty.font = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.light)
-        
-        self.statusLabel.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.medium)
-        self.statusLabel.textColor = #colorLiteral(red: 0.9294117647, green: 0.4196078431, blue: 0.3058823529, alpha: 1)
     }
 }
 
@@ -214,118 +198,72 @@ class AppointmentsHeader: UITableViewHeaderFooterView {
     }
 }
 
-class FutureAppointmentCell: UITableViewCell {
-    let content: FutureAppointmentContent = FutureAppointmentContent()
+class TodayAppointmentContent: AppointmentContent {
+    let statusLabel: UILabel = UILabel()
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.addSubview(content)
-        self.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.968627451, alpha: 1)
-        self.selectionStyle = .none
-        self.content.backgroundColor = .white
-        
-        content.setupConstraints()
+    override public init() {
+        super.init()
+        self.addSubview(self.statusLabel)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func setupConstraints() {
+        super.setupConstraints()
+        
+        self.heightAnchor.constraint(equalToConstant: 88).isActive = true
+        self.statusLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            statusLabel.topAnchor.constraint(equalTo: self.division.topAnchor, constant: 8),
+            statusLabel.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor),
+            statusLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            time.topAnchor.constraint(equalTo: clinicName.topAnchor),
+            time.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor, constant: -20),
+        ])
+    }
+    
+    override func setupStyles(){
+        super.setupStyles()
     }
 }
 
-class FutureAppointmentContent: UIView {
-    let clinicName: UILabel = UILabel()
-    let specialty: UILabel = UILabel()
-    let time: UILabel = UILabel()
-    let division: UIView = UIView()
-    let accessAppointment: UIButton = UIButton()
+class FutureAppointmentContent: AppointmentContent {
     let dateLabel: UILabel = UILabel()
     
-    public init() {
-        super.init(frame: .zero)
-        
-        self.layer.cornerRadius = 8
-        self.backgroundColor = .clear
-        
-        
-        self.addSubview(self.clinicName)
-        self.addSubview(self.specialty)
-        self.addSubview(self.time)
-        self.addSubview(self.division)
-        self.addSubview(self.accessAppointment)
+    override public init() {
+        super.init()
         self.addSubview(self.dateLabel)
-        
-        self.setupStyles()
-        
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupConstraints() {
-        self.translatesAutoresizingMaskIntoConstraints = false
-        self.accessAppointment.translatesAutoresizingMaskIntoConstraints = false
-        self.clinicName.translatesAutoresizingMaskIntoConstraints = false
-        self.specialty.translatesAutoresizingMaskIntoConstraints = false
-        self.time.translatesAutoresizingMaskIntoConstraints = false
-        self.division.translatesAutoresizingMaskIntoConstraints = false
+    override func setupConstraints() {
+        super.setupConstraints()
+        
+        self.heightAnchor.constraint(equalToConstant: 104).isActive = true
         self.dateLabel.translatesAutoresizingMaskIntoConstraints = false
-        
+
         NSLayoutConstraint.activate([
-            self.heightAnchor.constraint(equalToConstant: 104),
-            self.topAnchor.constraint(equalTo: superview!.topAnchor, constant: 16),
-            self.leadingAnchor.constraint(equalTo: superview!.layoutMarginsGuide.leadingAnchor),
-            self.trailingAnchor.constraint(equalTo: superview!.layoutMarginsGuide.trailingAnchor)
-        ])
-        
-        NSLayoutConstraint.activate([
-            clinicName.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor),
-            clinicName.topAnchor.constraint(equalTo: self.topAnchor, constant: 5)
-        ])
-        
-        NSLayoutConstraint.activate([
-            specialty.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor),
-            specialty.topAnchor.constraint(equalTo: clinicName.topAnchor, constant: 26)
+            dateLabel.topAnchor.constraint(equalTo: self.division.topAnchor, constant: 8),
+            dateLabel.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor),
+            dateLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         ])
         
         NSLayoutConstraint.activate([
             time.topAnchor.constraint(equalTo: dateLabel.topAnchor, constant: 20),
             time.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor),
         ])
-        
-        NSLayoutConstraint.activate([
-            accessAppointment.topAnchor.constraint(equalTo: clinicName.topAnchor),
-            accessAppointment.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
-        ])
-        
-        NSLayoutConstraint.activate([
-            division.heightAnchor.constraint(equalToConstant: 1),
-            division.topAnchor.constraint(equalTo: specialty.topAnchor, constant: 23),
-            division.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor),
-            division.trailingAnchor.constraint(equalTo: self.trailingAnchor)
-        ])
-        
-        NSLayoutConstraint.activate([
-            dateLabel.topAnchor.constraint(equalTo: division.topAnchor, constant: 8),
-            dateLabel.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor),
-            dateLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor)
-        ])
     }
     
-    //We need to correct the fonts
-    func setupStyles(){
-        self.division.backgroundColor = .gray
-        
-        let ultraLightConfiguration = UIImage.SymbolConfiguration(weight: .regular)
-        let ultraLightSymbolImage = UIImage(systemName: "chevron.right", withConfiguration: ultraLightConfiguration)
-        
-        self.accessAppointment.setBackgroundImage(ultraLightSymbolImage, for: .normal)
-        self.accessAppointment.setTitleColor(.blue, for: .normal)
-        
-        self.clinicName.font = UIFont.boldSystemFont(ofSize: 17)
-        self.specialty.font = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.light)
-        
-        self.dateLabel.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.medium)
-        self.dateLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+    override func setupStyles(){
+        super.setupStyles()
     }
 }
