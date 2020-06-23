@@ -52,7 +52,6 @@ class AppointmentsTable: UITableView {
         self.register(AppointmentCell.self, forCellReuseIdentifier: "appointmentCell") //We may use more than one type of cell.
         self.register(FutureAppointmentCell.self, forCellReuseIdentifier: "futureAppointmentCell")
         self.separatorStyle = UITableViewCell.SeparatorStyle.none
-        self.rowHeight = 104
         self.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.968627451, alpha: 1)
     }
 }
