@@ -14,14 +14,44 @@ class AppointmentsView: UIView {
     
     public init() {
         super.init(frame: .zero)
-        self.addSubview(self.appointmentsTable)
-        self.appointmentsTable.setupConstraints()
+        self.setupLayout()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func setupLayout() {
+        self.addSubview(self.appointmentsTable)
+//        self.addSubview(self.profileButton)
+//        self.profileButton.setupConstraints()
+        self.appointmentsTable.setupConstraints()
+        
+
+        
+        
+    }
 }
+
+//class ProfileButton: UIButton {
+//    override init(frame: CGRect) {
+//        super.init(frame: .zero)
+//        let profileConfiguration = UIImage.SymbolConfiguration(weight: .regular)
+//        let profileImage = UIImage(systemName: "person.circle.fill", withConfiguration: profileConfiguration)
+//        self.setBackgroundImage(profileImage, for: .normal)
+//    }
+//
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+//
+//    func setupConstraints() {
+//        self.translatesAutoresizingMaskIntoConstraints = false
+//        self.centerYAnchor.constraint(equalTo: superview!.).isActive = true
+//        self.trailingAnchor.constraint(equalTo: superview!.layoutMarginsGuide.trailingAnchor).isActive = true
+//    }
+//}
+
 
 class AppointmentsTable: UITableView {
     
