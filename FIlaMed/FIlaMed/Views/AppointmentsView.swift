@@ -10,35 +10,44 @@ import UIKit
 
 class AppointmentsView: UIView {
     
-    let appointmentsTable: UITableView = UITableView()
+    let appointmentsTable: AppointmentsTable = AppointmentsTable()
     
     public init() {
         super.init(frame: .zero)
         self.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.968627451, alpha: 1)
-        self.setup()
-        
+        self.addSubview(self.appointmentsTable)
+        self.appointmentsTable.setupConstraints()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+class AppointmentsTable: UITableView {
+    
+    init() {
+        super.init(frame: .zero, style: UITableView.Style.plain)
+        self.setupStyle()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup() {
-        self.addSubview(self.appointmentsTable)
-        
-        //AutoLayout settings
-        self.appointmentsTable.translatesAutoresizingMaskIntoConstraints = false
-        self.appointmentsTable.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        self.appointmentsTable.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        self.appointmentsTable.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
-        self.appointmentsTable.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
-        
-        //Table settings
-        self.appointmentsTable.register(AppointmentsHeader.self, forHeaderFooterViewReuseIdentifier: "appointmentsHeader")
-        self.appointmentsTable.register(AppointmentCell.self, forCellReuseIdentifier: "appointmentCell") //We may use more than one type of cell.
-        self.appointmentsTable.separatorStyle = UITableViewCell.SeparatorStyle.none
-        self.appointmentsTable.rowHeight = 104
-        
+    func setupConstraints(){
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.centerXAnchor.constraint(equalTo: superview!.centerXAnchor).isActive = true
+        self.centerYAnchor.constraint(equalTo: superview!.centerYAnchor).isActive = true
+        self.heightAnchor.constraint(equalTo: superview!.heightAnchor).isActive = true
+        self.widthAnchor.constraint(equalTo: superview!.widthAnchor).isActive = true
+    }
+    
+    func setupStyle() {
+        self.register(AppointmentsHeader.self, forHeaderFooterViewReuseIdentifier: "appointmentsHeader")
+        self.register(AppointmentCell.self, forCellReuseIdentifier: "appointmentCell") //We may use more than one type of cell.
+        self.separatorStyle = UITableViewCell.SeparatorStyle.none
+        self.rowHeight = 104
     }
 }
 
@@ -113,8 +122,9 @@ class AppointmentCell: UITableViewCell {
     
 }
 
-//We need to correct headers color
+//Remove view behind UILabel
 class AppointmentsHeader: UITableViewHeaderFooterView {
+    let view = UIView()
     let title = UILabel()
 
     override init(reuseIdentifier: String?) {
@@ -127,11 +137,22 @@ class AppointmentsHeader: UITableViewHeaderFooterView {
     }
     
     func configureContents() {
-        contentView.addSubview(title)
+        contentView.addSubview(view)
+        view.addSubview(title)
         
         title.translatesAutoresizingMaskIntoConstraints = false
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
         title.font = UIFont.boldSystemFont(ofSize: 22)
         title.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+
+        NSLayoutConstraint.activate([
+            view.heightAnchor.constraint(equalToConstant: 30),
+            view.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            view.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            view.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+        ])
         
         NSLayoutConstraint.activate([
             title.heightAnchor.constraint(equalToConstant: 30),
