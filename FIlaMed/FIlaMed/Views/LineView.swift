@@ -18,6 +18,7 @@ class LineView: UIScrollView {
         setupStyle()
         setupDoctorInformationView()
         setupLineIndicatorView(upperView: doctorInformationView)
+        self.contentSize.height = 530
     }
     
     required init?(coder: NSCoder) {
@@ -36,6 +37,14 @@ class LineView: UIScrollView {
     func setupLineIndicatorView(upperView: UIView) {
         self.addSubview(self.lineIndicatiorView)
         self.lineIndicatiorView.setupConstraints(upperView)
+    }
+    
+    public func setupConstraints() {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.leadingAnchor.constraint(equalTo: superview!.leadingAnchor).isActive = true
+        self.topAnchor.constraint(equalTo: superview!.topAnchor).isActive = true
+        self.widthAnchor.constraint(equalTo: superview!.widthAnchor).isActive = true
+        self.heightAnchor.constraint(equalTo: superview!.heightAnchor).isActive = true
     }
     
 }
