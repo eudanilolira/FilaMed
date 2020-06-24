@@ -135,7 +135,7 @@ class TodayAppointmentContent: AppointmentContent {
         self.clockSymbol.image = UIImage(systemName: "clock", withConfiguration: clockSymbolConfiguration)
         self.clockSymbol.tintColor = .black
         
-        self.statusLabel.textColor = Style.WarningColor
+        self.statusLabel.textColor = GlobalStyle.WarningColor
         self.statusLabel.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         
     }
