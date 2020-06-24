@@ -1,82 +1,14 @@
 //
-//  AppointmentsView.swift
-//  FIlaMed
+//  AppointmentsContent.swift
+//  FilaMed
 //
-//  Created by Danilo Araújo on 22/06/20.
+//  Created by Danilo Araújo on 24/06/20.
 //  Copyright © 2020 FilaMed. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-class AppointmentsView: UIView {
-    
-    let appointmentsTable: AppointmentsTable = AppointmentsTable()
-    
-    public init() {
-        super.init(frame: .zero)
-        self.setupLayout()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setupLayout() {
-        self.addSubview(self.appointmentsTable)
-        self.appointmentsTable.setupConstraints()
-    }
-}
-
-
-class AppointmentsTable: UITableView {
-    
-    init() {
-        super.init(frame: .zero, style: UITableView.Style.plain)
-        self.setupStyle()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setupConstraints(){
-        self.translatesAutoresizingMaskIntoConstraints = false
-        self.centerXAnchor.constraint(equalTo: superview!.centerXAnchor).isActive = true
-        self.centerYAnchor.constraint(equalTo: superview!.centerYAnchor).isActive = true
-        self.heightAnchor.constraint(equalTo: superview!.heightAnchor).isActive = true
-        self.widthAnchor.constraint(equalTo: superview!.widthAnchor).isActive = true
-    }
-    
-    func setupStyle() {
-        self.register(AppointmentsHeader.self, forHeaderFooterViewReuseIdentifier: "appointmentsHeader")
-        self.register(AppointmentCell<TodayAppointmentContent>.self, forCellReuseIdentifier: "appointmentCell") //We may use more than one type of cell.
-        self.register(AppointmentCell<FutureAppointmentContent>.self, forCellReuseIdentifier: "futureAppointmentCell")
-        self.separatorStyle = UITableViewCell.SeparatorStyle.none
-        self.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.968627451, alpha: 1)
-    }
-}
-
-class AppointmentCell<Content: HaveConstraints>: UITableViewCell {
-    let content: Content = Content()
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.addSubview(content)
-        self.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.968627451, alpha: 1)
-        self.selectionStyle = .none
-        self.content.backgroundColor = .white
-        
-        content.setupConstraints()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
-protocol HaveConstraints: UIView {
-    func setupConstraints()
-}
 
 class AppointmentContent: UIView, HaveConstraints {
     let clinicName: UILabel = UILabel()
@@ -89,8 +21,8 @@ class AppointmentContent: UIView, HaveConstraints {
         super.init(frame: .zero)
         
         self.layer.cornerRadius = 8
-        self.backgroundColor = .clear
-    
+        self.backgroundColor = Style.CardBackgroundColor
+        
         self.addSubview(self.clinicName)
         self.addSubview(self.specialty)
         self.addSubview(self.time)
@@ -98,7 +30,6 @@ class AppointmentContent: UIView, HaveConstraints {
         self.addSubview(self.accessAppointment)
         
         self.setupStyles()
-        
     }
     
     required init?(coder: NSCoder) {
@@ -156,47 +87,6 @@ class AppointmentContent: UIView, HaveConstraints {
     }
 }
 
-//Remove view behind UILabel
-class AppointmentsHeader: UITableViewHeaderFooterView {
-    let view = UIView()
-    let title = UILabel()
-
-    override init(reuseIdentifier: String?) {
-        super.init(reuseIdentifier: reuseIdentifier)
-        configureContents()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func configureContents() {
-        contentView.addSubview(view)
-        view.addSubview(title)
-        
-        title.translatesAutoresizingMaskIntoConstraints = false
-        view.translatesAutoresizingMaskIntoConstraints = false
-        
-        title.font = UIFont.boldSystemFont(ofSize: 22)
-        title.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.968627451, alpha: 1)
-        view.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.968627451, alpha: 1)
-
-        NSLayoutConstraint.activate([
-            view.heightAnchor.constraint(equalToConstant: 30),
-            view.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            view.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            view.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-        ])
-        
-        NSLayoutConstraint.activate([
-            view.heightAnchor.constraint(equalToConstant: 30),
-            title.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
-            title.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor),
-            title.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-            
-        ])
-    }
-}
 
 class TodayAppointmentContent: AppointmentContent {
     let statusLabel: UILabel = UILabel()
