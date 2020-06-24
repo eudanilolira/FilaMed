@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LineView: UIScrollView {
+class LineView: UIView {
     
     let doctorInformationView: DoctorInformationView = DoctorInformationView()
     let lineIndicatiorView: LineIndicatorView = LineIndicatorView()
@@ -39,5 +39,34 @@ class LineView: UIScrollView {
 
     }
     
+    func setupConstraints() {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.bottomAnchor.constraint(equalTo: superview!.bottomAnchor).isActive = true
+        self.topAnchor.constraint(equalTo: superview!.topAnchor, constant: 16).isActive = true
+        self.leadingAnchor.constraint(equalTo: superview!.leadingAnchor).isActive = true
+        self.trailingAnchor.constraint(equalTo: superview!.trailingAnchor).isActive = true
+        self.widthAnchor.constraint(equalTo: superview!.widthAnchor).isActive = true
+        self.heightAnchor.constraint(equalTo: superview!.heightAnchor).isActive = true
+    }
+}
+
+class LineScrollView: UIScrollView {
+    
+    let lineView: LineView = LineView()
+    
+    public init() {
+        super.init(frame: .zero)
+        self.addSubview(lineView)
+        lineView.setupConstraints()
+        setupStyle()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setupStyle() {
+        self.backgroundColor = .systemGray6
+    }
 }
 
