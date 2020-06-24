@@ -16,6 +16,7 @@ class AppointmentContent: UIView, HaveConstraints {
     let time: UILabel = UILabel()
     let division: UIView = UIView()
     let accessAppointment: UIButton = UIButton()
+    let clockSymbol: UIImageView = UIImageView()
     
     public init() {
         super.init(frame: .zero)
@@ -28,6 +29,7 @@ class AppointmentContent: UIView, HaveConstraints {
         self.addSubview(self.time)
         self.addSubview(self.division)
         self.addSubview(self.accessAppointment)
+        self.addSubview(self.clockSymbol)
         
         self.setupStyles()
     }
@@ -43,6 +45,7 @@ class AppointmentContent: UIView, HaveConstraints {
         self.specialty.translatesAutoresizingMaskIntoConstraints = false
         self.time.translatesAutoresizingMaskIntoConstraints = false
         self.division.translatesAutoresizingMaskIntoConstraints = false
+        self.clockSymbol.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             self.topAnchor.constraint(equalTo: superview!.topAnchor, constant: 16),
@@ -61,12 +64,12 @@ class AppointmentContent: UIView, HaveConstraints {
         ])
         
         NSLayoutConstraint.activate([
-            accessAppointment.topAnchor.constraint(equalTo: clinicName.topAnchor),
+            accessAppointment.centerYAnchor.constraint(equalTo: clinicName.centerYAnchor),
             accessAppointment.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
         ])
         
         NSLayoutConstraint.activate([
-            division.heightAnchor.constraint(equalToConstant: 1),
+            division.heightAnchor.constraint(equalToConstant: 0.25),
             division.topAnchor.constraint(equalTo: specialty.topAnchor, constant: 23),
             division.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor),
             division.trailingAnchor.constraint(equalTo: self.trailingAnchor)
@@ -74,9 +77,9 @@ class AppointmentContent: UIView, HaveConstraints {
     }
     
     func setupStyles(){
-        self.division.backgroundColor = .gray
+        self.division.backgroundColor = #colorLiteral(red: 0.5921568627, green: 0.5921568627, blue: 0.5921568627, alpha: 1)
         
-        let ultraLightConfiguration = UIImage.SymbolConfiguration(weight: .regular)
+        let ultraLightConfiguration = UIImage.SymbolConfiguration(font: UIFont.systemFont(ofSize: 15, weight: .semibold))
         let ultraLightSymbolImage = UIImage(systemName: "chevron.right", withConfiguration: ultraLightConfiguration)
         
         self.accessAppointment.setBackgroundImage(ultraLightSymbolImage, for: .normal)
@@ -113,22 +116,39 @@ class TodayAppointmentContent: AppointmentContent {
         ])
         
         NSLayoutConstraint.activate([
-            time.topAnchor.constraint(equalTo: clinicName.topAnchor),
+            time.centerYAnchor.constraint(equalTo: clinicName.centerYAnchor),
             time.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor, constant: -20),
+        ])
+        
+        NSLayoutConstraint.activate([
+            clockSymbol.centerYAnchor.constraint(equalTo: time.centerYAnchor),
+            clockSymbol.trailingAnchor.constraint(equalTo: self.time.leadingAnchor, constant: -2),
         ])
     }
     
     override func setupStyles(){
         super.setupStyles()
+        
+        self.time.font = UIFont.systemFont(ofSize: 12, weight: .bold)
+        
+        let clockSymbolConfiguration = UIImage.SymbolConfiguration(font: UIFont.systemFont(ofSize: 12, weight: .bold))
+        self.clockSymbol.image = UIImage(systemName: "clock", withConfiguration: clockSymbolConfiguration)
+        self.clockSymbol.tintColor = .black
+        
+        self.statusLabel.textColor = Style.WarningColor
+        self.statusLabel.font = UIFont.systemFont(ofSize: 15, weight: .medium)
+        
     }
 }
 
 class FutureAppointmentContent: AppointmentContent {
     let dateLabel: UILabel = UILabel()
+    let calendarSymbol: UIImageView = UIImageView()
     
     override public init() {
         super.init()
         self.addSubview(self.dateLabel)
+        self.addSubview(self.calendarSymbol)
     }
     
     required init?(coder: NSCoder) {
@@ -140,20 +160,45 @@ class FutureAppointmentContent: AppointmentContent {
         
         self.heightAnchor.constraint(equalToConstant: 104).isActive = true
         self.dateLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.calendarSymbol.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
+            clockSymbol.topAnchor.constraint(equalTo: self.dateLabel.topAnchor, constant: 20),
+            clockSymbol.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor),
+        ])
+        
+        NSLayoutConstraint.activate([
+            calendarSymbol.topAnchor.constraint(equalTo: dateLabel.topAnchor),
+            calendarSymbol.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor),
+        ])
+        
+        NSLayoutConstraint.activate([
             dateLabel.topAnchor.constraint(equalTo: self.division.topAnchor, constant: 8),
-            dateLabel.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor),
-            dateLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor)
+            dateLabel.leadingAnchor.constraint(equalTo: self.calendarSymbol.trailingAnchor, constant: 2),
         ])
         
         NSLayoutConstraint.activate([
             time.topAnchor.constraint(equalTo: dateLabel.topAnchor, constant: 20),
-            time.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor),
+            time.leadingAnchor.constraint(equalTo: self.clockSymbol.trailingAnchor, constant: 2),
         ])
+        
+
     }
     
     override func setupStyles(){
         super.setupStyles()
+        
+        self.dateLabel.font = UIFont.systemFont(ofSize: 12, weight: .medium)
+        
+        let clockSymbolConfiguration = UIImage.SymbolConfiguration(font: UIFont.systemFont(ofSize: 12, weight: .regular))
+        self.clockSymbol.image = UIImage(systemName: "clock", withConfiguration: clockSymbolConfiguration)
+        self.clockSymbol.tintColor = #colorLiteral(red: 0.5921568627, green: 0.5921568627, blue: 0.5921568627, alpha: 1)
+        
+        let calendarSymbolConfiguration = UIImage.SymbolConfiguration(font: UIFont.systemFont(ofSize: 12, weight: .bold))
+        self.calendarSymbol.image = UIImage(systemName: "calendar", withConfiguration: calendarSymbolConfiguration)
+        self.calendarSymbol.tintColor = .black
+        
+        self.time.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        self.time.textColor = #colorLiteral(red: 0.5921568627, green: 0.5921568627, blue: 0.5921568627, alpha: 1)
     }
 }
