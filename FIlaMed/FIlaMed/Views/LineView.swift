@@ -8,15 +8,16 @@
 
 import UIKit
 
-class LineView: UIView {
+class LineView: UIScrollView {
     
     let doctorInformationView: DoctorInformationView = DoctorInformationView()
+    let lineIndicatiorView: LineIndicatorView = LineIndicatorView()
     
     public init() {
         super.init(frame: .zero)
         setupStyle()
         setupDoctorInformationView()
-        //setupConstraints()
+        setupLineIndicatorView(upperView: doctorInformationView)
     }
     
     required init?(coder: NSCoder) {
@@ -32,12 +33,9 @@ class LineView: UIView {
         self.doctorInformationView.setupConstraints()
     }
     
-    func setupConstraints(){
-        self.translatesAutoresizingMaskIntoConstraints = false
-        self.centerXAnchor.constraint(equalTo: superview!.centerXAnchor).isActive = true
-        self.centerYAnchor.constraint(equalTo: superview!.centerYAnchor).isActive = true
-        self.heightAnchor.constraint(equalTo: superview!.heightAnchor).isActive = true
-        self.widthAnchor.constraint(equalTo: superview!.widthAnchor).isActive = true
+    func setupLineIndicatorView(upperView: UIView) {
+        self.addSubview(self.lineIndicatiorView)
+        self.lineIndicatiorView.setupConstraints(upperView)
     }
     
 }
@@ -69,9 +67,33 @@ class DoctorInformationView: UIView {
     func setupConstraints() {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.centerXAnchor.constraint(equalTo: superview!.centerXAnchor).isActive = true
-        //let topYAnchor = NSLayoutConstraint(item: self, attribute: .top, relatedBy: .equal, toItem: UIApplication.shared.statusBarFrame, attribute: .bottom, multiplier: 1.0, constant: 32)
-        self.topAnchor.constraint(equalTo: superview!.topAnchor, constant: 44).isActive = true
-        self.widthAnchor.constraint(equalToConstant: 343).isActive = true
+        self.topAnchor.constraint(equalTo: superview!.topAnchor, constant: 16).isActive = true
+        self.widthAnchor.constraint(equalToConstant: 345).isActive = true
         self.heightAnchor.constraint(equalToConstant: 233).isActive = true
+    }
+}
+
+class LineIndicatorView: UIView {
+    
+    public override init(frame: CGRect) {
+        super.init(frame: .zero)
+        setupStyle()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setupStyle() {
+        self.backgroundColor = .white
+        self.layer.cornerRadius = 8
+    }
+    
+    func setupConstraints(_ upperView: UIView) {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.centerXAnchor.constraint(equalTo: superview!.centerXAnchor).isActive = true
+        self.topAnchor.constraint(equalTo: upperView.bottomAnchor, constant: 32).isActive = true
+        self.widthAnchor.constraint(equalToConstant: 345).isActive = true
+        self.heightAnchor.constraint(equalToConstant: 230).isActive = true
     }
 }

@@ -24,13 +24,11 @@ class TabBarController: UITabBarController {
         appointmentsController.title = "Consultas"
         let appointmentsItemImage = UIImage(systemName: "heart.circle.fill")
         appointmentsController.tabBarItem.image = appointmentsItemImage
-        appointmentsController.navigationBar.prefersLargeTitles = true
     }
     
     func setupLineTabBarItem() {
         lineController.title = "Fila"
         let lineItemImage = UIImage(systemName: "person.2")
         lineController.tabBarItem.image = lineItemImage
-        lineController.navigationBar.prefersLargeTitles = true
     }
 }
