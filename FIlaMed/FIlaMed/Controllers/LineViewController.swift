@@ -10,13 +10,13 @@ import UIKit
 
 class LineViewController: UIViewController {
     
-    let lineView = LineView()
+    let lineScrollView = LineScrollView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.prefersLargeTitles = true
         //lineView.setupConstraints()
-        self.view = self.lineView
+        self.view = self.lineScrollView
     }
     
     override func viewWillAppear(_ animated: Bool) {
