@@ -15,7 +15,7 @@ class AppointmentCell<Content: HaveConstraints>: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.addSubview(content)
-        self.backgroundColor = Style.BackgroundColor
+        self.backgroundColor = GlobalStyle.BackgroundColor
         self.selectionStyle = .none
         
         

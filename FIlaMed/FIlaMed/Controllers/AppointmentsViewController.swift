@@ -33,7 +33,7 @@ class AppointmentsViewController: UIViewController {
 extension AppointmentsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 6
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -67,7 +67,7 @@ extension AppointmentsViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier:"appointmentsHeader") as! AppointmentsHeader
         view.title.text = section == 0 ? "Hoje" : "Próximas"
-
+        
         return view
     }
     
@@ -75,7 +75,13 @@ extension AppointmentsViewController: UITableViewDelegate, UITableViewDataSource
         return 2
     }
     
-    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 20.0
+    }
+
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
+    }
     
 }
 

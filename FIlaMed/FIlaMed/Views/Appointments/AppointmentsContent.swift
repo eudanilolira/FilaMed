@@ -21,7 +21,7 @@ class AppointmentContent: UIView, HaveConstraints {
         super.init(frame: .zero)
         
         self.layer.cornerRadius = 8
-        self.backgroundColor = Style.CardBackgroundColor
+        self.backgroundColor = GlobalStyle.CardBackgroundColor
         
         self.addSubview(self.clinicName)
         self.addSubview(self.specialty)

@@ -34,7 +34,7 @@ class AppointmentsTable: UITableView {
         self.register(AppointmentCell<TodayAppointmentContent>.self, forCellReuseIdentifier: "appointmentCell")
         self.register(AppointmentCell<FutureAppointmentContent>.self, forCellReuseIdentifier: "futureAppointmentCell")
         self.separatorStyle = UITableViewCell.SeparatorStyle.none
-        self.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.968627451, alpha: 1)
+        self.backgroundColor = GlobalStyle.BackgroundColor
     }
 }
 
@@ -59,8 +59,8 @@ class AppointmentsHeader: UITableViewHeaderFooterView {
         contentView.addSubview(title)
         
         title.font = UIFont.boldSystemFont(ofSize: 22)
-        title.backgroundColor = Style.BackgroundColor
-        view.backgroundColor =  Style.BackgroundColor
+        title.backgroundColor = GlobalStyle.BackgroundColor
+        view.backgroundColor =  GlobalStyle.BackgroundColor
     }
     
     func setupConstraints(){

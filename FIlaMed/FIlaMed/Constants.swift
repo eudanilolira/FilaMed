@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Size {
+struct GlobalSize {
     /// Image height/width for Large NavBar state
     static let ImageSizeForLargeState: CGFloat = 40
     /// Margin from right anchor of safe area to right anchor of Image
@@ -25,7 +25,7 @@ struct Size {
     static let NavBarHeightLargeState: CGFloat = 96.5
 }
 
-struct Style {
+struct GlobalStyle {
     static let BackgroundColor: UIColor = UIColor.systemGray6
     static let CardBackgroundColor: UIColor = .white
 }
