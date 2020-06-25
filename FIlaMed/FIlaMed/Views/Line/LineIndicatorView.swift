@@ -58,9 +58,9 @@ class LineIndicatorView: UIView {
         self.waitTimeLabel.leadingAnchor.constraint(equalTo: self.timeLeftLabel.leadingAnchor).isActive = true
         
         self.centerXAnchor.constraint(equalTo: superview!.centerXAnchor).isActive = true
-        self.topAnchor.constraint(equalTo: upperView.bottomAnchor, constant: 32).isActive = true
-        self.widthAnchor.constraint(equalToConstant: 345).isActive = true
-        self.heightAnchor.constraint(equalToConstant: 230).isActive = true
+        self.topAnchor.constraint(equalTo: upperView.bottomAnchor, constant: 16).isActive = true
+        self.widthAnchor.constraint(equalToConstant: 359).isActive = true
+        self.heightAnchor.constraint(equalToConstant: 230).isActive = true 
     }
 }
 

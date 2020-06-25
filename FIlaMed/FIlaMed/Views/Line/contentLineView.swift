@@ -11,7 +11,7 @@ import UIKit
 class LineView: UIView {
     
     let doctorInformationView: DoctorInformationView = DoctorInformationView()
-    let lineIndicatiorView: LineIndicatorView = LineIndicatorView()
+    let lineIndicatorView: LineIndicatorView = LineIndicatorView()
     
     public init() {
         super.init(frame: .zero)
@@ -34,15 +34,15 @@ class LineView: UIView {
     }
     
     func setupLineIndicatorView(upperView: UIView) {
-        self.addSubview(self.lineIndicatiorView)
-        self.lineIndicatiorView.setupConstraints(upperView)
+        self.addSubview(self.lineIndicatorView)
+        self.lineIndicatorView.setupConstraints(upperView)
 
     }
     
     func setupConstraints() {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.bottomAnchor.constraint(equalTo: superview!.bottomAnchor).isActive = true
-        self.topAnchor.constraint(equalTo: superview!.topAnchor, constant: 16).isActive = true
+        self.topAnchor.constraint(equalTo: superview!.topAnchor, constant: 24).isActive = true
         self.leadingAnchor.constraint(equalTo: superview!.leadingAnchor).isActive = true
         self.trailingAnchor.constraint(equalTo: superview!.trailingAnchor).isActive = true
         self.widthAnchor.constraint(equalTo: superview!.widthAnchor).isActive = true
@@ -52,12 +52,12 @@ class LineView: UIView {
 
 class LineScrollView: UIScrollView {
     
-    let lineView: LineView = LineView()
+    let contentView: LineView = LineView()
     
     public init() {
         super.init(frame: .zero)
-        self.addSubview(lineView)
-        lineView.setupConstraints()
+        self.addSubview(contentView)
+        contentView.setupConstraints()
         setupStyle()
     }
     
