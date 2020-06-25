@@ -12,10 +12,9 @@ class ProfileView: UIView {
     public init() {
         super.init(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-}
 
+}
