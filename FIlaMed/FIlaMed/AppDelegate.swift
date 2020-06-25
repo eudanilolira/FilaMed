@@ -14,7 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        //Perguntar a Alê ou Chico se isso faz sentido
         let appointmentsViewControler = AppointmentsViewController()
         let lineViewController = LineViewController()
         
