@@ -15,12 +15,10 @@ class LineViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        //lineView.setupConstraints()
         self.view = self.lineScrollView
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.title = "Fila"
     }
-
 }

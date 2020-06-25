@@ -12,10 +12,12 @@ class LineView: UIView {
     
     let doctorInformationView: DoctorInformationView = DoctorInformationView()
     let lineIndicatorView: LineIndicatorView = LineIndicatorView()
+    let outputButton: UIButton = UIButton()
     
     public init() {
         super.init(frame: .zero)
         setupStyle()
+        setupOutputButtonStyle()
         setupDoctorInformationView()
         setupLineIndicatorView(upperView: doctorInformationView)
     }
@@ -36,7 +38,23 @@ class LineView: UIView {
     func setupLineIndicatorView(upperView: UIView) {
         self.addSubview(self.lineIndicatorView)
         self.lineIndicatorView.setupConstraints(upperView)
-
+    }
+    
+    func setupOutputButtonStyle() {
+        self.outputButton.backgroundColor = .white
+        self.outputButton.layer.cornerRadius = 8
+        self.outputButton.setTitle("Sair da fila", for: .normal)
+        self.outputButton.setTitleColor(.systemRed, for: .normal)
+        self.outputButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
+        self.outputButton.contentHorizontalAlignment = .left
+    }
+    
+    func setupOutputButtonConstraints() {
+        self.addSubview(outputButton)
+        self.outputButton.translatesAutoresizingMaskIntoConstraints = false
+        self.outputButton.topAnchor.constraint(equalTo: lineIndicatorView.bottomAnchor, constant: 16).isActive = true
+        self.outputButton.centerXAnchor.constraint(equalTo: superview!.centerXAnchor).isActive = true
+        self.outputButton.widthAnchor.constraint(equalToConstant: 359).isActive = true
     }
     
     func setupConstraints() {
@@ -58,6 +76,7 @@ class LineScrollView: UIScrollView {
         super.init(frame: .zero)
         self.addSubview(contentView)
         contentView.setupConstraints()
+        contentView.setupOutputButtonConstraints()
         setupStyle()
     }
     
