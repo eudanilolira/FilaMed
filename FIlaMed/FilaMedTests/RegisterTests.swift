@@ -10,8 +10,7 @@ import XCTest
 @testable import FilaMed
 
 class RegisterTests: XCTestCase {
-    
-    
+
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -21,7 +20,6 @@ class RegisterTests: XCTestCase {
     }
 
     func testCreateUser() {
-        let viewController = RegisterViewController()
     }
     func testExample() throws {
         // This is an example of a functional test case.

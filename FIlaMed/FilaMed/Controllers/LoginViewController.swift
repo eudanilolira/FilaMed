@@ -1,5 +1,5 @@
 //
-//  LineViewController.swift
+//  LoginViewController.swift
 //  FIlaMed
 //
 //  Created by Danilo Araújo on 22/06/20.
@@ -8,14 +8,13 @@
 
 import UIKit
 
-class LineViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationItem.largeTitleDisplayMode = .always
-
+        self.title = "Login"
+        self.view = LoginView()
     }
-
 
 }

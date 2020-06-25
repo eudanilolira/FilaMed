@@ -1,5 +1,5 @@
 //
-//  IndividualAppointmentViewController.swift
+//  RegisterViewController.swift
 //  FIlaMed
 //
 //  Created by Danilo Araújo on 22/06/20.
@@ -8,11 +8,10 @@
 
 import UIKit
 
-class IndividualAppointmentViewController: UIViewController {
+class RegisterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
 
 }

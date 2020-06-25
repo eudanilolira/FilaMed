@@ -9,10 +9,10 @@
 import XCTest
 
 class AppointmentsTests: XCTestCase {
-    
+
     let app = XCUIApplication()
-    
-    override func setUp(){
+
+    override func setUp() {
         self.app.launch()
     }
 
@@ -23,16 +23,16 @@ class AppointmentsTests: XCTestCase {
     func testTitle() throws {
         self.app.tabBars.buttons["Consultas"].tap()
         XCTAssert(self.app.staticTexts["Consultas"].isHittable)
-   
+
     }
 
     func testAccessAppointment() {
         self.app.tabBars.buttons["Consultas"].tap()
-        
+
         let appointmentButton = app.buttons["chevron"].firstMatch
         appointmentButton.tap()
     }
-    
+
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         self.measure {

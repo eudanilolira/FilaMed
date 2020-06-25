@@ -12,7 +12,7 @@ class TabBarController: UIViewController {
     let tabBarViewController = UITabBarController()
     let appointmentsViewController = AppointmentsViewController()
     let lineViewController = LineViewController()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarViewController.viewControllers = [appointmentsViewController, lineViewController]
@@ -20,13 +20,13 @@ class TabBarController: UIViewController {
         setupLineTabBarItem()
         self.view.addSubview(tabBarViewController.view)
     }
-    
+
     func setupAppointmentsTabBarItem() {
         appointmentsViewController.title = "Consultas"
         let appointmentsItemImage = UIImage(systemName: "heart.circle.fill")
         appointmentsViewController.tabBarItem.image = appointmentsItemImage
     }
-    
+
     func setupLineTabBarItem() {
         lineViewController.title = "Fila"
         let lineItemImage = UIImage(systemName: "person.2")

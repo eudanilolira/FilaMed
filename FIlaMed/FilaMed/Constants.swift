@@ -23,5 +23,3 @@ struct GlobalStyle {
     static let CardBackgroundColor: UIColor = .white
     static let WarningColor: UIColor = #colorLiteral(red: 1, green: 0.568627451, blue: 0.5450980392, alpha: 1)
 }
-
-

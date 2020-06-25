@@ -10,15 +10,15 @@ import Foundation
 import UIKit
 
 extension AppointmentsViewController {
-    
+
     func setupProfilePicture() {
         guard let navigationBar = self.navigationController?.navigationBar else { return }
         navigationBar.addSubview(imageView)
-        
+
         imageView.layer.cornerRadius = GlobalSize.ImageSizeForLargeState / 2
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        
+
         NSLayoutConstraint.activate([
             imageView.rightAnchor.constraint(equalTo: navigationBar.rightAnchor, constant: -GlobalSize.ImageRightMargin),
             imageView.bottomAnchor.constraint(equalTo: navigationBar.bottomAnchor, constant: -GlobalSize.ImageBottomMarginForLargeState),
@@ -61,4 +61,3 @@ extension AppointmentsViewController {
         self.moveAndResizeImage(for: height)
     }
 }
-
