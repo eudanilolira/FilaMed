@@ -36,6 +36,7 @@ class LineView: UIView {
     func setupLineIndicatorView(upperView: UIView) {
         self.addSubview(self.lineIndicatiorView)
         self.lineIndicatiorView.setupConstraints(upperView)
+
     }
     
     func setupConstraints() {
