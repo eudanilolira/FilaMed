@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		0C0175F6249CEA8A00FAA102 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0175F5249CEA8A00FAA102 /* AppDelegate.swift */; };
 		0C0175F8249CEA8A00FAA102 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0175F7249CEA8A00FAA102 /* SceneDelegate.swift */; };
-		0C017600249CEA8A00FAA102 /* FIlaMed.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C0175FE249CEA8A00FAA102 /* FIlaMed.xcdatamodeld */; };
+		0C017600249CEA8A00FAA102 /* FilaMed.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C0175FE249CEA8A00FAA102 /* FilaMed.xcdatamodeld */; };
 		0C017602249CEA8B00FAA102 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C017601249CEA8B00FAA102 /* Assets.xcassets */; };
 		0C017605249CEA8B00FAA102 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C017603249CEA8B00FAA102 /* LaunchScreen.storyboard */; };
-		0C017610249CEA8B00FAA102 /* FIlaMedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C01760F249CEA8B00FAA102 /* FIlaMedTests.swift */; };
-		0C01761B249CEA8B00FAA102 /* FIlaMedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C01761A249CEA8B00FAA102 /* FIlaMedUITests.swift */; };
+		0C017610249CEA8B00FAA102 /* FilaMedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C01760F249CEA8B00FAA102 /* FilaMedTests.swift */; };
+		0C01761B249CEA8B00FAA102 /* FilaMedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C01761A249CEA8B00FAA102 /* FilaMedUITests.swift */; };
 		0C2EC30E24A0D3BF006E80C0 /* IndividualAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2EC30D24A0D3BF006E80C0 /* IndividualAppointmentViewController.swift */; };
 		0C2EC31024A0D3E4006E80C0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2EC30F24A0D3E4006E80C0 /* LoginViewController.swift */; };
 		0C2EC31224A0D3F6006E80C0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2EC31124A0D3F6006E80C0 /* RegisterViewController.swift */; };
@@ -45,14 +45,14 @@
 			containerPortal = 0C0175EA249CEA8A00FAA102 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0C0175F1249CEA8A00FAA102;
-			remoteInfo = FIlaMed;
+			remoteInfo = FilaMed;
 		};
 		0C017617249CEA8B00FAA102 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0C0175EA249CEA8A00FAA102 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0C0175F1249CEA8A00FAA102;
-			remoteInfo = FIlaMed;
+			remoteInfo = FilaMed;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -60,15 +60,15 @@
 		0C0175F2249CEA8A00FAA102 /* FilaMed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilaMed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C0175F5249CEA8A00FAA102 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C0175F7249CEA8A00FAA102 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0C0175FF249CEA8A00FAA102 /* FIlaMed.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FIlaMed.xcdatamodel; sourceTree = "<group>"; };
+		0C0175FF249CEA8A00FAA102 /* FilaMed.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FilaMed.xcdatamodel; sourceTree = "<group>"; };
 		0C017601249CEA8B00FAA102 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C017604249CEA8B00FAA102 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C017606249CEA8B00FAA102 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C01760B249CEA8B00FAA102 /* FilaMedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FilaMedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0C01760F249CEA8B00FAA102 /* FIlaMedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIlaMedTests.swift; sourceTree = "<group>"; };
+		0C01760F249CEA8B00FAA102 /* FilaMedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilaMedTests.swift; sourceTree = "<group>"; };
 		0C017611249CEA8B00FAA102 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C017616249CEA8B00FAA102 /* FilaMedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FilaMedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0C01761A249CEA8B00FAA102 /* FIlaMedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIlaMedUITests.swift; sourceTree = "<group>"; };
+		0C01761A249CEA8B00FAA102 /* FilaMedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilaMedUITests.swift; sourceTree = "<group>"; };
 		0C01761C249CEA8B00FAA102 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C2EC30D24A0D3BF006E80C0 /* IndividualAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualAppointmentViewController.swift; sourceTree = "<group>"; };
 		0C2EC30F24A0D3E4006E80C0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -123,9 +123,9 @@
 		0C0175E9249CEA8A00FAA102 = {
 			isa = PBXGroup;
 			children = (
-				0C0175F4249CEA8A00FAA102 /* FIlaMed */,
-				0C01760E249CEA8B00FAA102 /* FIlaMedTests */,
-				0C017619249CEA8B00FAA102 /* FIlaMedUITests */,
+				0C0175F4249CEA8A00FAA102 /* FilaMed */,
+				0C01760E249CEA8B00FAA102 /* FilaMedTests */,
+				0C017619249CEA8B00FAA102 /* FilaMedUITests */,
 				0C0175F3249CEA8A00FAA102 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -140,7 +140,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0C0175F4249CEA8A00FAA102 /* FIlaMed */ = {
+		0C0175F4249CEA8A00FAA102 /* FilaMed */ = {
 			isa = PBXGroup;
 			children = (
 				0C2EC30A24A0D25A006E80C0 /* Files */,
@@ -148,36 +148,36 @@
 				0C2EC30724A0D160006E80C0 /* Views */,
 				0C2EC30624A0D155006E80C0 /* Models */,
 			);
-			path = FIlaMed;
+			path = FilaMed;
 			sourceTree = "<group>";
 		};
-		0C01760E249CEA8B00FAA102 /* FIlaMedTests */ = {
+		0C01760E249CEA8B00FAA102 /* FilaMedTests */ = {
 			isa = PBXGroup;
 			children = (
 				0C017611249CEA8B00FAA102 /* Info.plist */,
-				0C01760F249CEA8B00FAA102 /* FIlaMedTests.swift */,
+				0C01760F249CEA8B00FAA102 /* FilaMedTests.swift */,
 				0C2EC32524A0F88E006E80C0 /* LineTests.swift */,
 				0C2EC32724A0F8A7006E80C0 /* LoginTests.swift */,
 				0C2EC32924A0F8BD006E80C0 /* RegisterTests.swift */,
 				0C2EC32B24A0F8D6006E80C0 /* IndividualAppointementTests.swift */,
 				0C2EC32D24A0F8E7006E80C0 /* AppointmentsTests.swift */,
 			);
-			path = FIlaMedTests;
+			path = FilaMedTests;
 			sourceTree = "<group>";
 		};
-		0C017619249CEA8B00FAA102 /* FIlaMedUITests */ = {
+		0C017619249CEA8B00FAA102 /* FilaMedUITests */ = {
 			isa = PBXGroup;
 			children = (
-				0C01761A249CEA8B00FAA102 /* FIlaMedUITests.swift */,
+				0C01761A249CEA8B00FAA102 /* FilaMedUITests.swift */,
 				0C01761C249CEA8B00FAA102 /* Info.plist */,
 			);
-			path = FIlaMedUITests;
+			path = FilaMedUITests;
 			sourceTree = "<group>";
 		};
 		0C2EC30624A0D155006E80C0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				0C0175FE249CEA8A00FAA102 /* FIlaMed.xcdatamodeld */,
+				0C0175FE249CEA8A00FAA102 /* FilaMed.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -250,7 +250,7 @@
 			dependencies = (
 			);
 			name = FilaMed;
-			productName = FIlaMed;
+			productName = FilaMed;
 			productReference = 0C0175F2249CEA8A00FAA102 /* FilaMed.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -268,7 +268,7 @@
 				0C01760D249CEA8B00FAA102 /* PBXTargetDependency */,
 			);
 			name = FilaMedTests;
-			productName = FIlaMedTests;
+			productName = FilaMedTests;
 			productReference = 0C01760B249CEA8B00FAA102 /* FilaMedTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -286,7 +286,7 @@
 				0C017618249CEA8B00FAA102 /* PBXTargetDependency */,
 			);
 			name = FilaMedUITests;
-			productName = FIlaMedUITests;
+			productName = FilaMedUITests;
 			productReference = 0C017616249CEA8B00FAA102 /* FilaMedUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
@@ -377,7 +377,7 @@
 				0C2EC31224A0D3F6006E80C0 /* RegisterViewController.swift in Sources */,
 				0C2EC31824A0D4C5006E80C0 /* AppointmentsViewController.swift in Sources */,
 				0C0175F6249CEA8A00FAA102 /* AppDelegate.swift in Sources */,
-				0C017600249CEA8A00FAA102 /* FIlaMed.xcdatamodeld in Sources */,
+				0C017600249CEA8A00FAA102 /* FilaMed.xcdatamodeld in Sources */,
 				0C7458EC24A38DE2007A0EEE /* AppointmentsProfile.swift in Sources */,
 				0C2EC31624A0D454006E80C0 /* ProfileViewController.swift in Sources */,
 				0C7458EA24A38D4D007A0EEE /* Constants.swift in Sources */,
@@ -393,7 +393,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C2EC32824A0F8A7006E80C0 /* LoginTests.swift in Sources */,
-				0C017610249CEA8B00FAA102 /* FIlaMedTests.swift in Sources */,
+				0C017610249CEA8B00FAA102 /* FilaMedTests.swift in Sources */,
 				0C2EC32A24A0F8BD006E80C0 /* RegisterTests.swift in Sources */,
 				0C2EC32E24A0F8E7006E80C0 /* AppointmentsTests.swift in Sources */,
 				0C2EC32C24A0F8D6006E80C0 /* IndividualAppointementTests.swift in Sources */,
@@ -405,7 +405,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C01761B249CEA8B00FAA102 /* FIlaMedUITests.swift in Sources */,
+				0C01761B249CEA8B00FAA102 /* FilaMedUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,7 +556,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KBDYNQ5FQB;
-				INFOPLIST_FILE = FIlaMed/Info.plist;
+				INFOPLIST_FILE = FilaMed/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -574,7 +574,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KBDYNQ5FQB;
-				INFOPLIST_FILE = FIlaMed/Info.plist;
+				INFOPLIST_FILE = FilaMed/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -593,14 +593,14 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KBDYNQ5FQB;
-				INFOPLIST_FILE = FIlaMedTests/Info.plist;
+				INFOPLIST_FILE = FilaMedTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.academy.FIlaMedTests;
+				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.academy.FilaMedTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -615,14 +615,14 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KBDYNQ5FQB;
-				INFOPLIST_FILE = FIlaMedTests/Info.plist;
+				INFOPLIST_FILE = FilaMedTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.academy.FIlaMedTests;
+				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.academy.FilaMedTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -636,17 +636,17 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KBDYNQ5FQB;
-				INFOPLIST_FILE = FIlaMedUITests/Info.plist;
+				INFOPLIST_FILE = FilaMedUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.academy.FIlaMedUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.academy.FilaMedUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = FIlaMed;
+				TEST_TARGET_NAME = FilaMed;
 			};
 			name = Debug;
 		};
@@ -656,17 +656,17 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KBDYNQ5FQB;
-				INFOPLIST_FILE = FIlaMedUITests/Info.plist;
+				INFOPLIST_FILE = FilaMedUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.academy.FIlaMedUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.academy.FilaMedUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = FIlaMed;
+				TEST_TARGET_NAME = FilaMed;
 			};
 			name = Release;
 		};
@@ -712,13 +712,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		0C0175FE249CEA8A00FAA102 /* FIlaMed.xcdatamodeld */ = {
+		0C0175FE249CEA8A00FAA102 /* FilaMed.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				0C0175FF249CEA8A00FAA102 /* FIlaMed.xcdatamodel */,
+				0C0175FF249CEA8A00FAA102 /* FilaMed.xcdatamodel */,
 			);
-			currentVersion = 0C0175FF249CEA8A00FAA102 /* FIlaMed.xcdatamodel */;
-			path = FIlaMed.xcdatamodeld;
+			currentVersion = 0C0175FF249CEA8A00FAA102 /* FilaMed.xcdatamodel */;
+			path = FilaMed.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
