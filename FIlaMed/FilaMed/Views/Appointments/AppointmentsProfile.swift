@@ -44,7 +44,6 @@ extension AppointmentsViewController {
         // Value of difference between icons for large and small states
         let sizeDiff = GlobalSize.ImageSizeForLargeState * (1.0 - factor) // 8.0
         let yTranslation: CGFloat = {
-            /// This value = 14. It equals to difference of 12 and 6 (bottom margin for large and small states). Also it adds 8.0 (size difference when the image gets smaller size)
             let maxYTranslation = GlobalSize.ImageBottomMarginForLargeState - GlobalSize.ImageBottomMarginForSmallState + sizeDiff
             return max(0, min(maxYTranslation, (maxYTranslation - coeff * (GlobalSize.ImageBottomMarginForSmallState + sizeDiff))))
         }()
