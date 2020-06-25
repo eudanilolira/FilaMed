@@ -117,9 +117,9 @@
 		0C0175E9249CEA8A00FAA102 = {
 			isa = PBXGroup;
 			children = (
-				0C0175F4249CEA8A00FAA102 /* FIlaMed */,
-				0C01760E249CEA8B00FAA102 /* FIlaMedTests */,
-				0C017619249CEA8B00FAA102 /* FIlaMedUITests */,
+				0C0175F4249CEA8A00FAA102 /* FilaMed */,
+				0C01760E249CEA8B00FAA102 /* FilaMedTests */,
+				0C017619249CEA8B00FAA102 /* FilaMedUITests */,
 				0C0175F3249CEA8A00FAA102 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -134,7 +134,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0C0175F4249CEA8A00FAA102 /* FIlaMed */ = {
+		0C0175F4249CEA8A00FAA102 /* FilaMed */ = {
 			isa = PBXGroup;
 			children = (
 				0C2EC30A24A0D25A006E80C0 /* Files */,
@@ -142,10 +142,10 @@
 				0C2EC30724A0D160006E80C0 /* Views */,
 				0C2EC30624A0D155006E80C0 /* Models */,
 			);
-			path = FIlaMed;
+			path = FilaMed;
 			sourceTree = "<group>";
 		};
-		0C01760E249CEA8B00FAA102 /* FIlaMedTests */ = {
+		0C01760E249CEA8B00FAA102 /* FilaMedTests */ = {
 			isa = PBXGroup;
 			children = (
 				0C017611249CEA8B00FAA102 /* Info.plist */,
@@ -156,16 +156,16 @@
 				0C2EC32B24A0F8D6006E80C0 /* IndividualAppointementTests.swift */,
 				0C2EC32D24A0F8E7006E80C0 /* AppointmentsTests.swift */,
 			);
-			path = FIlaMedTests;
+			path = FilaMedTests;
 			sourceTree = "<group>";
 		};
-		0C017619249CEA8B00FAA102 /* FIlaMedUITests */ = {
+		0C017619249CEA8B00FAA102 /* FilaMedUITests */ = {
 			isa = PBXGroup;
 			children = (
 				0C01761A249CEA8B00FAA102 /* FIlaMedUITests.swift */,
 				0C01761C249CEA8B00FAA102 /* Info.plist */,
 			);
-			path = FIlaMedUITests;
+			path = FilaMedUITests;
 			sourceTree = "<group>";
 		};
 		0C2EC30624A0D155006E80C0 /* Models */ = {
@@ -304,7 +304,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0C0175ED249CEA8A00FAA102 /* Build configuration list for PBXProject "FIlaMed" */;
+			buildConfigurationList = 0C0175ED249CEA8A00FAA102 /* Build configuration list for PBXProject "FilaMed" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -661,7 +661,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0C0175ED249CEA8A00FAA102 /* Build configuration list for PBXProject "FIlaMed" */ = {
+		0C0175ED249CEA8A00FAA102 /* Build configuration list for PBXProject "FilaMed" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0C01761D249CEA8B00FAA102 /* Debug */,
