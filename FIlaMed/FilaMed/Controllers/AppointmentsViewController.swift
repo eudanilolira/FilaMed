@@ -23,6 +23,10 @@ class AppointmentsViewController: UIViewController {
 extension AppointmentsViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return 1
+        }
+
         return 6
     }
 

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 struct GlobalSize {
     static let ImageSizeForLargeState: CGFloat = 40
@@ -23,3 +24,13 @@ struct GlobalStyle {
     static let CardBackgroundColor: UIColor = .white
     static let WarningColor: UIColor = #colorLiteral(red: 1, green: 0.568627451, blue: 0.5450980392, alpha: 1)
 }
+
+let coreDataContext: NSManagedObjectContext = {
+    guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+       fatalError("")
+    }
+
+    let context = appDelegate.persistentContainer.viewContext
+
+    return context
+}()
