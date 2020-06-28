@@ -1,13 +1,21 @@
 import UIKit
+import CoreData
 
 class AppointmentsViewController: UIViewController {
 
     let imageView = UIImageView(image: UIImage(systemName: "person.circle.fill"))
     let appointmentsView = AppointmentsView()
+    var userAppointments: [Appointment] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view = self.appointmentsView
+
+        if let appointments = AppointmentManager.shared.getAll() {
+            self.userAppointments = appointments
+        } else {
+            print("Nenhuma consulta")
+        }
 
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.968627451, alpha: 1)
