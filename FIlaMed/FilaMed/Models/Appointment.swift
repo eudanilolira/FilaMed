@@ -3,13 +3,15 @@ import CoreData
 struct AppointmentManager {
     static let shared = AppointmentManager()
 
-    func create(name: String) -> Appointment? {
+    func create(date: Date) -> Appointment? {
 
         let appointmentObject = NSEntityDescription.insertNewObject(forEntityName: "Appointment", into: coreDataContext)
 
         guard let appointment =  appointmentObject as? Appointment else {
             fatalError("Could not find Appointment class")
         }
+
+        appointment.date = date
 
         return self.save() ? appointment : nil
     }
