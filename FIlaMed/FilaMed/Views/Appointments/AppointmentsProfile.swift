@@ -36,7 +36,8 @@ extension AppointmentsViewController {
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
         if sender.state == .ended {
 //            self.navigationController?.pushViewController(ProfileViewController(), animated: true)
-            self.present(ProfileViewController(), animated: true)
+            let profileNavigationController:UINavigationController = UINavigationController(rootViewController: ProfileViewController())
+            self.present(profileNavigationController, animated: true)
         }
     }
 
