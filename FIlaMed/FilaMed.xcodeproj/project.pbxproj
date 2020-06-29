@@ -22,7 +22,6 @@
 		0C2EC31824A0D4C5006E80C0 /* AppointmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2EC31724A0D4C5006E80C0 /* AppointmentsViewController.swift */; };
 		0C2EC31A24A0D612006E80C0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2EC31924A0D612006E80C0 /* LoginView.swift */; };
 		0C2EC31C24A0DE6A006E80C0 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2EC31B24A0DE6A006E80C0 /* RegisterView.swift */; };
-		0C2EC31E24A0DE7C006E80C0 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2EC31D24A0DE7C006E80C0 /* LineView.swift */; };
 		0C2EC32024A0DE8A006E80C0 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2EC31F24A0DE8A006E80C0 /* ProfileView.swift */; };
 		0C2EC32224A0DE9D006E80C0 /* AppointmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2EC32124A0DE9D006E80C0 /* AppointmentsView.swift */; };
 		0C2EC32424A0DEAF006E80C0 /* IndividualAppointmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2EC32324A0DEAF006E80C0 /* IndividualAppointmentView.swift */; };
@@ -37,6 +36,9 @@
 		0C7458EA24A38D4D007A0EEE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7458E924A38D4D007A0EEE /* Constants.swift */; };
 		0C7458EC24A38DE2007A0EEE /* AppointmentsProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7458EB24A38DE2007A0EEE /* AppointmentsProfile.swift */; };
 		89B00D6624A0E09500FEAD73 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B00D6524A0E09500FEAD73 /* TabBarController.swift */; };
+		89CE633624AA0581003AD2C2 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CE633324AA0581003AD2C2 /* LineView.swift */; };
+		89CE633724AA0581003AD2C2 /* DoctorInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CE633424AA0581003AD2C2 /* DoctorInformationView.swift */; };
+		89CE633824AA0581003AD2C2 /* LineIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CE633524AA0581003AD2C2 /* LineIndicatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,7 +80,6 @@
 		0C2EC31724A0D4C5006E80C0 /* AppointmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsViewController.swift; sourceTree = "<group>"; };
 		0C2EC31924A0D612006E80C0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		0C2EC31B24A0DE6A006E80C0 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
-		0C2EC31D24A0DE7C006E80C0 /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		0C2EC31F24A0DE8A006E80C0 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		0C2EC32124A0DE9D006E80C0 /* AppointmentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsView.swift; sourceTree = "<group>"; };
 		0C2EC32324A0DEAF006E80C0 /* IndividualAppointmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualAppointmentView.swift; sourceTree = "<group>"; };
@@ -93,6 +94,9 @@
 		0C7458E924A38D4D007A0EEE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0C7458EB24A38DE2007A0EEE /* AppointmentsProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsProfile.swift; sourceTree = "<group>"; };
 		89B00D6524A0E09500FEAD73 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		89CE633324AA0581003AD2C2 /* LineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
+		89CE633424AA0581003AD2C2 /* DoctorInformationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorInformationView.swift; sourceTree = "<group>"; };
+		89CE633524AA0581003AD2C2 /* LineIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineIndicatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,9 +193,9 @@
 				0C017603249CEA8B00FAA102 /* LaunchScreen.storyboard */,
 				0C2EC31924A0D612006E80C0 /* LoginView.swift */,
 				0C2EC31B24A0DE6A006E80C0 /* RegisterView.swift */,
-				0C2EC31D24A0DE7C006E80C0 /* LineView.swift */,
 				0C2EC31F24A0DE8A006E80C0 /* ProfileView.swift */,
 				0C2EC32324A0DEAF006E80C0 /* IndividualAppointmentView.swift */,
+				89CE633224AA0581003AD2C2 /* Line */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -234,6 +238,16 @@
 			path = Appointments;
 			sourceTree = "<group>";
 		};
+		89CE633224AA0581003AD2C2 /* Line */ = {
+			isa = PBXGroup;
+			children = (
+				89CE633324AA0581003AD2C2 /* LineView.swift */,
+				89CE633424AA0581003AD2C2 /* DoctorInformationView.swift */,
+				89CE633524AA0581003AD2C2 /* LineIndicatorView.swift */,
+			);
+			path = Line;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -244,6 +258,7 @@
 				0C0175EE249CEA8A00FAA102 /* Sources */,
 				0C0175EF249CEA8A00FAA102 /* Frameworks */,
 				0C0175F0249CEA8A00FAA102 /* Resources */,
+				89CE633924AA0849003AD2C2 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -359,6 +374,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		89CE633924AA0849003AD2C2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\nswiftlint\nswiftlint autocorrect\nelse\necho \"warning: Swiftlint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0C0175EE249CEA8A00FAA102 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -369,19 +404,21 @@
 				0C2EC31C24A0DE6A006E80C0 /* RegisterView.swift in Sources */,
 				0C2EC32424A0DEAF006E80C0 /* IndividualAppointmentView.swift in Sources */,
 				0C2EC32024A0DE8A006E80C0 /* ProfileView.swift in Sources */,
+				89CE633624AA0581003AD2C2 /* LineView.swift in Sources */,
 				0C2EC31024A0D3E4006E80C0 /* LoginViewController.swift in Sources */,
 				0C7458E424A389B0007A0EEE /* AppointmentsCell.swift in Sources */,
 				0C7458E624A389F4007A0EEE /* AppointmentsContent.swift in Sources */,
 				0C2EC31424A0D43A006E80C0 /* LineViewController.swift in Sources */,
 				0C7458E824A38A3E007A0EEE /* AppointmentsTable.swift in Sources */,
 				0C2EC31224A0D3F6006E80C0 /* RegisterViewController.swift in Sources */,
+				89CE633724AA0581003AD2C2 /* DoctorInformationView.swift in Sources */,
+				89CE633824AA0581003AD2C2 /* LineIndicatorView.swift in Sources */,
 				0C2EC31824A0D4C5006E80C0 /* AppointmentsViewController.swift in Sources */,
 				0C0175F6249CEA8A00FAA102 /* AppDelegate.swift in Sources */,
 				0C017600249CEA8A00FAA102 /* FilaMed.xcdatamodeld in Sources */,
 				0C7458EC24A38DE2007A0EEE /* AppointmentsProfile.swift in Sources */,
 				0C2EC31624A0D454006E80C0 /* ProfileViewController.swift in Sources */,
 				0C7458EA24A38D4D007A0EEE /* Constants.swift in Sources */,
-				0C2EC31E24A0DE7C006E80C0 /* LineView.swift in Sources */,
 				0C2EC30E24A0D3BF006E80C0 /* IndividualAppointmentViewController.swift in Sources */,
 				0C2EC31A24A0D612006E80C0 /* LoginView.swift in Sources */,
 				0C0175F8249CEA8A00FAA102 /* SceneDelegate.swift in Sources */,
