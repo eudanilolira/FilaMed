@@ -9,6 +9,7 @@
 import UIKit
 
 class ProfileTable: UITableView {
+
     init() {
         super.init(frame: .zero, style: UITableView.Style.plain)
         self.setupStyle()

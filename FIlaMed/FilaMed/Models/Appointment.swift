@@ -3,7 +3,7 @@ import CoreData
 struct AppointmentManager {
     static let shared = AppointmentManager()
 
-    func create(date: Date, time: String, status: String) -> Appointment? {
+    func create(date: Date, time: String, status: AppointmentStatus) -> Appointment? {
 
         let appointmentObject = NSEntityDescription.insertNewObject(forEntityName: "Appointment", into: coreDataContext)
 
@@ -13,7 +13,7 @@ struct AppointmentManager {
 
         appointment.date = date
         appointment.time = time
-        appointment.status = status
+        appointment.status = status.rawValue
 
         return self.save() ? appointment : nil
     }
@@ -88,4 +88,11 @@ struct AppointmentManager {
 
         return false
     }
+}
+
+enum AppointmentStatus: String {
+    case line = "Você pode entrar na fila"
+    case documents = "Você já pode entregar os documentos"
+    case waiting = "Aguarde o momento de sair de casa"
+    case arrived = "Você chegou ao local, espere seu atendimento"
 }
