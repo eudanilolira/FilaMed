@@ -10,13 +10,15 @@ import UIKit
 
 class ProfileView: UIView {
     let profileInfo = ProfileInfoView()
+    let profileTable = ProfileTable()
 
     public init() {
         super.init(frame: .zero)
         self.backgroundColor = GlobalStyle.BackgroundColor
         self.addSubview(profileInfo)
+        self.addSubview(profileTable)
         self.profileInfo.setupConstraints()
-
+        self.profileTable.setupConstraints()
     }
 
     required init?(coder: NSCoder) {

@@ -29,6 +29,7 @@ class AppointmentsTable: UITableView {
     }
 
     func setupStyle() {
+        self.layer.cornerRadius = 8
         self.register(AppointmentsHeader.self, forHeaderFooterViewReuseIdentifier: "appointmentsHeader")
         self.register(AppointmentCell<TodayAppointmentContent>.self, forCellReuseIdentifier: "appointmentCell")
         self.register(AppointmentCell<FutureAppointmentContent>.self, forCellReuseIdentifier: "futureAppointmentCell")

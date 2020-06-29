@@ -15,6 +15,9 @@ class ProfileViewController: UIViewController {
         self.view = self.profileView
         let okButton = UIBarButtonItem(title: "OK", style: .done, target: self, action: #selector(self.dismissProfileView(_:)))
         self.navigationItem.rightBarButtonItem = okButton
+
+        self.profileView.profileTable.dataSource = self
+        self.profileView.profileTable.delegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -25,4 +28,30 @@ class ProfileViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
 
+}
+
+extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       return UITableViewCell()
+
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let viewHeader = tableView.dequeueReusableHeaderFooterView(withIdentifier: "appointmentsHeader")
+
+        guard let view = viewHeader as? AppointmentsHeader else {
+            fatalError("")
+        }
+        view.title.text = "Conta"
+
+        return view
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
 }
