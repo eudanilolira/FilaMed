@@ -9,9 +9,12 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-
+    let profileView = ProfileView()
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.modalPresentationStyle = UIModalPresentationStyle.currentContext
+//        definesPresentationContext = true
+        self.view = self.profileView
     }
 
 }
