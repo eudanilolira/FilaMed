@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Appointment" representedClassName="Appointment" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="status" optional="YES" attributeType="String"/>
+        <attribute name="time" optional="YES" attributeType="String"/>
+        <relationship name="realized" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Doctor" inverseName="realizes" inverseEntity="Doctor"/>
+        <relationship name="to" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="has" inverseEntity="User"/>
+    </entity>
+    <entity name="Clinic" representedClassName="Clinic" syncable="YES" codeGenerationType="class">
+        <attribute name="address" optional="YES" attributeType="String"/>
+        <attribute name="cnpj" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="telephone" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Doctor" inverseName="works" inverseEntity="Doctor"/>
+    </entity>
+    <entity name="Doctor" representedClassName="Doctor" syncable="YES" codeGenerationType="class">
+        <attribute name="identifier" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="specialty" optional="YES" attributeType="String"/>
+        <relationship name="realizes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Appointment" inverseName="realized" inverseEntity="Appointment"/>
+        <relationship name="works" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="Clinic" inverseName="has" inverseEntity="Clinic"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
+        <attribute name="cpf" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Appointment" inverseName="to" inverseEntity="Appointment"/>
+    </entity>
+    <elements>
+        <element name="Appointment" positionX="-228.89453125" positionY="329.8828125" width="128" height="118"/>
+        <element name="Clinic" positionX="-46.3046875" positionY="-56.36328125" width="128" height="118"/>
+        <element name="Doctor" positionX="-263.0546875" positionY="-43.7421875" width="128" height="118"/>
+        <element name="User" positionX="-276.7421875" positionY="169.44921875" width="128" height="88"/>
+    </elements>
+</model>
