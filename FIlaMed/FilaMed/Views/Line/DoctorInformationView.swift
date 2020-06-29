@@ -42,6 +42,7 @@ class DoctorInformationView: UIView {
     private func setupStyle() {
         self.backgroundColor = .white
         self.layer.cornerRadius = 8
+        self.layoutMargins = UIEdgeInsets(top: 0, left: 16, bottom: 8, right: 16)
     }
 
     private func setupDoctorImageViewStyle() {
@@ -108,13 +109,7 @@ class DoctorInformationView: UIView {
     }
 
     private func setupSelfConstraints() {
-        self.translatesAutoresizingMaskIntoConstraints = false
-        self.centerXAnchor.constraint(equalTo: superview!.centerXAnchor).isActive = true
-        self.topAnchor.constraint(equalTo: superview!.topAnchor).isActive = true
-        self.widthAnchor.constraint(equalToConstant: 359).isActive = true
         self.heightAnchor.constraint(equalToConstant: 216).isActive = true
-        self.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor).isActive = true
-        self.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor).isActive = true
     }
 
     private func setupDoctorImageViewConstraints() {

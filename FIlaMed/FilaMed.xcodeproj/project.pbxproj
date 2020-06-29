@@ -36,9 +36,11 @@
 		0C7458EA24A38D4D007A0EEE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7458E924A38D4D007A0EEE /* Constants.swift */; };
 		0C7458EC24A38DE2007A0EEE /* AppointmentsProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7458EB24A38DE2007A0EEE /* AppointmentsProfile.swift */; };
 		89B00D6624A0E09500FEAD73 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B00D6524A0E09500FEAD73 /* TabBarController.swift */; };
-		89CE633624AA0581003AD2C2 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CE633324AA0581003AD2C2 /* LineView.swift */; };
+		89CE633624AA0581003AD2C2 /* LineStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CE633324AA0581003AD2C2 /* LineStackView.swift */; };
 		89CE633724AA0581003AD2C2 /* DoctorInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CE633424AA0581003AD2C2 /* DoctorInformationView.swift */; };
 		89CE633824AA0581003AD2C2 /* LineIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CE633524AA0581003AD2C2 /* LineIndicatorView.swift */; };
+		89CE633B24AA5D0A003AD2C2 /* OutputButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CE633A24AA5D0A003AD2C2 /* OutputButton.swift */; };
+		89CE633D24AA687B003AD2C2 /* LineScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CE633C24AA687B003AD2C2 /* LineScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,9 +96,11 @@
 		0C7458E924A38D4D007A0EEE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0C7458EB24A38DE2007A0EEE /* AppointmentsProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsProfile.swift; sourceTree = "<group>"; };
 		89B00D6524A0E09500FEAD73 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		89CE633324AA0581003AD2C2 /* LineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
+		89CE633324AA0581003AD2C2 /* LineStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineStackView.swift; sourceTree = "<group>"; };
 		89CE633424AA0581003AD2C2 /* DoctorInformationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorInformationView.swift; sourceTree = "<group>"; };
 		89CE633524AA0581003AD2C2 /* LineIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineIndicatorView.swift; sourceTree = "<group>"; };
+		89CE633A24AA5D0A003AD2C2 /* OutputButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OutputButton.swift; path = ../../../../OutputButton.swift; sourceTree = "<group>"; };
+		89CE633C24AA687B003AD2C2 /* LineScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,9 +245,11 @@
 		89CE633224AA0581003AD2C2 /* Line */ = {
 			isa = PBXGroup;
 			children = (
-				89CE633324AA0581003AD2C2 /* LineView.swift */,
+				89CE633C24AA687B003AD2C2 /* LineScrollView.swift */,
+				89CE633324AA0581003AD2C2 /* LineStackView.swift */,
 				89CE633424AA0581003AD2C2 /* DoctorInformationView.swift */,
 				89CE633524AA0581003AD2C2 /* LineIndicatorView.swift */,
+				89CE633A24AA5D0A003AD2C2 /* OutputButton.swift */,
 			);
 			path = Line;
 			sourceTree = "<group>";
@@ -404,12 +410,14 @@
 				0C2EC31C24A0DE6A006E80C0 /* RegisterView.swift in Sources */,
 				0C2EC32424A0DEAF006E80C0 /* IndividualAppointmentView.swift in Sources */,
 				0C2EC32024A0DE8A006E80C0 /* ProfileView.swift in Sources */,
-				89CE633624AA0581003AD2C2 /* LineView.swift in Sources */,
+				89CE633624AA0581003AD2C2 /* LineStackView.swift in Sources */,
 				0C2EC31024A0D3E4006E80C0 /* LoginViewController.swift in Sources */,
 				0C7458E424A389B0007A0EEE /* AppointmentsCell.swift in Sources */,
 				0C7458E624A389F4007A0EEE /* AppointmentsContent.swift in Sources */,
 				0C2EC31424A0D43A006E80C0 /* LineViewController.swift in Sources */,
+				89CE633B24AA5D0A003AD2C2 /* OutputButton.swift in Sources */,
 				0C7458E824A38A3E007A0EEE /* AppointmentsTable.swift in Sources */,
+				89CE633D24AA687B003AD2C2 /* LineScrollView.swift in Sources */,
 				0C2EC31224A0D3F6006E80C0 /* RegisterViewController.swift in Sources */,
 				89CE633724AA0581003AD2C2 /* DoctorInformationView.swift in Sources */,
 				89CE633824AA0581003AD2C2 /* LineIndicatorView.swift in Sources */,

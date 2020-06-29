@@ -25,6 +25,7 @@ class LineIndicatorView: UIView {
     private func setupStyle() {
         self.backgroundColor = .white
         self.layer.cornerRadius = 8
+        self.layoutMargins = UIEdgeInsets(top: 0, left: 16, bottom: 8, right: 16)
 
         self.timeLeftLabel.text = "Saia de casa em: 15 minutos"
         self.waitTimeLabel.text = "Tempo de espera no local: 3 minutos"
@@ -57,9 +58,6 @@ class LineIndicatorView: UIView {
         self.waitTimeLabel.topAnchor.constraint(equalTo: self.timeLeftLabel.bottomAnchor, constant: 10).isActive = true
         self.waitTimeLabel.leadingAnchor.constraint(equalTo: self.timeLeftLabel.leadingAnchor).isActive = true
 
-        self.centerXAnchor.constraint(equalTo: superview!.centerXAnchor).isActive = true
-        self.topAnchor.constraint(equalTo: upperView.bottomAnchor, constant: 16).isActive = true
-        self.widthAnchor.constraint(equalToConstant: 359).isActive = true
         self.heightAnchor.constraint(equalToConstant: 230).isActive = true
     }
 }
