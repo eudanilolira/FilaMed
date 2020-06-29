@@ -65,7 +65,7 @@ struct SeedDataBase {
         let today = Date()
 
         for appoint in 0...3 {
-            if let appointment = AppointmentManager.shared.create(date: today, time: "9:30", status: "Você ainda não entrou na fila") {
+            if let appointment = AppointmentManager.shared.create(date: today, time: "9:30", status: .line) {
                 appointment.realized = SeedDataBase.doctors[appoint]
                 appointment.to = SeedDataBase.users[0]
 
@@ -83,7 +83,7 @@ struct SeedDataBase {
         appointmentDate.year = 2020
 
         for appoint in 0...3 {
-            if let appointment = AppointmentManager.shared.create(date: appointmentDate.date!, time: "9:30", status: "Você ainda não entrou na fila") {
+            if let appointment = AppointmentManager.shared.create(date: appointmentDate.date!, time: "9:30", status: .line) {
                 appointment.realized = SeedDataBase.doctors[appoint]
                 appointment.to = SeedDataBase.users[0]
 
