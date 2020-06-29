@@ -87,7 +87,7 @@ struct DoctorManager {
             try coreDataContext.save()
             return true
         } catch let error {
-            print("Sorry, we can't save the doctor. Try again later. \n \(error)")
+            print("Sorry, we can't save the doctor's information. Try again later. \n \(error)")
         }
 
         return false
