@@ -32,8 +32,15 @@ class ProfileViewController: UIViewController {
 
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       return UITableViewCell()
+        let profileCell = tableView.dequeueReusableCell(withIdentifier: "profileCell", for: indexPath)
 
+        guard let cell = profileCell as? ProfileCell else {
+            fatalError("")
+        }
+
+        cell.label.text = "Teste"
+
+        return cell
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

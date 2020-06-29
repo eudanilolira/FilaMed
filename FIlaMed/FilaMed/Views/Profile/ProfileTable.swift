@@ -13,6 +13,7 @@ class ProfileTable: UITableView {
     init() {
         super.init(frame: .zero, style: UITableView.Style.plain)
         self.setupStyle()
+        self.isScrollEnabled = false
 
     }
 
@@ -21,18 +22,15 @@ class ProfileTable: UITableView {
     }
 
     func setupConstraints() {
-        print(self.contentSize)
         self.translatesAutoresizingMaskIntoConstraints = false
         self.topAnchor.constraint(equalTo: superview!.subviews[0].bottomAnchor, constant: 150).isActive = true
-//        self.centerXAnchor.constraint(equalTo: superview!.centerXAnchor).isActive = true
-//        self.centerYAnchor.constraint(equalTo: superview!.centerYAnchor).isActive = true
-//        self.heightAnchor.constraint(equalToConstant: self.contentSize.height).isActive = true
         self.heightAnchor.constraint(equalToConstant: 200).isActive = true
         self.widthAnchor.constraint(equalTo: superview!.widthAnchor).isActive = true
     }
 
     func setupStyle() {
         self.register(AppointmentsHeader.self, forHeaderFooterViewReuseIdentifier: "appointmentsHeader")
+        self.register(ProfileCell.self, forCellReuseIdentifier: "profileCell")
         self.backgroundColor = GlobalStyle.BackgroundColor
     }
 }
