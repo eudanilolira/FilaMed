@@ -21,7 +21,6 @@ class AppointmentsViewController: UIViewController {
         self.appointmentsView.appointmentsTable.delegate = self
 
         self.setupProfilePicture()
-
     }
 
     func loadAppointments() {
