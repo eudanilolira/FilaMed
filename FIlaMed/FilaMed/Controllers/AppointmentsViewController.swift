@@ -14,8 +14,8 @@ class AppointmentsViewController: UIViewController {
         self.loadAppointments()
 
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.968627451, alpha: 1)
-        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.968627451, alpha: 1)
+        self.navigationController?.navigationBar.backgroundColor = GlobalStyle.BackgroundColor
+        self.navigationController?.navigationBar.barTintColor = GlobalStyle.BackgroundColor
 
         self.appointmentsView.appointmentsTable.dataSource = self
         self.appointmentsView.appointmentsTable.delegate = self
