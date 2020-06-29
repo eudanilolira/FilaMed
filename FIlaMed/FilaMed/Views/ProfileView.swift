@@ -11,7 +11,7 @@ import UIKit
 class ProfileView: UIView {
     public init() {
         super.init(frame: .zero)
-        self.backgroundColor = GlobalStyle.BackgroundColor
+        self.backgroundColor = .white
     }
 
     required init?(coder: NSCoder) {
