@@ -38,7 +38,14 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
             fatalError("")
         }
 
-        cell.label.text = "Teste"
+        switch indexPath.row {
+        case 0:
+            cell.label.text = "Plano de Saúde"
+        case 1:
+            cell.label.text = "Dados pessoais"
+        default:
+            cell.label.text = "Histórico de consultas"
+        }
 
         return cell
     }
@@ -48,10 +55,10 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let viewHeader = tableView.dequeueReusableHeaderFooterView(withIdentifier: "appointmentsHeader")
+        let viewHeader = tableView.dequeueReusableHeaderFooterView(withIdentifier: "profilesHeader")
 
-        guard let view = viewHeader as? AppointmentsHeader else {
-            fatalError("")
+        guard let view = viewHeader as? ProfilesHeader else {
+            fatalError("Cannot found ProfilesHeader")
         }
         view.title.text = "Conta"
 
