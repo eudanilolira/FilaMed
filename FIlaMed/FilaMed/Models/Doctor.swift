@@ -4,13 +4,16 @@ import UIKit
 struct DoctorManager {
     static let shared = DoctorManager()
 
-    func create(name: String) -> Doctor? {
+    func create(name: String, specialty: String, identifier: String) -> Doctor? {
         let doctorObject = NSEntityDescription.insertNewObject(forEntityName: "Doctor", into: coreDataContext)
 
         guard let doctor =  doctorObject as? Doctor else {
             fatalError("Could not find Doctor class")
         }
+
         doctor.name = name
+        doctor.identifier = identifier
+        doctor.specialty = specialty
 
         return self.save() ? doctor : nil
     }

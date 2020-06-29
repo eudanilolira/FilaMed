@@ -11,7 +11,7 @@ class AppointmentsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view = self.appointmentsView
-        self.separateAppointments()
+        self.loadAppointments()
 
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.968627451, alpha: 1)
@@ -24,31 +24,24 @@ class AppointmentsViewController: UIViewController {
 
     }
 
-    func separateAppointments() {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-
-        let today = dateFormatter.string(from: Date())
-
-        SeedDataBase.shared.createAppointments()
-        SeedDataBase.shared.createFutureAppointments()
+    func loadAppointments() {
+        let today = GlobalStyle.comparableDateFormat.string(from: Date())
 
         if let appointments = AppointmentManager.shared.getAll() {
-//            self.todayAppointments = appointments
-
             for appointment in appointments {
-                guard let appointmentDate = appointment.date else { fatalError() }
-                let formattedDate = dateFormatter.string(from: appointmentDate)
+                guard let appointmentDate = appointment.date else {
+                    fatalError("A Consulta não possui data marcada")
+                }
+                let formattedDate = GlobalStyle.comparableDateFormat.string(from: appointmentDate)
 
                 if (today == formattedDate) {
                     todayAppointments.append(appointment)
                 } else if (formattedDate > today) {
                     futureAppointments.append(appointment)
                 }
-
             }
         } else {
-            print("Nenhuma consulta")
+            print("Nenhuma consulta foi marcada")
         }
     }
 
@@ -61,7 +54,7 @@ extension AppointmentsViewController: UITableViewDelegate, UITableViewDataSource
             return todayAppointments.count
         }
 
-        return futureAppointments.count
+        return futureAppointments.count - 1
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -75,11 +68,12 @@ extension AppointmentsViewController: UITableViewDelegate, UITableViewDataSource
             guard let cell = appointmentCell as? AppointmentCell<TodayAppointmentContent> else {
                 fatalError("")
             }
+            let appointment = todayAppointments[indexPath.row]
 
-            cell.content.clinicName.text = todayAppointments[indexPath.row].realized!.name
-            cell.content.specialty.text = todayAppointments[indexPath.row].realized!.specialty
-            cell.content.time.text = "10:30"
-            cell.content.statusLabel.text = "Você ainda não entrou na fila"
+            cell.content.clinicName.text = appointment.realized?.name
+            cell.content.specialty.text = appointment.realized?.specialty
+            cell.content.time.text = appointment.time
+            cell.content.statusLabel.text = appointment.status
 
             return cell
 
@@ -89,11 +83,12 @@ extension AppointmentsViewController: UITableViewDelegate, UITableViewDataSource
             guard let cell =  futureCell as? AppointmentCell<FutureAppointmentContent> else {
                 fatalError("")
             }
+            let appointment = futureAppointments[indexPath.row]
 
-            cell.content.clinicName.text = futureAppointments[indexPath.row].realized!.name
-            cell.content.specialty.text = futureAppointments[indexPath.row].realized!.specialty
-            cell.content.time.text = "10:30"
-            cell.content.dateLabel.text = "26/06/2020"
+            cell.content.clinicName.text = appointment.realized?.name
+            cell.content.specialty.text = appointment.realized?.specialty
+            cell.content.dateLabel.text = GlobalStyle.dateFormat.string(from: appointment.date!)
+            cell.content.time.text = appointment.time
 
             return cell
         }

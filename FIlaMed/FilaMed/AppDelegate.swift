@@ -36,6 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.rootViewController = tabBarControler
 
+        SeedDataBase.shared.seed()
         return true
     }
 

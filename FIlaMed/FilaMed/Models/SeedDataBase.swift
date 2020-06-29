@@ -11,26 +11,85 @@ import CoreData
 
 struct SeedDataBase {
     static let shared = SeedDataBase()
+    static var doctors: [Doctor?] = []
+    static var appointments: [Appointment?] = []
+    static var users: [User?] = []
+    static var clinics: [Clinic] = []
 
-    func createAppointments() {
-        let today = Date()
-        let appointment = AppointmentManager.shared.create(date: today)
-        appointment?.realized = DoctorManager.shared.create(name: "Dra.Judith da Matta")
-        appointment!.realized!.specialty = "Ortodontista"
-        appointment?.to = UserManager.shared.create(name: "Danilo Araujo")
+    func seed() {
+
+        if AppointmentManager.shared.count() == 0 {
+            createDoctors()
+            createUsers()
+            createAppointments()
+            createFutureAppointments()
+        } else {
+            if let data = DoctorManager.shared.getAll() {
+                SeedDataBase.doctors = data
+            }
+
+            if let data = AppointmentManager.shared.getAll() {
+                SeedDataBase.appointments = data
+            }
+
+            if let data = UserManager.shared.getAll() {
+                SeedDataBase.users = data
+            }
+
+            if let data = ClinicManager.shared.getAll() {
+                SeedDataBase.clinics = data
+            }
+        }
 
     }
 
+    func createDoctors() {
+        SeedDataBase.doctors = [
+            DoctorManager.shared.create(name: "Dra.Judith da Matta", specialty: "Ortodontista", identifier: "125464"),
+            DoctorManager.shared.create(name: "Dra.Sylvia Lira", specialty: "Ortodontista", identifier: "625464"),
+            DoctorManager.shared.create(name: "Dr.Flávio Arrais", specialty: "Cardiologista", identifier: "2845679"),
+            DoctorManager.shared.create(name: "Dr.João Ramos", specialty: "Psiquiatra", identifier: "7856790")
+        ]
+    }
+
+    func createUsers() {
+        SeedDataBase.users = [
+            UserManager.shared.create(name: "Danilo Araújo"),
+            UserManager.shared.create(name: "Wilton Ramos"),
+            UserManager.shared.create(name: "Pedro da Matta"),
+            UserManager.shared.create(name: "Hugo Santos")
+        ]
+    }
+
+    func createAppointments() {
+        let today = Date()
+
+        for appoint in 0...3 {
+            if let appointment = AppointmentManager.shared.create(date: today, time: "9:30", status: "Você ainda não entrou na fila") {
+                appointment.realized = SeedDataBase.doctors[appoint]
+                appointment.to = SeedDataBase.users[0]
+
+                SeedDataBase.appointments.append(appointment)
+            }
+        }
+    }
+
     func createFutureAppointments() {
-        var today = DateComponents()
-        today.calendar = Calendar.current
-        today.day = 10
-        today.month = 10
-        today.year = 2020
-        print(today)
-        let appointment = AppointmentManager.shared.create(date: today.date!)
-        appointment?.realized = DoctorManager.shared.create(name: "Dra.Marcio Danilo")
-        appointment!.realized!.specialty = "Pediatra"
-        appointment?.to = UserManager.shared.create(name: "Danilo Araujo")
+        var appointmentDate = DateComponents()
+
+        appointmentDate.calendar = Calendar.current
+        appointmentDate.day = 23
+        appointmentDate.month = 10
+        appointmentDate.year = 2020
+
+        for appoint in 0...3 {
+            if let appointment = AppointmentManager.shared.create(date: appointmentDate.date!, time: "9:30", status: "Você ainda não entrou na fila") {
+                appointment.realized = SeedDataBase.doctors[appoint]
+                appointment.to = SeedDataBase.users[0]
+
+                SeedDataBase.appointments.append(appointment)
+            }
+
+        }
     }
 }
