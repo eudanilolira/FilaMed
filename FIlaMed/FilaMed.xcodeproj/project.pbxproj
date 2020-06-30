@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		063D56664585722E2CE988AF /* Pods_FilaMedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11FFD038E86412B30373616E /* Pods_FilaMedTests.framework */; };
 		0C0175F6249CEA8A00FAA102 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0175F5249CEA8A00FAA102 /* AppDelegate.swift */; };
 		0C0175F8249CEA8A00FAA102 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0175F7249CEA8A00FAA102 /* SceneDelegate.swift */; };
 		0C017600249CEA8A00FAA102 /* FilaMed.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C0175FE249CEA8A00FAA102 /* FilaMed.xcdatamodeld */; };
@@ -14,6 +15,7 @@
 		0C017605249CEA8B00FAA102 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C017603249CEA8B00FAA102 /* LaunchScreen.storyboard */; };
 		0C017610249CEA8B00FAA102 /* FilaMedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C01760F249CEA8B00FAA102 /* FilaMedTests.swift */; };
 		0C01761B249CEA8B00FAA102 /* FilaMedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C01761A249CEA8B00FAA102 /* FilaMedUITests.swift */; };
+		0C0EDEC324ABA1D800F2FC5E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C0EDEC224ABA1D800F2FC5E /* GoogleService-Info.plist */; };
 		0C2EC30E24A0D3BF006E80C0 /* IndividualAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2EC30D24A0D3BF006E80C0 /* IndividualAppointmentViewController.swift */; };
 		0C2EC31024A0D3E4006E80C0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2EC30F24A0D3E4006E80C0 /* LoginViewController.swift */; };
 		0C2EC31224A0D3F6006E80C0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2EC31124A0D3F6006E80C0 /* RegisterViewController.swift */; };
@@ -48,7 +50,9 @@
 		0CAAE10024AB8E3400B1561B /* ProfileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAAE0FF24AB8E3400B1561B /* ProfileInfo.swift */; };
 		0CAAE10224AB900C00B1561B /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAAE10124AB900C00B1561B /* ProfileHeader.swift */; };
 		0CEF397A24A604160023AC3E /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEF397924A604160023AC3E /* Doctor.swift */; };
+		132E60B51A4AEE97C1A836EA /* Pods_FilaMed_FilaMedUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A819216C8FD6CAA335131762 /* Pods_FilaMed_FilaMedUITests.framework */; };
 		89B00D6624A0E09500FEAD73 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B00D6524A0E09500FEAD73 /* TabBarController.swift */; };
+		A4860D265BF65B5091CFED1F /* Pods_FilaMed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8777D8CBC832ACC74A55C796 /* Pods_FilaMed.framework */; };
 		C1F90B3724A9247A00CCCDFA /* SeedDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F90B3624A9247A00CCCDFA /* SeedDataBase.swift */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +87,7 @@
 		0C017616249CEA8B00FAA102 /* FilaMedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FilaMedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C01761A249CEA8B00FAA102 /* FilaMedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilaMedUITests.swift; sourceTree = "<group>"; };
 		0C01761C249CEA8B00FAA102 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C0EDEC224ABA1D800F2FC5E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0C2EC30D24A0D3BF006E80C0 /* IndividualAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualAppointmentViewController.swift; sourceTree = "<group>"; };
 		0C2EC30F24A0D3E4006E80C0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0C2EC31124A0D3F6006E80C0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -117,8 +122,17 @@
 		0CAAE0FF24AB8E3400B1561B /* ProfileInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfo.swift; sourceTree = "<group>"; };
 		0CAAE10124AB900C00B1561B /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		0CEF397924A604160023AC3E /* Doctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
+		0E9C4141817ACE61D02BEEDE /* Pods-FilaMed-FilaMedUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaMed-FilaMedUITests.debug.xcconfig"; path = "Target Support Files/Pods-FilaMed-FilaMedUITests/Pods-FilaMed-FilaMedUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		11FFD038E86412B30373616E /* Pods_FilaMedTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FilaMedTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8777D8CBC832ACC74A55C796 /* Pods_FilaMed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FilaMed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89B00D6524A0E09500FEAD73 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		9E65EC462D2402486CC20C87 /* Pods-FilaMed-FilaMedUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaMed-FilaMedUITests.release.xcconfig"; path = "Target Support Files/Pods-FilaMed-FilaMedUITests/Pods-FilaMed-FilaMedUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A819216C8FD6CAA335131762 /* Pods_FilaMed_FilaMedUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FilaMed_FilaMedUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A81D8978D55BBC75CEE5E792 /* Pods-FilaMed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaMed.debug.xcconfig"; path = "Target Support Files/Pods-FilaMed/Pods-FilaMed.debug.xcconfig"; sourceTree = "<group>"; };
 		C1F90B3624A9247A00CCCDFA /* SeedDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedDataBase.swift; sourceTree = "<group>"; };
+		C208AFFC038D4CAF4573A5BF /* Pods-FilaMedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaMedTests.release.xcconfig"; path = "Target Support Files/Pods-FilaMedTests/Pods-FilaMedTests.release.xcconfig"; sourceTree = "<group>"; };
+		C579737E75C8E6CC1E6BAAC9 /* Pods-FilaMed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaMed.release.xcconfig"; path = "Target Support Files/Pods-FilaMed/Pods-FilaMed.release.xcconfig"; sourceTree = "<group>"; };
+		DAD0F29CF5C8CE95EE5FD47A /* Pods-FilaMedTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaMedTests.debug.xcconfig"; path = "Target Support Files/Pods-FilaMedTests/Pods-FilaMedTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4860D265BF65B5091CFED1F /* Pods_FilaMed.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				063D56664585722E2CE988AF /* Pods_FilaMedTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				132E60B51A4AEE97C1A836EA /* Pods_FilaMed_FilaMedUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +170,8 @@
 				0C01760E249CEA8B00FAA102 /* FilaMedTests */,
 				0C017619249CEA8B00FAA102 /* FilaMedUITests */,
 				0C0175F3249CEA8A00FAA102 /* Products */,
+				1B576EC1FEADDD51690C690C /* Pods */,
+				9392E818E4793119C9FA3702 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -244,6 +263,7 @@
 		0C2EC30A24A0D25A006E80C0 /* Files */ = {
 			isa = PBXGroup;
 			children = (
+				0C0EDEC224ABA1D800F2FC5E /* GoogleService-Info.plist */,
 				0C017606249CEA8B00FAA102 /* Info.plist */,
 				0C0175F5249CEA8A00FAA102 /* AppDelegate.swift */,
 				0C0175F7249CEA8A00FAA102 /* SceneDelegate.swift */,
@@ -281,6 +301,29 @@
 			path = Appointments;
 			sourceTree = "<group>";
 		};
+		1B576EC1FEADDD51690C690C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A81D8978D55BBC75CEE5E792 /* Pods-FilaMed.debug.xcconfig */,
+				C579737E75C8E6CC1E6BAAC9 /* Pods-FilaMed.release.xcconfig */,
+				0E9C4141817ACE61D02BEEDE /* Pods-FilaMed-FilaMedUITests.debug.xcconfig */,
+				9E65EC462D2402486CC20C87 /* Pods-FilaMed-FilaMedUITests.release.xcconfig */,
+				DAD0F29CF5C8CE95EE5FD47A /* Pods-FilaMedTests.debug.xcconfig */,
+				C208AFFC038D4CAF4573A5BF /* Pods-FilaMedTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9392E818E4793119C9FA3702 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8777D8CBC832ACC74A55C796 /* Pods_FilaMed.framework */,
+				A819216C8FD6CAA335131762 /* Pods_FilaMed_FilaMedUITests.framework */,
+				11FFD038E86412B30373616E /* Pods_FilaMedTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -288,10 +331,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0C01761F249CEA8B00FAA102 /* Build configuration list for PBXNativeTarget "FilaMed" */;
 			buildPhases = (
+				6AA85A05F6D272E07A0F872E /* [CP] Check Pods Manifest.lock */,
 				0C0175EE249CEA8A00FAA102 /* Sources */,
 				0C0175EF249CEA8A00FAA102 /* Frameworks */,
 				0C0175F0249CEA8A00FAA102 /* Resources */,
 				0C63102424A526DB00E6F83E /* ShellScript */,
+				92EAFC144E3F479677BC369C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -306,6 +351,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0C017622249CEA8B00FAA102 /* Build configuration list for PBXNativeTarget "FilaMedTests" */;
 			buildPhases = (
+				186A74B187ECF4BC148693D9 /* [CP] Check Pods Manifest.lock */,
 				0C017607249CEA8B00FAA102 /* Sources */,
 				0C017608249CEA8B00FAA102 /* Frameworks */,
 				0C017609249CEA8B00FAA102 /* Resources */,
@@ -324,9 +370,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0C017625249CEA8B00FAA102 /* Build configuration list for PBXNativeTarget "FilaMedUITests" */;
 			buildPhases = (
+				7B8D7C9CAC706AF631DB7161 /* [CP] Check Pods Manifest.lock */,
 				0C017612249CEA8B00FAA102 /* Sources */,
 				0C017613249CEA8B00FAA102 /* Frameworks */,
 				0C017614249CEA8B00FAA102 /* Resources */,
+				11A942B7E5C81390250991ED /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -388,6 +436,7 @@
 			files = (
 				0C017605249CEA8B00FAA102 /* LaunchScreen.storyboard in Resources */,
 				0C017602249CEA8B00FAA102 /* Assets.xcassets in Resources */,
+				0C0EDEC324ABA1D800F2FC5E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +473,106 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\nswiftlint\nswiftlint autocorrect\nelse\necho \"warning: Swiftlint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		11A942B7E5C81390250991ED /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FilaMed-FilaMedUITests/Pods-FilaMed-FilaMedUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FilaMed-FilaMedUITests/Pods-FilaMed-FilaMedUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FilaMed-FilaMedUITests/Pods-FilaMed-FilaMedUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		186A74B187ECF4BC148693D9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FilaMedTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6AA85A05F6D272E07A0F872E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FilaMed-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B8D7C9CAC706AF631DB7161 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FilaMed-FilaMedUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		92EAFC144E3F479677BC369C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FilaMed/Pods-FilaMed-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FilaMed/Pods-FilaMed-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FilaMed/Pods-FilaMed-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -633,6 +782,7 @@
 		};
 		0C017620249CEA8B00FAA102 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A81D8978D55BBC75CEE5E792 /* Pods-FilaMed.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -651,6 +801,7 @@
 		};
 		0C017621249CEA8B00FAA102 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C579737E75C8E6CC1E6BAAC9 /* Pods-FilaMed.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -669,6 +820,7 @@
 		};
 		0C017623249CEA8B00FAA102 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAD0F29CF5C8CE95EE5FD47A /* Pods-FilaMedTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -691,6 +843,7 @@
 		};
 		0C017624249CEA8B00FAA102 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C208AFFC038D4CAF4573A5BF /* Pods-FilaMedTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -713,6 +866,7 @@
 		};
 		0C017626249CEA8B00FAA102 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E9C4141817ACE61D02BEEDE /* Pods-FilaMed-FilaMedUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -733,6 +887,7 @@
 		};
 		0C017627249CEA8B00FAA102 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E65EC462D2402486CC20C87 /* Pods-FilaMed-FilaMedUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

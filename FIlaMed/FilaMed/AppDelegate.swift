@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,9 +19,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white
         window?.makeKeyAndVisible()
-        window?.rootViewController = UINavigationController(rootViewController: TabBarController())
 
+        FirebaseApp.configure()
         SeedDataBase.shared.seed()
+
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            print("")
+        }
+
+        if Auth.auth().currentUser != nil {
+            window?.rootViewController = UINavigationController(rootViewController: TabBarController())
+        } else {
+            window?.rootViewController = LoginViewController()
+        }
+
         return true
     }
 
