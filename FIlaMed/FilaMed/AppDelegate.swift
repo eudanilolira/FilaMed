@@ -14,27 +14,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let appointmentsViewControler = AppointmentsViewController()
-        let lineViewController = LineViewController()
-
-        appointmentsViewControler.title = "Consultas"
-        lineViewController.title = "Fila"
-
-        let appointmentsItemImage = UIImage(systemName: "heart.circle.fill")
-        let lineItemImage = UIImage(systemName: "person")
-        appointmentsViewControler.tabBarItem.image = appointmentsItemImage
-        lineViewController.tabBarItem.image = lineItemImage
-
-        let appointmentNavigationController = UINavigationController(rootViewController: appointmentsViewControler)
-        let lineNavigationController = UINavigationController(rootViewController: lineViewController)
-
-        let tabBarControler = UITabBarController()
-        tabBarControler.viewControllers = [appointmentNavigationController, lineNavigationController]
 
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white
         window?.makeKeyAndVisible()
-        window?.rootViewController = tabBarControler
+        window?.rootViewController = UINavigationController(rootViewController: TabBarController())
 
         SeedDataBase.shared.seed()
         return true

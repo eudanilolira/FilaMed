@@ -7,21 +7,33 @@
 //
 import UIKit
 
-class AppointmentsView: UIView {
-
+class AppointmentsView: UIView, CodeView {
     let appointmentsTable: AppointmentsTable = AppointmentsTable()
+
+    func buildViewHierarchy() {
+        self.addSubview(self.appointmentsTable)
+    }
+
+    func setupContraints() {
+        self.appointmentsTable.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            self.appointmentsTable.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            self.appointmentsTable.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            self.appointmentsTable.heightAnchor.constraint(equalTo: self.heightAnchor),
+            self.appointmentsTable.widthAnchor.constraint(equalTo: self.widthAnchor)
+        ])
+    }
+
+    func setupAdditionalConfiguration() {
+    }
 
     public init() {
         super.init(frame: .zero)
-        self.setupLayout()
+        self.setupView()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-
-    func setupLayout() {
-        self.addSubview(self.appointmentsTable)
-        self.appointmentsTable.setupConstraints()
     }
 }

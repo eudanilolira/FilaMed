@@ -8,74 +8,43 @@
 
 import UIKit
 
-class ProfileView: UIView {
+class ProfileView: UIView, CodeView {
     let profileInfo = ProfileInfoView()
     let profileTable = ProfileTable()
 
-    public init() {
-        super.init(frame: .zero)
-        self.backgroundColor = GlobalStyle.BackgroundColor
+    func buildViewHierarchy() {
         self.addSubview(profileInfo)
         self.addSubview(profileTable)
-        self.profileInfo.setupConstraints()
-        self.profileTable.setupConstraints()
     }
 
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    func setupContraints() {
+        self.profileInfo.translatesAutoresizingMaskIntoConstraints = false
+        self.profileTable.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            self.profileInfo.topAnchor.constraint(equalTo: self.topAnchor),
+            self.profileInfo.centerXAnchor.constraint(equalTo: self.centerXAnchor)
+        ])
+
+        NSLayoutConstraint.activate([
+            self.profileTable.topAnchor.constraint(equalTo: self.profileInfo.bottomAnchor, constant: 240),
+            self.profileTable.heightAnchor.constraint(equalToConstant: 170),
+            self.profileTable.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor),
+            self.profileTable.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor)
+        ])
     }
 
-}
-
-class ProfileInfoView: UIView {
-    let profilePicture: UIImageView = UIImageView()
-    let profileName: UILabel = UILabel()
+    func setupAdditionalConfiguration() {
+        self.backgroundColor = GlobalStyle.BackgroundColor
+    }
 
     public init() {
         super.init(frame: .zero)
-        self.setupLayout()
-
+        self.setupView()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func setupLayout() {
-        self.addSubview(profilePicture)
-        self.addSubview(profileName)
-
-        let picture = UIImage(named: "profile_picture.png")
-        self.profilePicture.image = picture
-
-        let font = UIFont.systemFont(ofSize: 22, weight: .bold)
-
-        self.profileName.font = font
-        self.profileName.text = "Pedro da Matta"
-        self.profileName.sizeToFit()
-    }
-
-    func setupConstraints() {
-        self.translatesAutoresizingMaskIntoConstraints = false
-        self.profileName.translatesAutoresizingMaskIntoConstraints = false
-        self.profilePicture.translatesAutoresizingMaskIntoConstraints = false
-
-        NSLayoutConstraint.activate([
-            self.topAnchor.constraint(equalTo: superview!.topAnchor, constant: 80),
-            self.centerXAnchor.constraint(equalTo: superview!.centerXAnchor)
-        ])
-
-        NSLayoutConstraint.activate([
-            self.profilePicture.topAnchor.constraint(equalTo: superview!.topAnchor, constant: 100),
-            self.profilePicture.centerXAnchor.constraint(equalTo: superview!.centerXAnchor),
-            self.profilePicture.heightAnchor.constraint(equalToConstant: 74),
-            self.profilePicture.widthAnchor.constraint(equalToConstant: 74)
-        ])
-
-        NSLayoutConstraint.activate([
-            self.profileName.topAnchor.constraint(equalTo: profilePicture.bottomAnchor, constant: 16),
-            self.profileName.centerXAnchor.constraint(equalTo: profilePicture.centerXAnchor)
-        ])
-
-    }
 }

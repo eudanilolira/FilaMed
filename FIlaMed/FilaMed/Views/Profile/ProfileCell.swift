@@ -8,22 +8,25 @@
 
 import UIKit
 
-class ProfileCell: UITableViewCell {
+class ProfileCell: UITableViewCell, CodeView {
     let label: UILabel = UILabel()
     let accessButton: UIButton = UIButton()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.setupStyles()
-        self.setupConstraints()
-        self.selectionStyle = .none
+        self.setupView()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func setupConstraints() {
+    func buildViewHierarchy() {
+        self.addSubview(label)
+        self.addSubview(accessButton)
+    }
+
+    func setupContraints() {
         self.label.translatesAutoresizingMaskIntoConstraints = false
         self.accessButton.translatesAutoresizingMaskIntoConstraints = false
 
@@ -38,9 +41,8 @@ class ProfileCell: UITableViewCell {
         ])
     }
 
-    func setupStyles() {
-        self.addSubview(label)
-        self.addSubview(accessButton)
+    func setupAdditionalConfiguration() {
+        self.selectionStyle = .none
 
         let arrowSymbolFont = UIFont.systemFont(ofSize: 15, weight: .semibold)
         let arrowSymbolConfiguration = UIImage.SymbolConfiguration(font: arrowSymbolFont)
@@ -48,5 +50,4 @@ class ProfileCell: UITableViewCell {
 
         self.accessButton.setBackgroundImage(arrowSymbol, for: .normal)
     }
-
 }
