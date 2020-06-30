@@ -17,6 +17,7 @@ class LineStackView: UIStackView, CodeView {
     public init() {
         super.init(frame: .zero)
         setupView()
+        outputButton.addTarget(self, action: #selector(touchedOutputButton), for: .touchUpInside)
     }
 
     required init(coder: NSCoder) {
@@ -48,6 +49,13 @@ class LineStackView: UIStackView, CodeView {
     func setupAdditionalConfiguration() {
         self.axis = .vertical
         self.spacing = 24
+    }
+
+    @IBAction func touchedOutputButton() {
+        callOutputAlert()
+    }
+
+    func callOutputAlert() {
     }
 
 }

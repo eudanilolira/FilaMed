@@ -48,13 +48,13 @@ class LineIndicatorView: UIView, CodeView {
         self.leftLocationLabel.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor).isActive = true
 
         self.timeLeftLabel.topAnchor.constraint(equalTo: self.leftLocationLabel.topAnchor).isActive = true
-        self.timeLeftLabel.leadingAnchor.constraint(equalTo: self.leftLocationLabel.trailingAnchor, constant: 5).isActive = true
+        self.timeLeftLabel.leadingAnchor.constraint(equalTo: self.leftLocationLabel.trailingAnchor).isActive = true
 
         self.placeTimeLabel.topAnchor.constraint(equalTo: self.leftLocationLabel.bottomAnchor, constant: 10).isActive = true
         self.placeTimeLabel.leftAnchor.constraint(equalTo: self.leftLocationLabel.leftAnchor).isActive = true
 
         self.waitTimeLabel.topAnchor.constraint(equalTo: self.placeTimeLabel.topAnchor).isActive = true
-        self.waitTimeLabel.leadingAnchor.constraint(equalTo: self.placeTimeLabel.trailingAnchor, constant: 5).isActive = true
+        self.waitTimeLabel.leadingAnchor.constraint(equalTo: self.placeTimeLabel.trailingAnchor).isActive = true
     }
 
     func setupAdditionalConfiguration() {
@@ -62,7 +62,7 @@ class LineIndicatorView: UIView, CodeView {
         self.layer.cornerRadius = 8
         self.layoutMargins = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
 
-        self.leftLocationLabel.text = "Saia de onde está em: "
+        self.leftLocationLabel.text = "Saia do seu local em: "
         self.timeLeftLabel.text = "15 minutos"
         self.placeTimeLabel.text = "Tempo de espera no local: "
         self.waitTimeLabel.text = "3 minutos"
