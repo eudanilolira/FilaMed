@@ -9,26 +9,32 @@
 import UIKit
 
 class TabBarController: UITabBarController {
-    let appointmentsViewController = AppointmentsViewController()
-    let lineViewController = LineViewController()
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewControllers = [appointmentsViewController, lineViewController]
 
-        self.setupAppointmentsTabBarItem()
-        self.setupLineTabBarItem()
+        let appointmentsViewController = self.setupAppointmentsVC()
+        let lineViewController = self.setupLineVC()
+
+        self.viewControllers = [appointmentsViewController, lineViewController]
     }
 
-    func setupAppointmentsTabBarItem() {
+    func setupAppointmentsVC() -> UINavigationController {
+        let appointmentsViewController = AppointmentsViewController()
+        let navigationController = UINavigationController(rootViewController: appointmentsViewController)
         appointmentsViewController.title = "Consultas"
         let appointmentsItemImage = UIImage(systemName: "heart.circle.fill")
         appointmentsViewController.tabBarItem.image = appointmentsItemImage
+
+        return navigationController
     }
 
-    func setupLineTabBarItem() {
+    func setupLineVC() -> UINavigationController {
+        let lineViewController = LineViewController()
+        let navigationController = UINavigationController(rootViewController: lineViewController)
         lineViewController.title = "Fila"
         let lineItemImage = UIImage(systemName: "person.2")
         lineViewController.tabBarItem.image = lineItemImage
+
+        return navigationController
     }
 }
