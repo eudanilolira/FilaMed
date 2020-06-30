@@ -8,9 +8,22 @@
 
 import UIKit
 
-class IndividualAppointmentView: UIView {
+class IndividualAppointmentView: UIView, CodeView {
+    func buildViewHierarchy() {
+        return
+    }
+
+    func setupContraints() {
+        return
+    }
+
+    func setupAdditionalConfiguration() {
+        self.backgroundColor = .white
+    }
+
     public init() {
-        super.init(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
+        super.init(frame: .zero)
+        self.setupView()
     }
 
     required init?(coder: NSCoder) {

@@ -12,6 +12,7 @@ class IndividualAppointmentViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view = IndividualAppointmentView()
     }
 
 }

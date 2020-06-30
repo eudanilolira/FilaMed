@@ -43,6 +43,7 @@
 		0C7482E924A8F0410022F79C /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7482E824A8F0410022F79C /* Appointment.swift */; };
 		0CEF397A24A604160023AC3E /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEF397924A604160023AC3E /* Doctor.swift */; };
 		89B00D6624A0E09500FEAD73 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B00D6524A0E09500FEAD73 /* TabBarController.swift */; };
+		C17D250824AB89ED009361A3 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17D250724AB89ED009361A3 /* Protocols.swift */; };
 		C1F90B3724A9247A00CCCDFA /* SeedDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F90B3624A9247A00CCCDFA /* SeedDataBase.swift */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +107,7 @@
 		0C7482E824A8F0410022F79C /* Appointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
 		0CEF397924A604160023AC3E /* Doctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
 		89B00D6524A0E09500FEAD73 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		C17D250724AB89ED009361A3 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		C1F90B3624A9247A00CCCDFA /* SeedDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedDataBase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -237,6 +239,7 @@
 				0C0175F7249CEA8A00FAA102 /* SceneDelegate.swift */,
 				0C017601249CEA8B00FAA102 /* Assets.xcassets */,
 				0C7458E924A38D4D007A0EEE /* Constants.swift */,
+				C17D250724AB89ED009361A3 /* Protocols.swift */,
 			);
 			name = Files;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				C1F90B3724A9247A00CCCDFA /* SeedDataBase.swift in Sources */,
 				0C7458EA24A38D4D007A0EEE /* Constants.swift in Sources */,
 				0C2EC31E24A0DE7C006E80C0 /* LineView.swift in Sources */,
+				C17D250824AB89ED009361A3 /* Protocols.swift in Sources */,
 				0C7482E724A8E7650022F79C /* User.swift in Sources */,
 				0C2EC30E24A0D3BF006E80C0 /* IndividualAppointmentViewController.swift in Sources */,
 				0C2EC31A24A0D612006E80C0 /* LoginView.swift in Sources */,

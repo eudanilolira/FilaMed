@@ -50,7 +50,7 @@ class ProfilesHeader: UITableViewHeaderFooterView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func setupStyle() {
         contentView.addSubview(view)
         contentView.addSubview(title)

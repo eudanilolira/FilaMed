@@ -23,6 +23,10 @@ class AppointmentsViewController: UIViewController {
         self.setupProfilePicture()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        self.imageView.isHidden = false
+    }
+
     func loadAppointments() {
         let today = GlobalStyle.comparableDateFormat.string(from: Date())
 
@@ -54,6 +58,11 @@ extension AppointmentsViewController: UITableViewDelegate, UITableViewDataSource
         }
 
         return futureAppointments.count - 1
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.navigationController?.pushViewController(IndividualAppointmentViewController(), animated: true)
+        self.imageView.isHidden = true
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
