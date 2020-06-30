@@ -45,6 +45,8 @@
 		0CAAE0FA24AB860F00B1561B /* AppointmentsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAAE0F924AB860F00B1561B /* AppointmentsHeader.swift */; };
 		0CAAE0FC24AB8C0F00B1561B /* FutureAppointmentsContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAAE0FB24AB8C0F00B1561B /* FutureAppointmentsContent.swift */; };
 		0CAAE0FE24AB8C2F00B1561B /* TodayAppointmentsContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAAE0FD24AB8C2F00B1561B /* TodayAppointmentsContent.swift */; };
+		0CAAE10024AB8E3400B1561B /* ProfileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAAE0FF24AB8E3400B1561B /* ProfileInfo.swift */; };
+		0CAAE10224AB900C00B1561B /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAAE10124AB900C00B1561B /* ProfileHeader.swift */; };
 		0CEF397A24A604160023AC3E /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEF397924A604160023AC3E /* Doctor.swift */; };
 		89B00D6624A0E09500FEAD73 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B00D6524A0E09500FEAD73 /* TabBarController.swift */; };
 		C1F90B3724A9247A00CCCDFA /* SeedDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F90B3624A9247A00CCCDFA /* SeedDataBase.swift */; };
@@ -112,6 +114,8 @@
 		0CAAE0F924AB860F00B1561B /* AppointmentsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsHeader.swift; sourceTree = "<group>"; };
 		0CAAE0FB24AB8C0F00B1561B /* FutureAppointmentsContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureAppointmentsContent.swift; sourceTree = "<group>"; };
 		0CAAE0FD24AB8C2F00B1561B /* TodayAppointmentsContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayAppointmentsContent.swift; sourceTree = "<group>"; };
+		0CAAE0FF24AB8E3400B1561B /* ProfileInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfo.swift; sourceTree = "<group>"; };
+		0CAAE10124AB900C00B1561B /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		0CEF397924A604160023AC3E /* Doctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
 		89B00D6524A0E09500FEAD73 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		C1F90B3624A9247A00CCCDFA /* SeedDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedDataBase.swift; sourceTree = "<group>"; };
@@ -256,6 +260,8 @@
 				0C2EC31F24A0DE8A006E80C0 /* ProfileView.swift */,
 				0C4B955E24AA4C8D0033449E /* ProfileTable.swift */,
 				0C4B956024AA5CF60033449E /* ProfileCell.swift */,
+				0CAAE0FF24AB8E3400B1561B /* ProfileInfo.swift */,
+				0CAAE10124AB900C00B1561B /* ProfileHeader.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -429,12 +435,14 @@
 				0CEF397A24A604160023AC3E /* Doctor.swift in Sources */,
 				0C2EC32224A0DE9D006E80C0 /* AppointmentsView.swift in Sources */,
 				89B00D6624A0E09500FEAD73 /* TabBarController.swift in Sources */,
+				0CAAE10024AB8E3400B1561B /* ProfileInfo.swift in Sources */,
 				0C2EC31C24A0DE6A006E80C0 /* RegisterView.swift in Sources */,
 				0C2EC32424A0DEAF006E80C0 /* IndividualAppointmentView.swift in Sources */,
 				0C2EC32024A0DE8A006E80C0 /* ProfileView.swift in Sources */,
 				0CAAE0FC24AB8C0F00B1561B /* FutureAppointmentsContent.swift in Sources */,
 				0C2EC31024A0D3E4006E80C0 /* LoginViewController.swift in Sources */,
 				0C7458E424A389B0007A0EEE /* AppointmentsCell.swift in Sources */,
+				0CAAE10224AB900C00B1561B /* ProfileHeader.swift in Sources */,
 				0C7458E624A389F4007A0EEE /* AppointmentsContent.swift in Sources */,
 				0C2EC31424A0D43A006E80C0 /* LineViewController.swift in Sources */,
 				0C7458E824A38A3E007A0EEE /* AppointmentsTable.swift in Sources */,
