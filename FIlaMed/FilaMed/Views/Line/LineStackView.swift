@@ -32,18 +32,17 @@ class LineStackView: UIStackView {
     func setupStyle() {
         self.axis = .vertical
         self.spacing = 24
-//        self.distribution = .fill
-//        self.alignment = .fill
+        //self.distribution = .equalCentering
+        //self.alignment = .fill
     }
 
     public func setupConstraints() {
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.leadingAnchor.constraint(equalTo: superview!.leadingAnchor).isActive = true
-        self.trailingAnchor.constraint(equalTo: superview!.trailingAnchor).isActive = true
+        self.leadingAnchor.constraint(equalTo: superview!.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        self.trailingAnchor.constraint(equalTo: superview!.safeAreaLayoutGuide.trailingAnchor).isActive = true
         self.topAnchor.constraint(equalTo: superview!.topAnchor).isActive = true
         self.bottomAnchor.constraint(equalTo: superview!.bottomAnchor).isActive = true
         self.widthAnchor.constraint(equalTo: superview!.widthAnchor).isActive = true
-        self.heightAnchor.constraint(equalToConstant: 544).isActive = true
     }
 
     func setupDoctorInformationView() {

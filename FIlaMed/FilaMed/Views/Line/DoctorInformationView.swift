@@ -10,12 +10,13 @@ import UIKit
 
 class DoctorInformationView: UIView {
 
-    let doctorImageView = UIImageView()
-    let doctorNameLabel = UILabel()
-    let doctorIdLabel = UILabel()
-    let clinicLabel = UILabel()
-    let clinicNameLabel = UILabel()
-    let specialityLabel = UILabel()
+    let doctorImageView     = UIImageView()
+    let doctorNameLabel     = UILabel()
+    let doctorIdLabel       = UILabel()
+    let clinicLabel         = UILabel()
+    let clinicNameLabel     = UILabel()
+    let division            = UIView()
+    let specialityLabel     = UILabel()
     let specialityNameLabel = UILabel()
 
     public init() {
@@ -35,6 +36,7 @@ class DoctorInformationView: UIView {
         setupDoctorIdStyle()
         setupClinicLabelStyle()
         setupClinicNameLabelStyle()
+        setupDivisionStyle()
         setupSpecialityLabelStyle()
         setupSpecialityNameLabelStyle()
     }
@@ -82,6 +84,10 @@ class DoctorInformationView: UIView {
         self.clinicNameLabel.text = "Unimed"
     }
 
+    private func setupDivisionStyle() {
+        self.division.backgroundColor = #colorLiteral(red: 0.5921568627, green: 0.5921568627, blue: 0.5921568627, alpha: 1)
+    }
+
     private func setupSpecialityLabelStyle() {
         let text = setSFSymbolToAttributedText(systemName: "heart.circle")
         text.append(NSAttributedString(string: " Especialidade"))
@@ -104,6 +110,7 @@ class DoctorInformationView: UIView {
         setupDoctorIdLabelConstraints()
         setupClinicLabelConstraints()
         setupClinicNameLabelConstraints()
+        setupDivisionConstraints()
         setupSpecialityLabelConstraints()
         setupSpecialityNameLabelConstraints()
     }
@@ -142,10 +149,19 @@ class DoctorInformationView: UIView {
         self.clinicNameLabel.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor).isActive = true
     }
 
+    private func setupDivisionConstraints() {
+        self.addSubview(division)
+        self.division.translatesAutoresizingMaskIntoConstraints = false
+        division.heightAnchor.constraint(equalToConstant: 0.25).isActive = true
+        division.topAnchor.constraint(equalTo: clinicLabel.bottomAnchor, constant: 8).isActive = true
+        division.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor).isActive = true
+        division.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+    }
+
     private func setupSpecialityLabelConstraints() {
         self.addSubview(specialityLabel)
         self.specialityLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.specialityLabel.topAnchor.constraint(equalTo: clinicLabel.bottomAnchor, constant: 16).isActive = true
+        self.specialityLabel.topAnchor.constraint(equalTo: division.bottomAnchor, constant: 7.75).isActive = true
         self.specialityLabel.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor).isActive = true
     }
 
