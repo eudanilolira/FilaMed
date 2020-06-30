@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DoctorInformationView: UIView {
+class DoctorInformationView: UIView, CodeView {
 
     let doctorImageView     = UIImageView()
     let doctorNameLabel     = UILabel()
@@ -21,14 +21,29 @@ class DoctorInformationView: UIView {
 
     public init() {
         super.init(frame: .zero)
-        setupStyles()
+        setupView()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
+    func buildViewHierarchy() {
+        self.addSubview(doctorImageView)
+        self.addSubview(doctorNameLabel)
+        self.addSubview(doctorIdLabel)
+        self.addSubview(clinicLabel)
+        self.addSubview(clinicNameLabel)
+        self.addSubview(division)
+        self.addSubview(specialityLabel)
+        self.addSubview(specialityNameLabel)
+    }
+
     // MARK: setupStyle Functions
+    func setupAdditionalConfiguration() {
+        setupStyles()
+    }
+
     public func setupStyles() {
         setupStyle()
         setupDoctorImageViewStyle()
@@ -61,13 +76,6 @@ class DoctorInformationView: UIView {
         self.doctorIdLabel.text = "CRO - 7345"
         self.doctorIdLabel.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         self.doctorIdLabel.textColor = #colorLiteral(red: 0.4392156863, green: 0.4392156863, blue: 0.4392156863, alpha: 1) //#707070
-    }
-
-    private func setupDoctorNameLabelConstraints() {
-        self.addSubview(doctorNameLabel)
-        self.doctorNameLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.doctorNameLabel.topAnchor.constraint(equalTo: doctorImageView.bottomAnchor, constant: 4).isActive = true
-        self.doctorNameLabel.centerXAnchor.constraint(equalTo: superview!.centerXAnchor).isActive = true
     }
 
     private func setupClinicLabelStyle() {
@@ -103,8 +111,7 @@ class DoctorInformationView: UIView {
     }
 
     // MARK: setupConstraints Functions
-    public func setupConstraints() {
-        setupSelfConstraints()
+    func setupContraints() {
         setupDoctorImageViewConstraints()
         setupDoctorNameLabelConstraints()
         setupDoctorIdLabelConstraints()
@@ -115,61 +122,73 @@ class DoctorInformationView: UIView {
         setupSpecialityNameLabelConstraints()
     }
 
-    private func setupSelfConstraints() {
-        self.heightAnchor.constraint(equalToConstant: 216).isActive = true
+    private func setupDoctorImageViewConstraints() {
+        self.doctorImageView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.doctorImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 16),
+            self.doctorImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            self.doctorImageView.widthAnchor.constraint(equalToConstant: 56),
+            self.doctorImageView.heightAnchor.constraint(equalToConstant: 56)
+        ])
     }
 
-    private func setupDoctorImageViewConstraints() {
-        self.addSubview(doctorImageView)
-        self.doctorImageView.translatesAutoresizingMaskIntoConstraints = false
-        self.doctorImageView.topAnchor.constraint(equalTo: superview!.topAnchor, constant: 16).isActive = true
-        self.doctorImageView.centerXAnchor.constraint(equalTo: superview!.centerXAnchor).isActive = true
-        self.doctorImageView.widthAnchor.constraint(equalToConstant: 56).isActive = true
-        self.doctorImageView.heightAnchor.constraint(equalToConstant: 56).isActive = true
+    private func setupDoctorNameLabelConstraints() {
+        self.addSubview(doctorNameLabel)
+        self.doctorNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.doctorNameLabel.topAnchor.constraint(equalTo: doctorImageView.bottomAnchor, constant: 4),
+            self.doctorNameLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor)
+        ])
     }
 
     private func setupDoctorIdLabelConstraints() {
-        self.addSubview(doctorIdLabel)
         self.doctorIdLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.doctorIdLabel.topAnchor.constraint(equalTo: doctorNameLabel.bottomAnchor, constant: 4).isActive = true
-        self.doctorIdLabel.centerXAnchor.constraint(equalTo: superview!.centerXAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            self.doctorIdLabel.topAnchor.constraint(equalTo: doctorNameLabel.bottomAnchor, constant: 4),
+            self.doctorIdLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor)
+        ])
     }
 
     private func setupClinicLabelConstraints() {
-        self.addSubview(clinicLabel)
         self.clinicLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.clinicLabel.topAnchor.constraint(equalTo: doctorIdLabel.bottomAnchor, constant: 24).isActive = true
-        self.clinicLabel.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            self.clinicLabel.topAnchor.constraint(equalTo: doctorIdLabel.bottomAnchor, constant: 24),
+            self.clinicLabel.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor)
+        ])
     }
 
     private func setupClinicNameLabelConstraints() {
-        self.addSubview(clinicNameLabel)
         self.clinicNameLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.clinicNameLabel.topAnchor.constraint(equalTo: clinicLabel.topAnchor).isActive = true
-        self.clinicNameLabel.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            self.clinicNameLabel.topAnchor.constraint(equalTo: clinicLabel.topAnchor),
+            self.clinicNameLabel.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor)
+        ])
     }
 
     private func setupDivisionConstraints() {
-        self.addSubview(division)
         self.division.translatesAutoresizingMaskIntoConstraints = false
-        division.heightAnchor.constraint(equalToConstant: 0.25).isActive = true
-        division.topAnchor.constraint(equalTo: clinicLabel.bottomAnchor, constant: 8).isActive = true
-        division.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor).isActive = true
-        division.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            division.heightAnchor.constraint(equalToConstant: 0.25),
+            division.topAnchor.constraint(equalTo: clinicLabel.bottomAnchor, constant: 8),
+            division.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor),
+            division.trailingAnchor.constraint(equalTo: self.trailingAnchor)
+        ])
     }
 
     private func setupSpecialityLabelConstraints() {
-        self.addSubview(specialityLabel)
         self.specialityLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.specialityLabel.topAnchor.constraint(equalTo: division.bottomAnchor, constant: 7.75).isActive = true
-        self.specialityLabel.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            self.specialityLabel.topAnchor.constraint(equalTo: division.bottomAnchor, constant: 7.75),
+            self.specialityLabel.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor)
+        ])
     }
 
     private func setupSpecialityNameLabelConstraints() {
-        self.addSubview(specialityNameLabel)
         self.specialityNameLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.specialityNameLabel.topAnchor.constraint(equalTo: specialityLabel.topAnchor).isActive = true
-        self.specialityNameLabel.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            self.specialityNameLabel.topAnchor.constraint(equalTo: specialityLabel.topAnchor),
+            self.specialityNameLabel.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor)
+        ])
     }
 
     // MARK: Auxiliar Functions
