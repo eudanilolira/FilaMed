@@ -82,7 +82,7 @@ class ProgressStepView: UIView {
         self.indicatorView.backgroundColor = #colorLiteral(red: 0.3725490196, green: 0.8117647059, blue: 0.3882352941, alpha: 1)
 
         self.progressLabel.text = "Você ainda não entrou na fila"
-        self.progressLabel.font = UIFont.systemFont(ofSize: 12, weight: .medium)
+        self.progressLabel.font = UIFont.systemFont(ofSize: 17, weight: .medium)
     }
 
     func setupConstraints(_ upperView: UIView) {

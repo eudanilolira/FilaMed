@@ -38,8 +38,8 @@ class LineStackView: UIStackView {
 
     public func setupConstraints() {
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.leadingAnchor.constraint(equalTo: superview!.safeAreaLayoutGuide.leadingAnchor).isActive = true
-        self.trailingAnchor.constraint(equalTo: superview!.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        self.leadingAnchor.constraint(equalTo: superview!.layoutMarginsGuide.leadingAnchor).isActive = true
+        self.trailingAnchor.constraint(equalTo: superview!.layoutMarginsGuide.trailingAnchor, constant: -8).isActive = true
         self.topAnchor.constraint(equalTo: superview!.topAnchor).isActive = true
         self.bottomAnchor.constraint(equalTo: superview!.bottomAnchor).isActive = true
         self.widthAnchor.constraint(equalTo: superview!.widthAnchor).isActive = true

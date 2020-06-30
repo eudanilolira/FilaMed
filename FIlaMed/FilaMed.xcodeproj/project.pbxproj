@@ -41,6 +41,7 @@
 		89CE633824AA0581003AD2C2 /* LineIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CE633524AA0581003AD2C2 /* LineIndicatorView.swift */; };
 		89CE633B24AA5D0A003AD2C2 /* OutputButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CE633A24AA5D0A003AD2C2 /* OutputButton.swift */; };
 		89CE633D24AA687B003AD2C2 /* LineScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CE633C24AA687B003AD2C2 /* LineScrollView.swift */; };
+		89E1AF4F24AB86F200CFCC7D /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E1AF4E24AB86F200CFCC7D /* CodeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		89CE633524AA0581003AD2C2 /* LineIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineIndicatorView.swift; sourceTree = "<group>"; };
 		89CE633A24AA5D0A003AD2C2 /* OutputButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OutputButton.swift; path = ../../../../OutputButton.swift; sourceTree = "<group>"; };
 		89CE633C24AA687B003AD2C2 /* LineScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineScrollView.swift; sourceTree = "<group>"; };
+		89E1AF4E24AB86F200CFCC7D /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +228,7 @@
 				0C0175F7249CEA8A00FAA102 /* SceneDelegate.swift */,
 				0C017601249CEA8B00FAA102 /* Assets.xcassets */,
 				0C7458E924A38D4D007A0EEE /* Constants.swift */,
+				89E1AF4E24AB86F200CFCC7D /* CodeView.swift */,
 			);
 			name = Files;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				0C2EC31824A0D4C5006E80C0 /* AppointmentsViewController.swift in Sources */,
 				0C0175F6249CEA8A00FAA102 /* AppDelegate.swift in Sources */,
 				0C017600249CEA8A00FAA102 /* FilaMed.xcdatamodeld in Sources */,
+				89E1AF4F24AB86F200CFCC7D /* CodeView.swift in Sources */,
 				0C7458EC24A38DE2007A0EEE /* AppointmentsProfile.swift in Sources */,
 				0C2EC31624A0D454006E80C0 /* ProfileViewController.swift in Sources */,
 				0C7458EA24A38D4D007A0EEE /* Constants.swift in Sources */,
