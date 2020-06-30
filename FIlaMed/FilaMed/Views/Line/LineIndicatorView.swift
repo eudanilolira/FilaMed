@@ -8,97 +8,69 @@
 
 import UIKit
 
-class LineIndicatorView: UIView {
-    let progressLine: [ProgressStepView] = [ProgressStepView(), ProgressStepView(), ProgressStepView(), ProgressStepView()]
+class LineIndicatorView: UIView, CodeView {
+
+    let leftLocationLabel: UILabel = UILabel()
     let timeLeftLabel: UILabel = UILabel()
+    let placeTimeLabel: UILabel = UILabel()
     let waitTimeLabel: UILabel = UILabel()
+
+    let progressStackView = ProgressStackView()
 
     public override init(frame: CGRect) {
         super.init(frame: .zero)
-        setupStyle()
+        setupView()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func setupStyle() {
-        self.backgroundColor = .white
-        self.layer.cornerRadius = 8
-        self.layoutMargins = UIEdgeInsets(top: 0, left: 16, bottom: 8, right: 16)
-
-        self.timeLeftLabel.text = "Saia de casa em: 15 minutos"
-        self.waitTimeLabel.text = "Tempo de espera no local: 3 minutos"
-
-        let textFont = UIFont.systemFont(ofSize: 12, weight: .regular)
-
-        self.timeLeftLabel.font = textFont
-        self.waitTimeLabel.font = textFont
-    }
-
-    func setupConstraints(_ upperView: UIView) {
-        self.timeLeftLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.waitTimeLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.translatesAutoresizingMaskIntoConstraints = false
-
-        self.addSubview(progressLine[0])
+    func buildViewHierarchy() {
+        self.addSubview(progressStackView)
+        self.addSubview(leftLocationLabel)
+        self.addSubview(placeTimeLabel)
         self.addSubview(timeLeftLabel)
         self.addSubview(waitTimeLabel)
-
-        self.progressLine[0].setupConstraints(self)
-
-        for instance in 1...3 {
-            self.addSubview(progressLine[instance])
-            self.progressLine[instance].setupConstraints(progressLine[instance-1])
-        }
-
-        self.timeLeftLabel.topAnchor.constraint(equalTo: self.progressLine[3].layoutMarginsGuide.bottomAnchor, constant: 60).isActive = true
-        self.timeLeftLabel.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor, constant: 10).isActive = true
-
-        self.waitTimeLabel.topAnchor.constraint(equalTo: self.timeLeftLabel.bottomAnchor, constant: 10).isActive = true
-        self.waitTimeLabel.leadingAnchor.constraint(equalTo: self.timeLeftLabel.leadingAnchor).isActive = true
-
-        self.heightAnchor.constraint(equalToConstant: 230).isActive = true
-    }
-}
-
-class ProgressStepView: UIView {
-    let progressLabel: UILabel = UILabel()
-    let indicatorView: UIView = UIView()
-
-    public init() {
-        super.init(frame: .zero)
-        self.addSubview(self.progressLabel)
-        self.addSubview(self.indicatorView)
-        setupStyle()
     }
 
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    func setupContraints() {
+        self.progressStackView.translatesAutoresizingMaskIntoConstraints = false
+        self.leftLocationLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.placeTimeLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.timeLeftLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.waitTimeLabel.translatesAutoresizingMaskIntoConstraints = false
+
+        self.progressStackView.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor).isActive = true
+        self.progressStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10).isActive = true
+
+        self.leftLocationLabel.topAnchor.constraint(equalTo: self.progressStackView.bottomAnchor, constant: 20).isActive = true
+        self.leftLocationLabel.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor).isActive = true
+
+        self.timeLeftLabel.topAnchor.constraint(equalTo: self.leftLocationLabel.topAnchor).isActive = true
+        self.timeLeftLabel.leadingAnchor.constraint(equalTo: self.leftLocationLabel.trailingAnchor, constant: 5).isActive = true
+
+        self.placeTimeLabel.topAnchor.constraint(equalTo: self.leftLocationLabel.bottomAnchor, constant: 10).isActive = true
+        self.placeTimeLabel.leftAnchor.constraint(equalTo: self.leftLocationLabel.leftAnchor).isActive = true
+
+        self.waitTimeLabel.topAnchor.constraint(equalTo: self.placeTimeLabel.topAnchor).isActive = true
+        self.waitTimeLabel.leadingAnchor.constraint(equalTo: self.placeTimeLabel.trailingAnchor, constant: 5).isActive = true
     }
 
-    private func setupStyle() {
-        self.indicatorView.layer.cornerRadius = 9 //This value needs to be half of views size
-        self.indicatorView.backgroundColor = #colorLiteral(red: 0.3725490196, green: 0.8117647059, blue: 0.3882352941, alpha: 1)
+    func setupAdditionalConfiguration() {
+        self.backgroundColor = .white
+        self.layer.cornerRadius = 8
+        self.layoutMargins = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
 
-        self.progressLabel.text = "Você ainda não entrou na fila"
-        self.progressLabel.font = UIFont.systemFont(ofSize: 17, weight: .medium)
-    }
+        self.leftLocationLabel.text = "Saia de onde está em: "
+        self.timeLeftLabel.text = "15 minutos"
+        self.placeTimeLabel.text = "Tempo de espera no local: "
+        self.waitTimeLabel.text = "3 minutos"
 
-    func setupConstraints(_ upperView: UIView) {
-        self.translatesAutoresizingMaskIntoConstraints = false
-        self.progressLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.indicatorView.translatesAutoresizingMaskIntoConstraints = false
+        self.leftLocationLabel.font = UIFont.systemFont(ofSize: 17, weight: .regular)
+        self.placeTimeLabel.font = UIFont.systemFont(ofSize: 17, weight: .regular)
+        self.timeLeftLabel.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
+        self.waitTimeLabel.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
 
-        self.progressLabel.centerYAnchor.constraint(equalTo: self.indicatorView.centerYAnchor).isActive = true
-        self.progressLabel.leadingAnchor.constraint(equalTo: self.indicatorView.safeAreaLayoutGuide.trailingAnchor, constant: 10).isActive = true
-
-        self.indicatorView.topAnchor.constraint(equalTo: self.layoutMarginsGuide.topAnchor).isActive = true
-        self.indicatorView.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor).isActive = true
-        self.indicatorView.heightAnchor.constraint(equalToConstant: 18).isActive = true
-        self.indicatorView.widthAnchor.constraint(equalToConstant: 18).isActive = true
-
-        self.topAnchor.constraint(equalTo: upperView.layoutMarginsGuide.topAnchor, constant: 20).isActive = true
-        self.leadingAnchor.constraint(equalTo: superview!.layoutMarginsGuide.leadingAnchor).isActive = true
     }
 }

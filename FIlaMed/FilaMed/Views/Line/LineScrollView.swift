@@ -30,13 +30,13 @@ class LineScrollView: UIScrollView, CodeView {
         NSLayoutConstraint.activate([
             self.contentView.leadingAnchor.constraint(equalTo:  self.layoutMarginsGuide.leadingAnchor),
             self.contentView.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor),
-            self.contentView.topAnchor.constraint(equalTo:      self.layoutMarginsGuide.topAnchor),
+            self.contentView.topAnchor.constraint(equalTo:      self.topAnchor),
             self.contentView.bottomAnchor.constraint(equalTo:   self.bottomAnchor)
         ])
     }
 
     func setupAdditionalConfiguration() {
-        //TODO
+        self.backgroundColor = .systemGray6
     }
 
 }

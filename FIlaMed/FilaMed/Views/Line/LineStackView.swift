@@ -12,12 +12,11 @@ class LineStackView: UIStackView, CodeView {
 
     let doctorInformationView: DoctorInformationView = DoctorInformationView()
     let lineIndicatorView: LineIndicatorView = LineIndicatorView()
-    //let outputButton: OutputButton = OutputButton()
+    let outputButton: OutputButton = OutputButton()
 
     public init() {
         super.init(frame: .zero)
         setupView()
-        //self.addArrangedSubview(outputButton)
     }
 
     required init(coder: NSCoder) {
@@ -31,6 +30,7 @@ class LineStackView: UIStackView, CodeView {
     func buildViewHierarchy() {
         self.addArrangedSubview(doctorInformationView)
         self.addArrangedSubview(lineIndicatorView)
+        self.addArrangedSubview(outputButton)
     }
 
     func setupContraints() {
