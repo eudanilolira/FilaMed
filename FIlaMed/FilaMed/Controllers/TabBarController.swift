@@ -8,17 +8,16 @@
 
 import UIKit
 
-class TabBarController: UIViewController {
-    let tabBarViewController = UITabBarController()
+class TabBarController: UITabBarController {
     let appointmentsViewController = AppointmentsViewController()
     let lineViewController = LineViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBarViewController.viewControllers = [appointmentsViewController, lineViewController]
-        setupAppointmentsTabBarItem()
-        setupLineTabBarItem()
-        self.view.addSubview(tabBarViewController.view)
+        self.viewControllers = [appointmentsViewController, lineViewController]
+
+        self.setupAppointmentsTabBarItem()
+        self.setupLineTabBarItem()
     }
 
     func setupAppointmentsTabBarItem() {
