@@ -1,19 +1,21 @@
 //
-//  AppointmentsTable.swift
+//  ProfileTable.swift
 //  FilaMed
 //
-//  Created by Danilo Araújo on 24/06/20.
+//  Created by Danilo Araújo on 29/06/20.
 //  Copyright © 2020 FilaMed. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-class AppointmentsTable: UITableView {
+class ProfileTable: UITableView {
 
     init() {
         super.init(frame: .zero, style: UITableView.Style.plain)
         self.setupStyle()
+        self.isScrollEnabled = false
+        self.backgroundColor = .white
+        self.layer.cornerRadius = 10
     }
 
     required init?(coder: NSCoder) {
@@ -22,25 +24,23 @@ class AppointmentsTable: UITableView {
 
     func setupConstraints() {
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.centerXAnchor.constraint(equalTo: superview!.centerXAnchor).isActive = true
-        self.centerYAnchor.constraint(equalTo: superview!.centerYAnchor).isActive = true
-        self.heightAnchor.constraint(equalTo: superview!.heightAnchor).isActive = true
-        self.widthAnchor.constraint(equalTo: superview!.widthAnchor).isActive = true
+        self.topAnchor.constraint(equalTo: superview!.subviews[0].bottomAnchor, constant: 150).isActive = true
+        self.heightAnchor.constraint(equalToConstant: 170).isActive = true
+        self.trailingAnchor.constraint(equalTo: superview!.layoutMarginsGuide.trailingAnchor).isActive = true
+        self.leadingAnchor.constraint(equalTo: superview!.layoutMarginsGuide.leadingAnchor).isActive = true
     }
 
     func setupStyle() {
-        self.layer.cornerRadius = 8
-        self.register(AppointmentsHeader.self, forHeaderFooterViewReuseIdentifier: "appointmentsHeader")
-        self.register(AppointmentCell<TodayAppointmentContent>.self, forCellReuseIdentifier: "appointmentCell")
-        self.register(AppointmentCell<FutureAppointmentContent>.self, forCellReuseIdentifier: "futureAppointmentCell")
-        self.separatorStyle = UITableViewCell.SeparatorStyle.none
+        self.register(ProfilesHeader.self, forHeaderFooterViewReuseIdentifier: "profilesHeader")
+        self.register(ProfileCell.self, forCellReuseIdentifier: "profileCell")
         self.backgroundColor = GlobalStyle.BackgroundColor
     }
 }
 
-class AppointmentsHeader: UITableViewHeaderFooterView {
+class ProfilesHeader: UITableViewHeaderFooterView {
     let view = UIView()
     let title = UILabel()
+
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         self.setupStyle()
@@ -50,11 +50,12 @@ class AppointmentsHeader: UITableViewHeaderFooterView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     func setupStyle() {
         contentView.addSubview(view)
         contentView.addSubview(title)
 
-        title.font = UIFont.boldSystemFont(ofSize: 22)
+        title.font = UIFont.boldSystemFont(ofSize: 17)
         title.backgroundColor = GlobalStyle.BackgroundColor
         view.backgroundColor =  GlobalStyle.BackgroundColor
     }
@@ -72,8 +73,8 @@ class AppointmentsHeader: UITableViewHeaderFooterView {
 
         NSLayoutConstraint.activate([
             title.heightAnchor.constraint(equalTo: contentView.heightAnchor),
-            title.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
-            title.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor),
+            title.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            title.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             title.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
 
         ])
