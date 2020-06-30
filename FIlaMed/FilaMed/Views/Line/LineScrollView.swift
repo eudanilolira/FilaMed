@@ -8,22 +8,35 @@
 
 import UIKit
 
-class LineScrollView: UIScrollView {
+class LineScrollView: UIScrollView, CodeView {
 
     var contentView: LineStackView = LineStackView()
 
     public init() {
         super.init(frame: .zero)
-        self.addSubview(contentView)
-        contentView.setupConstraints()
-        setupStyle()
+        setupView()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func setupStyle() {
-        self.backgroundColor = .systemGray6
+    func buildViewHierarchy() {
+        self.addSubview(contentView)
     }
+
+    func setupContraints() {
+        self.contentView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.contentView.leadingAnchor.constraint(equalTo:  self.layoutMarginsGuide.leadingAnchor),
+            self.contentView.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor),
+            self.contentView.topAnchor.constraint(equalTo:      self.layoutMarginsGuide.topAnchor),
+            self.contentView.bottomAnchor.constraint(equalTo:   self.bottomAnchor)
+        ])
+    }
+
+    func setupAdditionalConfiguration() {
+        //TODO
+    }
+
 }
