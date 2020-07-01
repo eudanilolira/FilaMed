@@ -85,6 +85,11 @@ extension AppointmentsViewController: UITableViewDelegate, UITableViewDataSource
         return indexPath.section == 0 ? 104 : 122
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.navigationController?.pushViewController(IndividualAppointmentViewController(), animated: true)
+        self.imageView.isHidden = true
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let appointmentCell = tableView.dequeueReusableCell(withIdentifier: "appointmentCell", for: indexPath)
