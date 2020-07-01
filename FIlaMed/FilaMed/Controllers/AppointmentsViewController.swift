@@ -78,7 +78,7 @@ extension AppointmentsViewController: UITableViewDelegate, UITableViewDataSource
             return todayAppointments.count
         }
 
-        return futureAppointments.count - 1
+        return futureAppointments.count
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -86,6 +86,7 @@ extension AppointmentsViewController: UITableViewDelegate, UITableViewDataSource
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(SeedDataBase.appointments.count)
         self.navigationController?.pushViewController(IndividualAppointmentViewController(), animated: true)
         self.imageView.isHidden = true
     }
