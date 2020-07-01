@@ -9,16 +9,21 @@
 import UIKit
 
 class IndividualAppointmentView: UIView, CodeView {
+    var stackView = IndividualAppointmentStackView()
+
     func buildViewHierarchy() {
-        return
+        self.addSubview(stackView)
     }
 
     func setupContraints() {
-        return
+        self.stackView.translatesAutoresizingMaskIntoConstraints = false
+        self.stackView.topAnchor.constraint(equalTo: self.layoutMarginsGuide.topAnchor).isActive = true
+        self.stackView.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor).isActive = true
+        self.stackView.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor).isActive = true
     }
 
     func setupAdditionalConfiguration() {
-        self.backgroundColor = .white
+        self.backgroundColor = GlobalStyle.BackgroundColor
     }
 
     public init() {

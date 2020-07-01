@@ -44,6 +44,11 @@
 		0CEF397A24A604160023AC3E /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEF397924A604160023AC3E /* Doctor.swift */; };
 		89B00D6624A0E09500FEAD73 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B00D6524A0E09500FEAD73 /* TabBarController.swift */; };
 		C17D250824AB89ED009361A3 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17D250724AB89ED009361A3 /* Protocols.swift */; };
+		C17D250B24AB9C54009361A3 /* IndividualAppointmentStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17D250A24AB9C54009361A3 /* IndividualAppointmentStackView.swift */; };
+		C17D250D24ACB20F009361A3 /* IndividualAppointmentClinicInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17D250C24ACB20F009361A3 /* IndividualAppointmentClinicInformation.swift */; };
+		C17D250F24ACB865009361A3 /* IndividualAppointmentTimePrediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17D250E24ACB865009361A3 /* IndividualAppointmentTimePrediction.swift */; };
+		C17D251124ACBA27009361A3 /* IndividualAppointmentConfirmButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17D251024ACBA27009361A3 /* IndividualAppointmentConfirmButton.swift */; };
+		C17D251324ACBD75009361A3 /* IndividualAppointmentCancelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17D251224ACBD75009361A3 /* IndividualAppointmentCancelButton.swift */; };
 		C1F90B3724A9247A00CCCDFA /* SeedDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F90B3624A9247A00CCCDFA /* SeedDataBase.swift */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +113,11 @@
 		0CEF397924A604160023AC3E /* Doctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
 		89B00D6524A0E09500FEAD73 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		C17D250724AB89ED009361A3 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		C17D250A24AB9C54009361A3 /* IndividualAppointmentStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualAppointmentStackView.swift; sourceTree = "<group>"; };
+		C17D250C24ACB20F009361A3 /* IndividualAppointmentClinicInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualAppointmentClinicInformation.swift; sourceTree = "<group>"; };
+		C17D250E24ACB865009361A3 /* IndividualAppointmentTimePrediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualAppointmentTimePrediction.swift; sourceTree = "<group>"; };
+		C17D251024ACBA27009361A3 /* IndividualAppointmentConfirmButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualAppointmentConfirmButton.swift; sourceTree = "<group>"; };
+		C17D251224ACBD75009361A3 /* IndividualAppointmentCancelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualAppointmentCancelButton.swift; sourceTree = "<group>"; };
 		C1F90B3624A9247A00CCCDFA /* SeedDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedDataBase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -206,13 +216,13 @@
 		0C2EC30724A0D160006E80C0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C17D250924AB9AD3009361A3 /* IndividualAppointment */,
 				0C4B955D24AA4C5F0033449E /* Profile */,
 				0C7458E224A38992007A0EEE /* Appointments */,
 				0C017603249CEA8B00FAA102 /* LaunchScreen.storyboard */,
 				0C2EC31924A0D612006E80C0 /* LoginView.swift */,
 				0C2EC31B24A0DE6A006E80C0 /* RegisterView.swift */,
 				0C2EC31D24A0DE7C006E80C0 /* LineView.swift */,
-				0C2EC32324A0DEAF006E80C0 /* IndividualAppointmentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -264,6 +274,19 @@
 				0C7458EB24A38DE2007A0EEE /* AppointmentsProfile.swift */,
 			);
 			path = Appointments;
+			sourceTree = "<group>";
+		};
+		C17D250924AB9AD3009361A3 /* IndividualAppointment */ = {
+			isa = PBXGroup;
+			children = (
+				0C2EC32324A0DEAF006E80C0 /* IndividualAppointmentView.swift */,
+				C17D250A24AB9C54009361A3 /* IndividualAppointmentStackView.swift */,
+				C17D250C24ACB20F009361A3 /* IndividualAppointmentClinicInformation.swift */,
+				C17D250E24ACB865009361A3 /* IndividualAppointmentTimePrediction.swift */,
+				C17D251024ACBA27009361A3 /* IndividualAppointmentConfirmButton.swift */,
+				C17D251224ACBD75009361A3 /* IndividualAppointmentCancelButton.swift */,
+			);
+			name = IndividualAppointment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -425,6 +448,7 @@
 				0C2EC32024A0DE8A006E80C0 /* ProfileView.swift in Sources */,
 				0C2EC31024A0D3E4006E80C0 /* LoginViewController.swift in Sources */,
 				0C7458E424A389B0007A0EEE /* AppointmentsCell.swift in Sources */,
+				C17D251124ACBA27009361A3 /* IndividualAppointmentConfirmButton.swift in Sources */,
 				0C7458E624A389F4007A0EEE /* AppointmentsContent.swift in Sources */,
 				0C2EC31424A0D43A006E80C0 /* LineViewController.swift in Sources */,
 				0C7458E824A38A3E007A0EEE /* AppointmentsTable.swift in Sources */,
@@ -433,7 +457,10 @@
 				0C4B956124AA5CF60033449E /* ProfileCell.swift in Sources */,
 				0C2EC31224A0D3F6006E80C0 /* RegisterViewController.swift in Sources */,
 				0C2EC31824A0D4C5006E80C0 /* AppointmentsViewController.swift in Sources */,
+				C17D250B24AB9C54009361A3 /* IndividualAppointmentStackView.swift in Sources */,
 				0C0175F6249CEA8A00FAA102 /* AppDelegate.swift in Sources */,
+				C17D250D24ACB20F009361A3 /* IndividualAppointmentClinicInformation.swift in Sources */,
+				C17D251324ACBD75009361A3 /* IndividualAppointmentCancelButton.swift in Sources */,
 				0C017600249CEA8A00FAA102 /* FilaMed.xcdatamodeld in Sources */,
 				0C7482E924A8F0410022F79C /* Appointment.swift in Sources */,
 				0C7458EC24A38DE2007A0EEE /* AppointmentsProfile.swift in Sources */,
@@ -443,6 +470,7 @@
 				0C2EC31E24A0DE7C006E80C0 /* LineView.swift in Sources */,
 				C17D250824AB89ED009361A3 /* Protocols.swift in Sources */,
 				0C7482E724A8E7650022F79C /* User.swift in Sources */,
+				C17D250F24ACB865009361A3 /* IndividualAppointmentTimePrediction.swift in Sources */,
 				0C2EC30E24A0D3BF006E80C0 /* IndividualAppointmentViewController.swift in Sources */,
 				0C2EC31A24A0D612006E80C0 /* LoginView.swift in Sources */,
 				0C0175F8249CEA8A00FAA102 /* SceneDelegate.swift in Sources */,

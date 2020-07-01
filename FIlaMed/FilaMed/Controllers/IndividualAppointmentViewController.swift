@@ -9,10 +9,11 @@
 import UIKit
 
 class IndividualAppointmentViewController: UIViewController {
+    var stackView = IndividualAppointmentView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view = IndividualAppointmentView()
+        self.view = stackView
     }
 
 }
