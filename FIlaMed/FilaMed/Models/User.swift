@@ -21,11 +21,12 @@ struct UserManager {
     func get(email: String) -> User? {
 
         let fetchRequest = NSFetchRequest<User>(entityName: "User")
+        fetchRequest.fetchLimit = 1
         fetchRequest.predicate = NSPredicate(format: "email == %@", email)
 
         do {
             let user = try coreDataContext.fetch(fetchRequest)
-            return user[0]
+            if !user.isEmpty { return user[0] }
         } catch let error {
             print("We Couldn't find the user. \n \(error)")
         }

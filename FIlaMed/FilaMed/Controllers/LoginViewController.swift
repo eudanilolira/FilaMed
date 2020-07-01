@@ -62,8 +62,16 @@ class LoginViewController: UIViewController {
             guard let strongSelf = self else { return }
             guard let user = Auth.auth().currentUser else { return }
 
-            SessionManager.shared.login(user)
-            strongSelf.showAppointments()
+            if SessionManager.shared.login(user) {
+                strongSelf.showAppointments()
+            } else {
+                strongSelf.showAlert(message: "Usuário não encontrado", title: "Erro")
+            }
+
+            return
         }
+
+        self.showAlert(message: "Usuário não cadastrado", title: "Erro")
+
     }
 }
