@@ -32,7 +32,8 @@ class IndividualAppointmentStackView: UIStackView, CodeView {
     }
 
     func setupContraints() {
-        self.clinicInformation.heightAnchor.constraint(equalToConstant: 250).isActive = true
+        self.clinicInformation.heightAnchor.constraint(equalToConstant: 270).isActive = true
+        self.clinicInformation.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         self.timePrediction.heightAnchor.constraint(equalToConstant: 150).isActive = true
         self.confirmButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         self.cancelButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
@@ -46,7 +47,3 @@ class IndividualAppointmentStackView: UIStackView, CodeView {
         self.setCustomSpacing(15.0, after: confirmButton)
     }
 }
-
-//class ClinicInformation: UIView {
-//
-//}

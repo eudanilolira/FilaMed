@@ -25,6 +25,7 @@ class AppointmentsViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         self.imageView.isHidden = false
+        self.navigationItem.largeTitleDisplayMode = .always
     }
 
     func loadAppointments() {

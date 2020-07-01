@@ -17,7 +17,7 @@ class IndividualAppointmentView: UIView, CodeView {
 
     func setupContraints() {
         self.stackView.translatesAutoresizingMaskIntoConstraints = false
-        self.stackView.topAnchor.constraint(equalTo: self.layoutMarginsGuide.topAnchor).isActive = true
+        self.stackView.topAnchor.constraint(equalTo: self.layoutMarginsGuide.topAnchor, constant: 30).isActive = true
         self.stackView.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor).isActive = true
         self.stackView.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor).isActive = true
     }

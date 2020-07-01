@@ -76,7 +76,7 @@ class AppointmentContent: UIView, HaveConstraints {
     }
 
     func setupStyles() {
-        self.division.backgroundColor = #colorLiteral(red: 0.5921568627, green: 0.5921568627, blue: 0.5921568627, alpha: 1)
+        self.division.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
 
         let ultraLightFont = UIFont.systemFont(ofSize: 15, weight: .semibold)
         let ultraLightConfiguration = UIImage.SymbolConfiguration(font: ultraLightFont)

@@ -26,15 +26,28 @@ class IndividualAppointmentCancelButton: UIView, CodeView {
     }
 
     func setupContraints() {
-        self.cancelLabel.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor).isActive = true
+        self.cancelLabel.translatesAutoresizingMaskIntoConstraints = false
+
+        self.cancelLabel.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor, constant: 10).isActive = true
+        self.cancelLabel.centerYAnchor.constraint(equalTo: self.layoutMarginsGuide.centerYAnchor).isActive = true
+
     }
 
     func setupAdditionalConfiguration() {
         self.cancelLabel.text = "Cancelar"
+        self.cancelLabel.textColor = #colorLiteral(red: 1, green: 0.3138251901, blue: 0, alpha: 1)
+        self.cancelLabel.font = UIFont.systemFont(ofSize: 18, weight: .regular)
 
         self.backgroundColor = .white
         self.translatesAutoresizingMaskIntoConstraints = false
         self.layer.cornerRadius = 10
+
+        let tapped = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        self.addGestureRecognizer(tapped)
+    }
+
+    @objc func handleTap(_ sender: UITapGestureRecognizer) {
+        print("Cancelar")
     }
 
 }
