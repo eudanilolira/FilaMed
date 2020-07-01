@@ -2,8 +2,9 @@ import CoreData
 
 struct UserManager {
     static let shared = UserManager()
+    static var loggedUser: User?
 
-    func create(name: String) -> User? {
+    func create(name: String, email: String) -> User? {
 
         let userObject = NSEntityDescription.insertNewObject(forEntityName: "User", into: coreDataContext)
 
@@ -12,14 +13,15 @@ struct UserManager {
         }
 
         user.name = name
+        user.email = email
 
         return self.save() ? user : nil
     }
 
-    func get(name: String) -> User? {
+    func get(email: String) -> User? {
 
         let fetchRequest = NSFetchRequest<User>(entityName: "User")
-        fetchRequest.fetchLimit = 1
+        fetchRequest.predicate = NSPredicate(format: "email == %@", email)
 
         do {
             let user = try coreDataContext.fetch(fetchRequest)

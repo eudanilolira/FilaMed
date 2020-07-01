@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import FirebaseAuth
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, loggedViewController {
+    var handle: AuthStateDidChangeListenerHandle?
     let profileView = ProfileView()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view = self.profileView
@@ -21,10 +24,24 @@ class ProfileViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        self.presentationController?.containerView?.backgroundColor = GlobalStyle.BackgroundColor
+        super.viewWillAppear(animated)
+        handle = Auth.auth().addStateDidChangeListener { (_, _) in
+            if !SessionManager.shared.isLogged() {
+                return self.returnToLogin()
+            }
+
+            self.profileView.profileInfo.profileName.text = SessionManager.user?.name
+            self.presentationController?.containerView?.backgroundColor = GlobalStyle.BackgroundColor
+        }
     }
 
-    @objc func dismissProfileView(_ sender: UIBarButtonItem) {
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        Auth.auth().removeStateDidChangeListener(handle!)
+    }
+
+    @objc
+    func dismissProfileView(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
 

@@ -8,13 +8,68 @@
 
 import UIKit
 
-class RegisterView: UIView {
+class RegisterView: UIView, CodeView {
+    let nameTextField = UITextField()
+    let emailTextField = UITextField()
+    let passwordTextField = UITextField()
+    let registerButton = UIButton()
+
     public init() {
-        super.init(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
+        super.init(frame: .zero)
+        self.setupView()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
+    func buildViewHierarchy() {
+        self.addSubview(nameTextField)
+        self.addSubview(emailTextField)
+        self.addSubview(passwordTextField)
+        self.addSubview(registerButton)
+    }
+
+    func setupContraints() {
+        self.nameTextField.translatesAutoresizingMaskIntoConstraints = false
+        self.emailTextField.translatesAutoresizingMaskIntoConstraints = false
+        self.passwordTextField.translatesAutoresizingMaskIntoConstraints = false
+        self.registerButton.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            self.nameTextField.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
+            self.nameTextField.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
+            self.nameTextField.topAnchor.constraint(equalTo: self.topAnchor, constant: 400)
+        ])
+
+        NSLayoutConstraint.activate([
+            self.emailTextField.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
+            self.emailTextField.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
+            self.emailTextField.topAnchor.constraint(equalTo: self.nameTextField.bottomAnchor, constant: 20)
+        ])
+
+        NSLayoutConstraint.activate([
+            self.passwordTextField.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
+            self.passwordTextField.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
+            self.passwordTextField.topAnchor.constraint(equalTo: self.emailTextField.bottomAnchor, constant: 20)
+        ])
+
+        NSLayoutConstraint.activate([
+            self.registerButton.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
+            self.registerButton.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
+            self.registerButton.topAnchor.constraint(equalTo: self.passwordTextField.bottomAnchor, constant: 20)
+        ])
+    }
+
+    func setupAdditionalConfiguration() {
+        self.nameTextField.backgroundColor = .systemPink
+        self.emailTextField.backgroundColor = .systemRed
+
+        self.passwordTextField.backgroundColor = .systemBlue
+        self.passwordTextField.isSecureTextEntry = true
+
+        self.registerButton.backgroundColor = .systemGray
+
+        self.registerButton.setTitle("Registrar", for: .normal)
+    }
 }

@@ -1,17 +1,18 @@
 import UIKit
 import CoreData
+import FirebaseAuth
 
-class AppointmentsViewController: UIViewController {
+class AppointmentsViewController: UIViewController, loggedViewController {
 
     let imageView = UIImageView(image: UIImage(systemName: "person.circle.fill"))
     let appointmentsView = AppointmentsView()
     var todayAppointments: [Appointment] = []
     var futureAppointments: [Appointment] = []
+    var handle: AuthStateDidChangeListenerHandle?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view = self.appointmentsView
-        self.loadAppointments()
 
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationBar.backgroundColor = GlobalStyle.BackgroundColor
@@ -23,14 +24,34 @@ class AppointmentsViewController: UIViewController {
         self.setupProfilePicture()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        handle = Auth.auth().addStateDidChangeListener { (_, _) in
+            if !SessionManager.shared.isLogged() {
+                return self.returnToLogin()
+            }
+
+            self.loadAppointments()
+            self.appointmentsView.appointmentsTable.reloadData()
+        }
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        Auth.auth().removeStateDidChangeListener(handle!)
+    }
+
     func loadAppointments() {
         let today = GlobalStyle.comparableDateFormat.string(from: Date())
+        var todayAppointments: [Appointment] = []
+        var futureAppointments: [Appointment] = []
 
-        if let appointments = AppointmentManager.shared.getAll() {
+        guard let user = SessionManager.user?.email else { return }
+
+        if let appointments = AppointmentManager.shared.getBy(attribute: user, type: "email") {
             for appointment in appointments {
-                guard let appointmentDate = appointment.date else {
-                    fatalError("A Consulta não possui data marcada")
-                }
+                guard let appointmentDate = appointment.date else { return }
                 let formattedDate = GlobalStyle.comparableDateFormat.string(from: appointmentDate)
 
                 if (today == formattedDate) {
@@ -39,6 +60,10 @@ class AppointmentsViewController: UIViewController {
                     futureAppointments.append(appointment)
                 }
             }
+
+            self.todayAppointments = todayAppointments
+            self.futureAppointments = futureAppointments
+
         } else {
             print("Nenhuma consulta foi marcada")
         }

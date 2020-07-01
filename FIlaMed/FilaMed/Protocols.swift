@@ -6,7 +6,8 @@
 //  Copyright © 2020 FilaMed. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import FirebaseAuth
 
 protocol CodeView {
     func buildViewHierarchy()
@@ -20,5 +21,17 @@ extension CodeView {
         buildViewHierarchy()
         setupContraints()
         setupAdditionalConfiguration()
+    }
+}
+
+protocol loggedViewController: UIViewController {
+    var handle: AuthStateDidChangeListenerHandle? {get set}
+    func returnToLogin()
+}
+extension loggedViewController {
+    func returnToLogin() {
+        let loginViewController = LoginViewController()
+        loginViewController.modalPresentationStyle = .fullScreen
+        self.present(loginViewController, animated: true)
     }
 }

@@ -18,13 +18,13 @@ struct AppointmentManager {
         return self.save() ? appointment : nil
     }
 
-    func get(date: String) -> Appointment? {
+    func getBy(attribute: String, type: String) -> [Appointment]? {
         let fetchRequest = NSFetchRequest<Appointment>(entityName: "Appointment")
-        fetchRequest.fetchLimit = 1
+        fetchRequest.predicate = NSPredicate(format: "to.\(type) == %@", attribute)
 
         do {
-            let appointment = try coreDataContext.fetch(fetchRequest)
-            return appointment[0]
+            let appointments = try coreDataContext.fetch(fetchRequest)
+            return appointments
         } catch let error {
             print("We Couldn't find the appointment. \n \(error)")
         }
