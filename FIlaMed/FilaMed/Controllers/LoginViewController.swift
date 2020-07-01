@@ -58,20 +58,21 @@ class LoginViewController: UIViewController {
         guard let email = self.loginView.emailTextField.text else { return }
         guard let password = self.loginView.passwordTextField.text else { return }
 
-        Auth.auth().signIn(withEmail: email, password: password) { [weak self] user, _ in
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] user, error in
             guard let strongSelf = self else { return }
-            guard let user = Auth.auth().currentUser else { return }
+            guard let user = Auth.auth().currentUser else {
+                strongSelf.showAlert(message: error!.localizedDescription, title: "Erro")
+                return
+            }
 
             if SessionManager.shared.login(user) {
                 strongSelf.showAppointments()
             } else {
-                strongSelf.showAlert(message: "Usuário não encontrado", title: "Erro")
+                strongSelf.showAlert(message: "Usuário e/ou senhas incorreto(s)", title: "Erro")
             }
 
             return
         }
-
-        self.showAlert(message: "Usuário não cadastrado", title: "Erro")
 
     }
 }
