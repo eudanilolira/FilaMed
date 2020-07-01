@@ -22,7 +22,9 @@ class LoginViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         handle = Auth.auth().addStateDidChangeListener { (_, _) in
-            print("Checar se o usuário está logado")
+            if SessionManager.shared.isLogged() {
+                self.showAppointments()
+            }
         }
     }
 
