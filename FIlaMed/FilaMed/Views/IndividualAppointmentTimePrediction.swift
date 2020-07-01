@@ -42,25 +42,27 @@ class IndividualAppointmentTimePrediction: UIView, CodeView {
         self.timePrediction.translatesAutoresizingMaskIntoConstraints = false
         self.minutesLabel.translatesAutoresizingMaskIntoConstraints = false
 
-        self.timeScheduledLabel.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor).isActive = true
-        self.timeScheduledLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 10).isActive = true
+        NSLayoutConstraint.activate([
+            self.timeScheduledLabel.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor),
+            self.timeScheduledLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
 
-        self.timeScheduled.topAnchor.constraint(equalTo: self.timeScheduledLabel.bottomAnchor, constant: 10).isActive = true
-        self.timeScheduled.leadingAnchor.constraint(equalTo: self.timeScheduledLabel.leadingAnchor, constant: 5).isActive = true
+            self.timeScheduled.topAnchor.constraint(equalTo: self.timeScheduledLabel.bottomAnchor, constant: 10),
+            self.timeScheduled.leadingAnchor.constraint(equalTo: self.timeScheduledLabel.leadingAnchor, constant: 5),
 
-        self.division.heightAnchor.constraint(equalToConstant: 0.25).isActive = true
-        self.division.topAnchor.constraint(equalTo: self.timeScheduled.bottomAnchor, constant: 15).isActive = true
-        self.division.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor).isActive = true
-        self.division.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+            self.division.heightAnchor.constraint(equalToConstant: 0.25),
+            self.division.topAnchor.constraint(equalTo: self.timeScheduled.bottomAnchor, constant: 15),
+            self.division.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor),
+            self.division.trailingAnchor.constraint(equalTo: self.trailingAnchor),
 
-        self.timePredictionLabel.topAnchor.constraint(equalTo: self.division.bottomAnchor, constant: 15).isActive = true
-        self.timePredictionLabel.leadingAnchor.constraint(equalTo: self.timeScheduledLabel.leadingAnchor).isActive = true
+            self.timePredictionLabel.topAnchor.constraint(equalTo: self.division.bottomAnchor, constant: 15),
+            self.timePredictionLabel.leadingAnchor.constraint(equalTo: self.timeScheduledLabel.leadingAnchor),
 
-        self.timePrediction.topAnchor.constraint(equalTo: self.timePredictionLabel.bottomAnchor, constant: 10).isActive = true
-        self.timePrediction.leadingAnchor.constraint(equalTo: self.timeScheduledLabel.leadingAnchor, constant: 5).isActive = true
+            self.timePrediction.topAnchor.constraint(equalTo: self.timePredictionLabel.bottomAnchor, constant: 10),
+            self.timePrediction.leadingAnchor.constraint(equalTo: self.timeScheduledLabel.leadingAnchor, constant: 5),
 
-        self.minutesLabel.leadingAnchor.constraint(equalTo: self.timePrediction.leadingAnchor, constant: 24).isActive = true
-        self.minutesLabel.topAnchor.constraint(equalTo: self.timePrediction.topAnchor, constant: 3).isActive = true
+            self.minutesLabel.leadingAnchor.constraint(equalTo: self.timePrediction.leadingAnchor, constant: 24),
+            self.minutesLabel.topAnchor.constraint(equalTo: self.timePrediction.topAnchor, constant: 5)
+        ])
     }
 
     func setupAdditionalConfiguration() {

@@ -27,10 +27,10 @@ class IndividualAppointmentConfirmButton: UIView, CodeView {
 
     func setupContraints() {
         self.confirmButton.translatesAutoresizingMaskIntoConstraints = false
-
-        self.confirmButton.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor, constant: 10).isActive = true
-        self.confirmButton.centerYAnchor.constraint(equalTo: self.layoutMarginsGuide.centerYAnchor).isActive = true
-
+        NSLayoutConstraint.activate([
+            self.confirmButton.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor, constant: 10),
+            self.confirmButton.centerYAnchor.constraint(equalTo: self.layoutMarginsGuide.centerYAnchor)
+        ])
     }
 
     func setupAdditionalConfiguration() {

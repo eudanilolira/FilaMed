@@ -32,11 +32,13 @@ class IndividualAppointmentStackView: UIStackView, CodeView {
     }
 
     func setupContraints() {
-        self.clinicInformation.heightAnchor.constraint(equalToConstant: 270).isActive = true
-        self.clinicInformation.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        self.timePrediction.heightAnchor.constraint(equalToConstant: 150).isActive = true
-        self.confirmButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        self.cancelButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        NSLayoutConstraint.activate([
+            self.clinicInformation.heightAnchor.constraint(equalToConstant: 270),
+            self.clinicInformation.topAnchor.constraint(equalTo: self.topAnchor),
+            self.timePrediction.heightAnchor.constraint(equalToConstant: 150),
+            self.confirmButton.heightAnchor.constraint(equalToConstant: 50),
+            self.cancelButton.heightAnchor.constraint(equalToConstant: 50)
+        ])
     }
 
     func setupAdditionalConfiguration() {

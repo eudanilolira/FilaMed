@@ -40,25 +40,26 @@ class IndividualAppointmentClinicInformation: UIView, CodeView, MKMapViewDelegat
         self.division.translatesAutoresizingMaskIntoConstraints = false
         self.maps.translatesAutoresizingMaskIntoConstraints = false
 
-        self.clinicName.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor).isActive = true
-        self.clinicName.topAnchor.constraint(equalTo: self.layoutMarginsGuide.topAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            self.clinicName.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor),
+            self.clinicName.topAnchor.constraint(equalTo: self.layoutMarginsGuide.topAnchor),
 
-        self.specialty.topAnchor.constraint(equalTo: self.clinicName.bottomAnchor, constant: 5).isActive = true
-        self.specialty.leadingAnchor.constraint(equalTo: self.clinicName.leadingAnchor).isActive = true
+            self.specialty.topAnchor.constraint(equalTo: self.clinicName.bottomAnchor, constant: 5),
+            self.specialty.leadingAnchor.constraint(equalTo: self.clinicName.leadingAnchor),
 
-        self.address.topAnchor.constraint(equalTo: self.specialty.bottomAnchor).isActive = true
-        self.address.leadingAnchor.constraint(equalTo: self.clinicName.leadingAnchor).isActive = true
+            self.address.topAnchor.constraint(equalTo: self.specialty.bottomAnchor),
+            self.address.leadingAnchor.constraint(equalTo: self.clinicName.leadingAnchor),
 
-        self.division.heightAnchor.constraint(equalToConstant: 0.25).isActive = true
-        self.division.topAnchor.constraint(equalTo: self.specialty.bottomAnchor, constant: 20).isActive = true
-        self.division.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor).isActive = true
-        self.division.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+            self.division.heightAnchor.constraint(equalToConstant: 0.25),
+            self.division.topAnchor.constraint(equalTo: self.specialty.bottomAnchor, constant: 20),
+            self.division.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor),
+            self.division.trailingAnchor.constraint(equalTo: self.trailingAnchor),
 
-        self.maps.topAnchor.constraint(equalTo: self.division.bottomAnchor, constant: 10).isActive = true
-        self.maps.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        self.maps.heightAnchor.constraint(equalToConstant: 165).isActive = true
-        self.maps.widthAnchor.constraint(equalToConstant: 360).isActive = true
-
+            self.maps.topAnchor.constraint(equalTo: self.division.bottomAnchor, constant: 10),
+            self.maps.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            self.maps.heightAnchor.constraint(equalToConstant: 165),
+            self.maps.widthAnchor.constraint(equalToConstant: 360)
+        ])
     }
 
     func setupAdditionalConfiguration() {

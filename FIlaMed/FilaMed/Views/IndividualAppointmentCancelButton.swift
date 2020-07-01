@@ -27,10 +27,10 @@ class IndividualAppointmentCancelButton: UIView, CodeView {
 
     func setupContraints() {
         self.cancelLabel.translatesAutoresizingMaskIntoConstraints = false
-
-        self.cancelLabel.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor, constant: 10).isActive = true
-        self.cancelLabel.centerYAnchor.constraint(equalTo: self.layoutMarginsGuide.centerYAnchor).isActive = true
-
+        NSLayoutConstraint.activate([
+            self.cancelLabel.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor, constant: 10),
+            self.cancelLabel.centerYAnchor.constraint(equalTo: self.layoutMarginsGuide.centerYAnchor)
+        ])
     }
 
     func setupAdditionalConfiguration() {
