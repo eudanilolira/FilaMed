@@ -60,10 +60,10 @@ class AppointmentsViewController: UIViewController, loggedViewController {
                     futureAppointments.append(appointment)
                 }
             }
-            
+
             self.todayAppointments = todayAppointments
             self.futureAppointments = futureAppointments
-            
+
         } else {
             print("Nenhuma consulta foi marcada")
         }
