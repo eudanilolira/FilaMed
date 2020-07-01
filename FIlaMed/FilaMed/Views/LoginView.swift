@@ -115,10 +115,14 @@ class LoginView: UIView, CodeView {
         self.loginButton.layer.borderWidth = 1.25
         self.loginButton.layer.borderColor = color.cgColor
         self.loginButton.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
-        
+        self.loginButton.addTarget(self, action: #selector(touchedLoginButton), for: .touchUpInside)
 
         self.goToRegisterButton.setTitle("Não tenho uma conta. Fazer cadastro", for: .normal)
         self.goToRegisterButton.setTitleColor(.white, for: .normal)
         self.goToRegisterButton.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+    }
+
+    @IBAction func touchedLoginButton() {
+        self.loginButton.pulsate()
     }
 }

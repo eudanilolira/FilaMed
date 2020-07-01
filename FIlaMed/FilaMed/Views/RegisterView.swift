@@ -110,6 +110,7 @@ class RegisterView: UIView, CodeView {
         self.passwordTextField.isSecureTextEntry = true
         self.passwordTextField.layer.cornerRadius = 8
 
+        self.registerButton.addTarget(self, action: #selector(touchedRegisterButton), for: .touchUpInside)
         let color = #colorLiteral(red: 0.1921568627, green: 0.4588235294, blue: 0.4039215686, alpha: 1)
         self.registerButton.backgroundColor = .white
         self.registerButton.layer.cornerRadius = 8
@@ -118,5 +119,10 @@ class RegisterView: UIView, CodeView {
         self.registerButton.layer.borderWidth = 1.25
         self.registerButton.layer.borderColor = color.cgColor
         self.registerButton.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
+
+    }
+
+    @IBAction func touchedRegisterButton() {
+        self.registerButton.pulsate()
     }
 }

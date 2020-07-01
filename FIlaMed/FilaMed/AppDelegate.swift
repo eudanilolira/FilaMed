@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if Auth.auth().currentUser != nil {
             window?.rootViewController = TabBarController()
         } else {
-            window?.rootViewController = RegisterViewController()
+            window?.rootViewController = LoginViewController()
         }
 
         return true
