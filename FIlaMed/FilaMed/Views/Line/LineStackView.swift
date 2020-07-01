@@ -58,7 +58,7 @@ class LineStackView: UIStackView, CodeView {
     }
 
     func callOutputAlert() {
-        print("Deus é mais")
+        print("Config leave button")
     }
 
 }

@@ -13,7 +13,6 @@ class AppointmentsViewController: UIViewController {
         self.view = self.appointmentsView
         self.loadAppointments()
 
-
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationBar.backgroundColor = GlobalStyle.BackgroundColor
         self.navigationController?.navigationBar.barTintColor = GlobalStyle.BackgroundColor
