@@ -44,6 +44,7 @@
 		89E1AF4F24AB86F200CFCC7D /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E1AF4E24AB86F200CFCC7D /* CodeView.swift */; };
 		89E1AF5124ABAE5500CFCC7D /* ProgressStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E1AF5024ABAE5500CFCC7D /* ProgressStepView.swift */; };
 		89E1AF5324ABC59900CFCC7D /* ProgressStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E1AF5224ABC59900CFCC7D /* ProgressStackView.swift */; };
+		89E1AF5524ACAE3F00CFCC7D /* RoteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E1AF5424ACAE3E00CFCC7D /* RoteButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		89E1AF4E24AB86F200CFCC7D /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		89E1AF5024ABAE5500CFCC7D /* ProgressStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressStepView.swift; sourceTree = "<group>"; };
 		89E1AF5224ABC59900CFCC7D /* ProgressStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressStackView.swift; sourceTree = "<group>"; };
+		89E1AF5424ACAE3E00CFCC7D /* RoteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoteButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +259,7 @@
 				89CE633424AA0581003AD2C2 /* DoctorInformationView.swift */,
 				89CE633524AA0581003AD2C2 /* LineIndicatorView.swift */,
 				89E1AF5024ABAE5500CFCC7D /* ProgressStepView.swift */,
+				89E1AF5424ACAE3E00CFCC7D /* RoteButton.swift */,
 				89CE633A24AA5D0A003AD2C2 /* OutputButton.swift */,
 				89E1AF5224ABC59900CFCC7D /* ProgressStackView.swift */,
 			);
@@ -417,6 +420,7 @@
 				89E1AF5324ABC59900CFCC7D /* ProgressStackView.swift in Sources */,
 				0C2EC32224A0DE9D006E80C0 /* AppointmentsView.swift in Sources */,
 				89B00D6624A0E09500FEAD73 /* TabBarController.swift in Sources */,
+				89E1AF5524ACAE3F00CFCC7D /* RoteButton.swift in Sources */,
 				0C2EC31C24A0DE6A006E80C0 /* RegisterView.swift in Sources */,
 				0C2EC32424A0DEAF006E80C0 /* IndividualAppointmentView.swift in Sources */,
 				0C2EC32024A0DE8A006E80C0 /* ProfileView.swift in Sources */,

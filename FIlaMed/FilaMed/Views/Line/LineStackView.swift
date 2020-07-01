@@ -12,6 +12,7 @@ class LineStackView: UIStackView, CodeView {
 
     let doctorInformationView: DoctorInformationView = DoctorInformationView()
     let lineIndicatorView: LineIndicatorView = LineIndicatorView()
+    let roteButton: RoteButton = RoteButton()
     let outputButton: OutputButton = OutputButton()
 
     public init() {
@@ -31,6 +32,7 @@ class LineStackView: UIStackView, CodeView {
     func buildViewHierarchy() {
         self.addArrangedSubview(doctorInformationView)
         self.addArrangedSubview(lineIndicatorView)
+        self.addArrangedSubview(roteButton)
         self.addArrangedSubview(outputButton)
     }
 
@@ -56,6 +58,7 @@ class LineStackView: UIStackView, CodeView {
     }
 
     func callOutputAlert() {
+        print("Deus é mais")
     }
 
 }
