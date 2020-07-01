@@ -2,7 +2,7 @@ import UIKit
 import CoreData
 import FirebaseAuth
 
-class AppointmentsViewController: UIViewController {
+class AppointmentsViewController: UIViewController, loggedViewController {
 
     let imageView = UIImageView(image: UIImage(systemName: "person.circle.fill"))
     let appointmentsView = AppointmentsView()
@@ -26,13 +26,14 @@ class AppointmentsViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
         handle = Auth.auth().addStateDidChangeListener { (_, _) in
-            guard let user = Auth.auth().currentUser else {
-                print("Você precisa estar logado")
-                return
+            if !SessionManager.shared.isLogged() {
+                return self.returnToLogin()
             }
 
-            self.loadAppointments(for: user.email!)
+            self.loadAppointments()
+            self.appointmentsView.appointmentsTable.reloadData()
         }
     }
 
@@ -41,14 +42,16 @@ class AppointmentsViewController: UIViewController {
         Auth.auth().removeStateDidChangeListener(handle!)
     }
 
-    func loadAppointments(for user: String) {
+    func loadAppointments() {
         let today = GlobalStyle.comparableDateFormat.string(from: Date())
+        var todayAppointments: [Appointment] = []
+        var futureAppointments: [Appointment] = []
+
+        guard let user = SessionManager.user?.email else { return }
 
         if let appointments = AppointmentManager.shared.getBy(attribute: user, type: "email") {
             for appointment in appointments {
-                guard let appointmentDate = appointment.date else {
-                    fatalError("A Consulta não possui data marcada")
-                }
+                guard let appointmentDate = appointment.date else { return }
                 let formattedDate = GlobalStyle.comparableDateFormat.string(from: appointmentDate)
 
                 if (today == formattedDate) {
@@ -56,6 +59,9 @@ class AppointmentsViewController: UIViewController {
                 } else if (formattedDate > today) {
                     futureAppointments.append(appointment)
                 }
+
+                self.todayAppointments = todayAppointments
+                self.futureAppointments = futureAppointments
             }
         } else {
             print("Nenhuma consulta foi marcada")

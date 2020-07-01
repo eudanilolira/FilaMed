@@ -9,6 +9,7 @@
 import UIKit
 
 class RegisterView: UIView, CodeView {
+    let nameTextField = UITextField()
     let emailTextField = UITextField()
     let passwordTextField = UITextField()
     let registerButton = UIButton()
@@ -23,20 +24,28 @@ class RegisterView: UIView, CodeView {
     }
 
     func buildViewHierarchy() {
+        self.addSubview(nameTextField)
         self.addSubview(emailTextField)
         self.addSubview(passwordTextField)
         self.addSubview(registerButton)
     }
 
     func setupContraints() {
+        self.nameTextField.translatesAutoresizingMaskIntoConstraints = false
         self.emailTextField.translatesAutoresizingMaskIntoConstraints = false
         self.passwordTextField.translatesAutoresizingMaskIntoConstraints = false
         self.registerButton.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
+            self.nameTextField.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
+            self.nameTextField.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
+            self.nameTextField.topAnchor.constraint(equalTo: self.topAnchor, constant: 400)
+        ])
+
+        NSLayoutConstraint.activate([
             self.emailTextField.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
             self.emailTextField.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
-            self.emailTextField.topAnchor.constraint(equalTo: self.topAnchor, constant: 400)
+            self.emailTextField.topAnchor.constraint(equalTo: self.nameTextField.bottomAnchor, constant: 20)
         ])
 
         NSLayoutConstraint.activate([
@@ -53,6 +62,7 @@ class RegisterView: UIView, CodeView {
     }
 
     func setupAdditionalConfiguration() {
+        self.nameTextField.backgroundColor = .systemPink
         self.emailTextField.backgroundColor = .systemRed
 
         self.passwordTextField.backgroundColor = .systemBlue

@@ -13,16 +13,12 @@ struct SeedDataBase {
     static let shared = SeedDataBase()
     static var doctors: [Doctor?] = []
     static var appointments: [Appointment?] = []
-    static var users: [User?] = []
     static var clinics: [Clinic] = []
 
     func seed() {
 
         if AppointmentManager.shared.count() == 0 {
             createDoctors()
-            createUsers()
-            createAppointments()
-            createFutureAppointments()
         } else {
             if let data = DoctorManager.shared.getAll() {
                 SeedDataBase.doctors = data
@@ -30,10 +26,6 @@ struct SeedDataBase {
 
             if let data = AppointmentManager.shared.getAll() {
                 SeedDataBase.appointments = data
-            }
-
-            if let data = UserManager.shared.getAll() {
-                SeedDataBase.users = data
             }
 
             if let data = ClinicManager.shared.getAll() {
@@ -48,33 +40,14 @@ struct SeedDataBase {
             DoctorManager.shared.create(name: "Dra.Judith da Matta", specialty: "Ortodontista", identifier: "125464"),
             DoctorManager.shared.create(name: "Dra.Sylvia Lira", specialty: "Ortodontista", identifier: "625464"),
             DoctorManager.shared.create(name: "Dr.Flávio Arrais", specialty: "Cardiologista", identifier: "2845679"),
-            DoctorManager.shared.create(name: "Dr.João Ramos", specialty: "Psiquiatra", identifier: "7856790")
+            DoctorManager.shared.create(name: "Dr.João Ramos", specialty: "Psiquiatra", identifier: "7856790"),
+            DoctorManager.shared.create(name: "Dr.Cléber Santos", specialty: "Neurologista", identifier: "7789790")
         ]
     }
 
-    func createUsers() {
-        SeedDataBase.users = [
-            UserManager.shared.create(name: "Danilo Araújo", email: "danilo.lira01@gmail.com"),
-            UserManager.shared.create(name: "Wilton Ramos", email: "teste@gmail.com"),
-            UserManager.shared.create(name: "Pedro da Matta", email: "test2@gmail.com"),
-            UserManager.shared.create(name: "Hugo Santos", email: "test3@gmail.com")
-        ]
-    }
-
-    func createAppointments() {
+    func createAppointments(user: User) {
         let today = Date()
 
-        for appoint in 0...3 {
-            if let appointment = AppointmentManager.shared.create(date: today, time: "9:30", status: .line) {
-                appointment.realized = SeedDataBase.doctors[appoint]
-                appointment.to = SeedDataBase.users[0]
-
-                SeedDataBase.appointments.append(appointment)
-            }
-        }
-    }
-
-    func createFutureAppointments() {
         var appointmentDate = DateComponents()
 
         appointmentDate.calendar = Calendar.current
@@ -82,14 +55,17 @@ struct SeedDataBase {
         appointmentDate.month = 10
         appointmentDate.year = 2020
 
-        for appoint in 0...3 {
-            if let appointment = AppointmentManager.shared.create(date: appointmentDate.date!, time: "9:30", status: .line) {
-                appointment.realized = SeedDataBase.doctors[appoint]
-                appointment.to = SeedDataBase.users[0]
+        for index in 0...SeedDataBase.doctors.count-1 {
+            if let appointment = AppointmentManager.shared.create(
+                date: index%2 == 0 ? appointmentDate.date! : today,
+                time: "\(index+9):30",
+                status: .line) {
+
+                appointment.realized = SeedDataBase.doctors[index]
+                appointment.to = user
 
                 SeedDataBase.appointments.append(appointment)
             }
-
         }
     }
 }

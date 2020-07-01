@@ -56,8 +56,11 @@ class LoginViewController: UIViewController {
         guard let email = self.loginView.emailTextField.text else { return }
         guard let password = self.loginView.passwordTextField.text else { return }
 
-        Auth.auth().signIn(withEmail: email, password: password) { [weak self] _, _ in
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] user, _ in
             guard let strongSelf = self else { return }
+            guard let user = Auth.auth().currentUser else { return }
+
+            SessionManager.shared.login(user)
             strongSelf.showAppointments()
         }
     }

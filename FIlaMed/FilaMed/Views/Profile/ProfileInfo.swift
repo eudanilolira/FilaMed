@@ -8,8 +8,8 @@
 import UIKit
 
 class ProfileInfoView: UIView, CodeView {
-    let profilePicture: UIImageView = UIImageView()
-    let profileName: UILabel = UILabel()
+    var profilePicture: UIImageView = UIImageView()
+    var profileName: UILabel = UILabel()
 
     public init() {
         super.init(frame: .zero)
@@ -49,7 +49,6 @@ class ProfileInfoView: UIView, CodeView {
         let font = UIFont.systemFont(ofSize: 22, weight: .bold)
 
         self.profileName.font = font
-        self.profileName.text = "Pedro da Matta"
         self.profileName.sizeToFit()
     }
 }

@@ -35,6 +35,7 @@
 		0C2EC32E24A0F8E7006E80C0 /* AppointmentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2EC32D24A0F8E7006E80C0 /* AppointmentsTests.swift */; };
 		0C4B955F24AA4C8D0033449E /* ProfileTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4B955E24AA4C8D0033449E /* ProfileTable.swift */; };
 		0C4B956124AA5CF60033449E /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4B956024AA5CF60033449E /* ProfileCell.swift */; };
+		0C6422FC24ACC7600027DC44 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6422FB24ACC7600027DC44 /* Session.swift */; };
 		0C7458E424A389B0007A0EEE /* AppointmentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7458E324A389B0007A0EEE /* AppointmentsCell.swift */; };
 		0C7458E624A389F4007A0EEE /* AppointmentsContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7458E524A389F4007A0EEE /* AppointmentsContent.swift */; };
 		0C7458E824A38A3E007A0EEE /* AppointmentsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7458E724A38A3E007A0EEE /* AppointmentsTable.swift */; };
@@ -107,6 +108,7 @@
 		0C2EC32D24A0F8E7006E80C0 /* AppointmentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsTests.swift; sourceTree = "<group>"; };
 		0C4B955E24AA4C8D0033449E /* ProfileTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTable.swift; sourceTree = "<group>"; };
 		0C4B956024AA5CF60033449E /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		0C6422FB24ACC7600027DC44 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		0C7458E324A389B0007A0EEE /* AppointmentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsCell.swift; sourceTree = "<group>"; };
 		0C7458E524A389F4007A0EEE /* AppointmentsContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsContent.swift; sourceTree = "<group>"; };
 		0C7458E724A38A3E007A0EEE /* AppointmentsTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsTable.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				0C7482E624A8E7650022F79C /* User.swift */,
 				0C7482E824A8F0410022F79C /* Appointment.swift */,
 				C1F90B3624A9247A00CCCDFA /* SeedDataBase.swift */,
+				0C6422FB24ACC7600027DC44 /* Session.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -267,8 +270,8 @@
 				0C017606249CEA8B00FAA102 /* Info.plist */,
 				0C0175F5249CEA8A00FAA102 /* AppDelegate.swift */,
 				0C0175F7249CEA8A00FAA102 /* SceneDelegate.swift */,
-				0C017601249CEA8B00FAA102 /* Assets.xcassets */,
 				0C7458E924A38D4D007A0EEE /* Constants.swift */,
+				0C017601249CEA8B00FAA102 /* Assets.xcassets */,
 				0CAAE0F724AB84BB00B1561B /* Protocols.swift */,
 			);
 			name = Files;
@@ -581,6 +584,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C6422FC24ACC7600027DC44 /* Session.swift in Sources */,
 				0CEF397A24A604160023AC3E /* Doctor.swift in Sources */,
 				0C2EC32224A0DE9D006E80C0 /* AppointmentsView.swift in Sources */,
 				89B00D6624A0E09500FEAD73 /* TabBarController.swift in Sources */,

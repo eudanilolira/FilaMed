@@ -22,13 +22,21 @@ class RegisterViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         handle = Auth.auth().addStateDidChangeListener { (_, _) in
-            print("Checar se o usuário está logado")
+            if SessionManager.shared.isLogged() {
+                self.showAppointments()
+            }
         }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         Auth.auth().removeStateDidChangeListener(handle!)
+    }
+
+    func showAppointments() {
+        let tabBarNavigationController = TabBarController()
+        tabBarNavigationController.modalPresentationStyle = .fullScreen
+        self.present(tabBarNavigationController, animated: true)
     }
 
     func showAlert(message: String = "Erro inesperado", title: String = "Erro") {
@@ -47,27 +55,40 @@ class RegisterViewController: UIViewController {
 
     @objc
     func validateCredentials() {
-        guard let email = registerView.emailTextField.text else {
-            return
-        }
+        guard let name = registerView.nameTextField.text else { return }
+        guard let email = registerView.emailTextField.text else { return }
+        guard let password = registerView.passwordTextField.text else { return }
 
-        guard let password = registerView.passwordTextField.text else {
-            return
-        }
-
-        self.createUser(email: email, password: password)
+        self.createUser(name: name, email: email, password: password)
     }
 
-    func createUser(email: String, password: String) {
+    func createUser(name: String, email: String, password: String) {
         Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
-            guard let user = authResult?.user, error == nil else {
+            guard let _ = authResult?.user, error == nil else {
                 if let receivedError = error {
                     self.showAlert(message: receivedError.localizedDescription, title: "Ocorreu um erro")
                 }
                 return
             }
 
-            print("\(user.email!) created")
+            if let user = authResult?.user {
+                let optionalUser: User? = UserManager.shared.create(
+                    name: name,
+                    email: user.email!
+                )
+
+                if let createdUser = optionalUser {
+                    SeedDataBase.shared.createAppointments(user: createdUser)
+
+                    Auth.auth().signIn(withEmail: email, password: password) { [weak self] user, _ in
+                        guard let strongSelf = self else { return }
+                        guard let user = Auth.auth().currentUser else { return }
+
+                        SessionManager.shared.login(user)
+                        strongSelf.showAppointments()
+                    }
+                }
+            }
         }
     }
 }
