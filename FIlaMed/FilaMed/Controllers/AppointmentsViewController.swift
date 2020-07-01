@@ -59,10 +59,11 @@ class AppointmentsViewController: UIViewController, loggedViewController {
                 } else if (formattedDate > today) {
                     futureAppointments.append(appointment)
                 }
-
-                self.todayAppointments = todayAppointments
-                self.futureAppointments = futureAppointments
             }
+            
+            self.todayAppointments = todayAppointments
+            self.futureAppointments = futureAppointments
+            
         } else {
             print("Nenhuma consulta foi marcada")
         }
