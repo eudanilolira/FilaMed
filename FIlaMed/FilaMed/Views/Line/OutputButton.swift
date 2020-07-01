@@ -9,16 +9,16 @@
 import UIKit
 
 class OutputButton: UIButton {
-    
+
     init() {
         super.init(frame: .zero)
         self.setupStyle()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     private func setupStyle() {
         self.backgroundColor = .white
         self.layer.cornerRadius = 8
