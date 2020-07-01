@@ -107,9 +107,15 @@ class LoginView: UIView, CodeView {
         self.forgotPasswordButton.setTitleColor(.white, for: .normal)
         self.forgotPasswordButton.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .regular)
 
-        self.loginButton.backgroundColor = .systemGray
+        let color = #colorLiteral(red: 0.1921568627, green: 0.4588235294, blue: 0.4039215686, alpha: 1)
+        self.loginButton.backgroundColor = .white
         self.loginButton.layer.cornerRadius = 8
-        self.loginButton.setTitle("Entrar", for: .normal)
+        self.loginButton.setTitle("ENTRAR", for: .normal)
+        self.loginButton.setTitleColor(color, for: .normal)
+        self.loginButton.layer.borderWidth = 1.25
+        self.loginButton.layer.borderColor = color.cgColor
+        self.loginButton.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
+        
 
         self.goToRegisterButton.setTitle("Não tenho uma conta. Fazer cadastro", for: .normal)
         self.goToRegisterButton.setTitleColor(.white, for: .normal)
