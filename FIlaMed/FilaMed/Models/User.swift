@@ -3,7 +3,7 @@ import CoreData
 struct UserManager {
     static let shared = UserManager()
 
-    func create(name: String) -> User? {
+    func create(name: String, email: String) -> User? {
 
         let userObject = NSEntityDescription.insertNewObject(forEntityName: "User", into: coreDataContext)
 
@@ -12,6 +12,7 @@ struct UserManager {
         }
 
         user.name = name
+        user.email = email
 
         return self.save() ? user : nil
     }

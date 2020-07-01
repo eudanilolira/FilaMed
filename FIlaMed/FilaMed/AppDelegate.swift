@@ -23,14 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         SeedDataBase.shared.seed()
 
-        do {
-            try Auth.auth().signOut()
-        } catch {
-            print("")
-        }
-
         if Auth.auth().currentUser != nil {
-            window?.rootViewController = UINavigationController(rootViewController: TabBarController())
+            window?.rootViewController = TabBarController()
         } else {
             window?.rootViewController = LoginViewController()
         }

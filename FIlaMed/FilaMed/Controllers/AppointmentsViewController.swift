@@ -1,5 +1,6 @@
 import UIKit
 import CoreData
+import FirebaseAuth
 
 class AppointmentsViewController: UIViewController {
 
@@ -7,11 +8,11 @@ class AppointmentsViewController: UIViewController {
     let appointmentsView = AppointmentsView()
     var todayAppointments: [Appointment] = []
     var futureAppointments: [Appointment] = []
+    var handle: AuthStateDidChangeListenerHandle?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view = self.appointmentsView
-        self.loadAppointments()
 
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationBar.backgroundColor = GlobalStyle.BackgroundColor
@@ -23,10 +24,27 @@ class AppointmentsViewController: UIViewController {
         self.setupProfilePicture()
     }
 
-    func loadAppointments() {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        handle = Auth.auth().addStateDidChangeListener { (_, _) in
+            guard let user = Auth.auth().currentUser else {
+                print("Você precisa estar logado")
+                return
+            }
+
+            self.loadAppointments(for: user.email!)
+        }
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        Auth.auth().removeStateDidChangeListener(handle!)
+    }
+
+    func loadAppointments(for user: String) {
         let today = GlobalStyle.comparableDateFormat.string(from: Date())
 
-        if let appointments = AppointmentManager.shared.getAll() {
+        if let appointments = AppointmentManager.shared.getBy(attribute: user, type: "email") {
             for appointment in appointments {
                 guard let appointmentDate = appointment.date else {
                     fatalError("A Consulta não possui data marcada")

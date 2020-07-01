@@ -54,10 +54,10 @@ struct SeedDataBase {
 
     func createUsers() {
         SeedDataBase.users = [
-            UserManager.shared.create(name: "Danilo Araújo"),
-            UserManager.shared.create(name: "Wilton Ramos"),
-            UserManager.shared.create(name: "Pedro da Matta"),
-            UserManager.shared.create(name: "Hugo Santos")
+            UserManager.shared.create(name: "Danilo Araújo", email: "danilo.lira01@gmail.com"),
+            UserManager.shared.create(name: "Wilton Ramos", email: "teste@gmail.com"),
+            UserManager.shared.create(name: "Pedro da Matta", email: "test2@gmail.com"),
+            UserManager.shared.create(name: "Hugo Santos", email: "test3@gmail.com")
         ]
     }
 
