@@ -13,11 +13,16 @@ extension AppointmentsViewController {
 
     func setupProfilePicture() {
         guard let navigationBar = self.navigationController?.navigationBar else { return }
-        navigationBar.addSubview(imageView)
+
+        let tapped = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
 
         imageView.layer.cornerRadius = GlobalSize.ImageSizeForLargeState / 2
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(tapped)
+
+        navigationBar.addSubview(imageView)
 
         NSLayoutConstraint.activate([
             imageView.rightAnchor.constraint(equalTo: navigationBar.rightAnchor, constant: -GlobalSize.ImageRightMargin),
@@ -25,6 +30,15 @@ extension AppointmentsViewController {
             imageView.heightAnchor.constraint(equalToConstant: GlobalSize.ImageSizeForLargeState),
             imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor)
         ])
+
+    }
+
+    @objc func handleTap(_ sender: UITapGestureRecognizer) {
+        if sender.state == .ended {
+//            self.navigationController?.pushViewController(ProfileViewController(), animated: true)
+            let profileNavigationController:UINavigationController = UINavigationController(rootViewController: ProfileViewController())
+            self.present(profileNavigationController, animated: true)
+        }
     }
 
     func moveAndResizeImage(for height: CGFloat) {

@@ -30,11 +30,23 @@
 		0C2EC32A24A0F8BD006E80C0 /* RegisterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2EC32924A0F8BD006E80C0 /* RegisterTests.swift */; };
 		0C2EC32C24A0F8D6006E80C0 /* IndividualAppointementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2EC32B24A0F8D6006E80C0 /* IndividualAppointementTests.swift */; };
 		0C2EC32E24A0F8E7006E80C0 /* AppointmentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2EC32D24A0F8E7006E80C0 /* AppointmentsTests.swift */; };
+		0C4B955F24AA4C8D0033449E /* ProfileTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4B955E24AA4C8D0033449E /* ProfileTable.swift */; };
+		0C4B956124AA5CF60033449E /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4B956024AA5CF60033449E /* ProfileCell.swift */; };
 		0C7458E424A389B0007A0EEE /* AppointmentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7458E324A389B0007A0EEE /* AppointmentsCell.swift */; };
 		0C7458E624A389F4007A0EEE /* AppointmentsContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7458E524A389F4007A0EEE /* AppointmentsContent.swift */; };
 		0C7458E824A38A3E007A0EEE /* AppointmentsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7458E724A38A3E007A0EEE /* AppointmentsTable.swift */; };
 		0C7458EA24A38D4D007A0EEE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7458E924A38D4D007A0EEE /* Constants.swift */; };
 		0C7458EC24A38DE2007A0EEE /* AppointmentsProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7458EB24A38DE2007A0EEE /* AppointmentsProfile.swift */; };
+		0C7482E524A8E61E0022F79C /* Clinic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7482E424A8E61E0022F79C /* Clinic.swift */; };
+		0C7482E724A8E7650022F79C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7482E624A8E7650022F79C /* User.swift */; };
+		0C7482E924A8F0410022F79C /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7482E824A8F0410022F79C /* Appointment.swift */; };
+		0CAAE0F824AB84BB00B1561B /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAAE0F724AB84BB00B1561B /* Protocols.swift */; };
+		0CAAE0FA24AB860F00B1561B /* AppointmentsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAAE0F924AB860F00B1561B /* AppointmentsHeader.swift */; };
+		0CAAE0FC24AB8C0F00B1561B /* FutureAppointmentsContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAAE0FB24AB8C0F00B1561B /* FutureAppointmentsContent.swift */; };
+		0CAAE0FE24AB8C2F00B1561B /* TodayAppointmentsContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAAE0FD24AB8C2F00B1561B /* TodayAppointmentsContent.swift */; };
+		0CAAE10024AB8E3400B1561B /* ProfileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAAE0FF24AB8E3400B1561B /* ProfileInfo.swift */; };
+		0CAAE10224AB900C00B1561B /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAAE10124AB900C00B1561B /* ProfileHeader.swift */; };
+		0CEF397A24A604160023AC3E /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEF397924A604160023AC3E /* Doctor.swift */; };
 		89B00D6624A0E09500FEAD73 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B00D6524A0E09500FEAD73 /* TabBarController.swift */; };
 		89CE633624AA0581003AD2C2 /* LineStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CE633324AA0581003AD2C2 /* LineStackView.swift */; };
 		89CE633724AA0581003AD2C2 /* DoctorInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CE633424AA0581003AD2C2 /* DoctorInformationView.swift */; };
@@ -45,6 +57,7 @@
 		89E1AF5124ABAE5500CFCC7D /* ProgressStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E1AF5024ABAE5500CFCC7D /* ProgressStepView.swift */; };
 		89E1AF5324ABC59900CFCC7D /* ProgressStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E1AF5224ABC59900CFCC7D /* ProgressStackView.swift */; };
 		89E1AF5524ACAE3F00CFCC7D /* RoteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E1AF5424ACAE3E00CFCC7D /* RoteButton.swift */; };
+		C1F90B3724A9247A00CCCDFA /* SeedDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F90B3624A9247A00CCCDFA /* SeedDataBase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,11 +107,23 @@
 		0C2EC32924A0F8BD006E80C0 /* RegisterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTests.swift; sourceTree = "<group>"; };
 		0C2EC32B24A0F8D6006E80C0 /* IndividualAppointementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualAppointementTests.swift; sourceTree = "<group>"; };
 		0C2EC32D24A0F8E7006E80C0 /* AppointmentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsTests.swift; sourceTree = "<group>"; };
+		0C4B955E24AA4C8D0033449E /* ProfileTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTable.swift; sourceTree = "<group>"; };
+		0C4B956024AA5CF60033449E /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		0C7458E324A389B0007A0EEE /* AppointmentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsCell.swift; sourceTree = "<group>"; };
 		0C7458E524A389F4007A0EEE /* AppointmentsContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsContent.swift; sourceTree = "<group>"; };
 		0C7458E724A38A3E007A0EEE /* AppointmentsTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsTable.swift; sourceTree = "<group>"; };
 		0C7458E924A38D4D007A0EEE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0C7458EB24A38DE2007A0EEE /* AppointmentsProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsProfile.swift; sourceTree = "<group>"; };
+		0C7482E424A8E61E0022F79C /* Clinic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clinic.swift; sourceTree = "<group>"; };
+		0C7482E624A8E7650022F79C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0C7482E824A8F0410022F79C /* Appointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
+		0CAAE0F724AB84BB00B1561B /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		0CAAE0F924AB860F00B1561B /* AppointmentsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsHeader.swift; sourceTree = "<group>"; };
+		0CAAE0FB24AB8C0F00B1561B /* FutureAppointmentsContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureAppointmentsContent.swift; sourceTree = "<group>"; };
+		0CAAE0FD24AB8C2F00B1561B /* TodayAppointmentsContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayAppointmentsContent.swift; sourceTree = "<group>"; };
+		0CAAE0FF24AB8E3400B1561B /* ProfileInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfo.swift; sourceTree = "<group>"; };
+		0CAAE10124AB900C00B1561B /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
+		0CEF397924A604160023AC3E /* Doctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
 		89B00D6524A0E09500FEAD73 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		89CE633324AA0581003AD2C2 /* LineStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineStackView.swift; sourceTree = "<group>"; };
 		89CE633424AA0581003AD2C2 /* DoctorInformationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorInformationView.swift; sourceTree = "<group>"; };
@@ -109,6 +134,7 @@
 		89E1AF5024ABAE5500CFCC7D /* ProgressStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressStepView.swift; sourceTree = "<group>"; };
 		89E1AF5224ABC59900CFCC7D /* ProgressStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressStackView.swift; sourceTree = "<group>"; };
 		89E1AF5424ACAE3E00CFCC7D /* RoteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoteButton.swift; sourceTree = "<group>"; };
+		C1F90B3624A9247A00CCCDFA /* SeedDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedDataBase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +220,11 @@
 			isa = PBXGroup;
 			children = (
 				0C0175FE249CEA8A00FAA102 /* FilaMed.xcdatamodeld */,
+				0CEF397924A604160023AC3E /* Doctor.swift */,
+				0C7482E424A8E61E0022F79C /* Clinic.swift */,
+				0C7482E624A8E7650022F79C /* User.swift */,
+				0C7482E824A8F0410022F79C /* Appointment.swift */,
+				C1F90B3624A9247A00CCCDFA /* SeedDataBase.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -201,11 +232,13 @@
 		0C2EC30724A0D160006E80C0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0C4B955D24AA4C5F0033449E /* Profile */,
 				0C7458E224A38992007A0EEE /* Appointments */,
 				0C017603249CEA8B00FAA102 /* LaunchScreen.storyboard */,
 				0C2EC31924A0D612006E80C0 /* LoginView.swift */,
 				0C2EC31B24A0DE6A006E80C0 /* RegisterView.swift */,
 				0C2EC31F24A0DE8A006E80C0 /* ProfileView.swift */,
+				0C2EC31D24A0DE7C006E80C0 /* LineView.swift */,
 				0C2EC32324A0DEAF006E80C0 /* IndividualAppointmentView.swift */,
 				89CE633224AA0581003AD2C2 /* Line */,
 			);
@@ -235,8 +268,21 @@
 				0C017601249CEA8B00FAA102 /* Assets.xcassets */,
 				0C7458E924A38D4D007A0EEE /* Constants.swift */,
 				89E1AF4E24AB86F200CFCC7D /* CodeView.swift */,
+				0CAAE0F724AB84BB00B1561B /* Protocols.swift */,
 			);
 			name = Files;
+			sourceTree = "<group>";
+		};
+		0C4B955D24AA4C5F0033449E /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				0C2EC31F24A0DE8A006E80C0 /* ProfileView.swift */,
+				0C4B955E24AA4C8D0033449E /* ProfileTable.swift */,
+				0C4B956024AA5CF60033449E /* ProfileCell.swift */,
+				0CAAE0FF24AB8E3400B1561B /* ProfileInfo.swift */,
+				0CAAE10124AB900C00B1561B /* ProfileHeader.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		0C7458E224A38992007A0EEE /* Appointments */ = {
@@ -247,6 +293,9 @@
 				0C7458E524A389F4007A0EEE /* AppointmentsContent.swift */,
 				0C7458E724A38A3E007A0EEE /* AppointmentsTable.swift */,
 				0C7458EB24A38DE2007A0EEE /* AppointmentsProfile.swift */,
+				0CAAE0F924AB860F00B1561B /* AppointmentsHeader.swift */,
+				0CAAE0FB24AB8C0F00B1561B /* FutureAppointmentsContent.swift */,
+				0CAAE0FD24AB8C2F00B1561B /* TodayAppointmentsContent.swift */,
 			);
 			path = Appointments;
 			sourceTree = "<group>";
@@ -276,7 +325,7 @@
 				0C0175EE249CEA8A00FAA102 /* Sources */,
 				0C0175EF249CEA8A00FAA102 /* Frameworks */,
 				0C0175F0249CEA8A00FAA102 /* Resources */,
-				89CE633924AA0849003AD2C2 /* ShellScript */,
+				0C63102424A526DB00E6F83E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -393,7 +442,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		89CE633924AA0849003AD2C2 /* ShellScript */ = {
+		0C63102424A526DB00E6F83E /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -418,20 +467,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				89E1AF5324ABC59900CFCC7D /* ProgressStackView.swift in Sources */,
+				89E1AF5524ACAE3F00CFCC7D /* RoteButton.swift in Sources */,
+				89CE633624AA0581003AD2C2 /* LineStackView.swift in Sources */,
+				0CEF397A24A604160023AC3E /* Doctor.swift in Sources */,
 				0C2EC32224A0DE9D006E80C0 /* AppointmentsView.swift in Sources */,
 				89B00D6624A0E09500FEAD73 /* TabBarController.swift in Sources */,
-				89E1AF5524ACAE3F00CFCC7D /* RoteButton.swift in Sources */,
+				0CAAE10024AB8E3400B1561B /* ProfileInfo.swift in Sources */,
 				0C2EC31C24A0DE6A006E80C0 /* RegisterView.swift in Sources */,
 				0C2EC32424A0DEAF006E80C0 /* IndividualAppointmentView.swift in Sources */,
 				0C2EC32024A0DE8A006E80C0 /* ProfileView.swift in Sources */,
-				89CE633624AA0581003AD2C2 /* LineStackView.swift in Sources */,
+				0CAAE0FC24AB8C0F00B1561B /* FutureAppointmentsContent.swift in Sources */,
 				0C2EC31024A0D3E4006E80C0 /* LoginViewController.swift in Sources */,
 				0C7458E424A389B0007A0EEE /* AppointmentsCell.swift in Sources */,
+				0CAAE10224AB900C00B1561B /* ProfileHeader.swift in Sources */,
 				0C7458E624A389F4007A0EEE /* AppointmentsContent.swift in Sources */,
 				0C2EC31424A0D43A006E80C0 /* LineViewController.swift in Sources */,
 				89CE633B24AA5D0A003AD2C2 /* OutputButton.swift in Sources */,
 				0C7458E824A38A3E007A0EEE /* AppointmentsTable.swift in Sources */,
 				89CE633D24AA687B003AD2C2 /* LineScrollView.swift in Sources */,
+				0C4B955F24AA4C8D0033449E /* ProfileTable.swift in Sources */,
+				0C7482E524A8E61E0022F79C /* Clinic.swift in Sources */,
+				0C4B956124AA5CF60033449E /* ProfileCell.swift in Sources */,
 				0C2EC31224A0D3F6006E80C0 /* RegisterViewController.swift in Sources */,
 				89CE633724AA0581003AD2C2 /* DoctorInformationView.swift in Sources */,
 				89CE633824AA0581003AD2C2 /* LineIndicatorView.swift in Sources */,
@@ -440,9 +496,16 @@
 				0C017600249CEA8A00FAA102 /* FilaMed.xcdatamodeld in Sources */,
 				89E1AF5124ABAE5500CFCC7D /* ProgressStepView.swift in Sources */,
 				89E1AF4F24AB86F200CFCC7D /* CodeView.swift in Sources */,
+				0C7482E924A8F0410022F79C /* Appointment.swift in Sources */,
 				0C7458EC24A38DE2007A0EEE /* AppointmentsProfile.swift in Sources */,
+				0CAAE0FA24AB860F00B1561B /* AppointmentsHeader.swift in Sources */,
 				0C2EC31624A0D454006E80C0 /* ProfileViewController.swift in Sources */,
+				0CAAE0FE24AB8C2F00B1561B /* TodayAppointmentsContent.swift in Sources */,
+				C1F90B3724A9247A00CCCDFA /* SeedDataBase.swift in Sources */,
 				0C7458EA24A38D4D007A0EEE /* Constants.swift in Sources */,
+				0C2EC31E24A0DE7C006E80C0 /* LineView.swift in Sources */,
+				0CAAE0F824AB84BB00B1561B /* Protocols.swift in Sources */,
+				0C7482E724A8E7650022F79C /* User.swift in Sources */,
 				0C2EC30E24A0D3BF006E80C0 /* IndividualAppointmentViewController.swift in Sources */,
 				0C2EC31A24A0D612006E80C0 /* LoginView.swift in Sources */,
 				0C0175F8249CEA8A00FAA102 /* SceneDelegate.swift in Sources */,

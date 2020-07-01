@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 struct GlobalSize {
     static let ImageSizeForLargeState: CGFloat = 40
@@ -22,4 +23,28 @@ struct GlobalStyle {
     static let BackgroundColor: UIColor = UIColor.systemGray6
     static let CardBackgroundColor: UIColor = .white
     static let WarningColor: UIColor = #colorLiteral(red: 1, green: 0.568627451, blue: 0.5450980392, alpha: 1)
+
+    static let comparableDateFormat: DateFormatter = {
+        let dateFormat = DateFormatter()
+        dateFormat.dateFormat = "yyyy/MM/dd"
+
+        return dateFormat
+    }()
+
+    static let dateFormat: DateFormatter = {
+        let dateFormat = DateFormatter()
+        dateFormat.dateFormat = "dd/MM/yyyy"
+
+        return dateFormat
+    }()
 }
+
+let coreDataContext: NSManagedObjectContext = {
+    guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+       fatalError("")
+    }
+
+    let context = appDelegate.persistentContainer.viewContext
+
+    return context
+}()
