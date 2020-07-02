@@ -73,12 +73,10 @@ class AppointmentContent: UIView, CodeView {
 
         self.division.backgroundColor = #colorLiteral(red: 0.5921568627, green: 0.5921568627, blue: 0.5921568627, alpha: 1)
 
-        let arrowIconFont = UIFont.systemFont(ofSize: 15, weight: .semibold)
-        let arrowIconConfiguration = UIImage.SymbolConfiguration(font: arrowIconFont)
-        let arrowIconImage = UIImage(systemName: "chevron.right", withConfiguration: arrowIconConfiguration)
+        let arrowRight = UIImage(systemName: "chevron.right")!
+        let arrowRightImage = arrowRight.withTintColor(GlobalStyle.TouchElementColor, renderingMode: .alwaysOriginal)
 
-        self.accessAppointment.setBackgroundImage(arrowIconImage, for: .normal)
-        self.accessAppointment.setTitleColor(.blue, for: .normal)
+        self.accessAppointment.setBackgroundImage(arrowRightImage, for: .normal)
 
         self.clinicName.font = UIFont.boldSystemFont(ofSize: 17)
         self.specialty.font = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.light)

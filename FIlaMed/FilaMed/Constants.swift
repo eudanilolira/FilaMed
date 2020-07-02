@@ -22,7 +22,7 @@ struct GlobalSize {
 struct GlobalStyle {
     static let BackgroundColor: UIColor = UIColor.systemGray6
     static let CardBackgroundColor: UIColor = .white
-    static let TouchElementColor: UIColor = #colorLiteral(red: 0.4470588235, green: 0.7568627451, blue: 0.6784313725, alpha: 1)
+    static let TouchElementColor: UIColor = .systemGreen
     static let WarningColor: UIColor = #colorLiteral(red: 1, green: 0.568627451, blue: 0.5450980392, alpha: 1)
 
     static let comparableDateFormat: DateFormatter = {

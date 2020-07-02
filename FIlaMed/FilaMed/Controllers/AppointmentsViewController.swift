@@ -35,6 +35,8 @@ class AppointmentsViewController: UIViewController, loggedViewController {
             self.loadAppointments()
             self.appointmentsView.appointmentsTable.reloadData()
         }
+
+        self.imageView.isHidden = false
     }
 
     override func viewWillDisappear(_ animated: Bool) {
