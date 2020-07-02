@@ -86,7 +86,7 @@ extension AppointmentsViewController: UITableViewDelegate, UITableViewDataSource
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var individualAppointment = IndividualAppointmentViewController()
+        let individualAppointment = IndividualAppointmentViewController()
         var healthProfessional: Doctor
         let index = indexPath.row
 
