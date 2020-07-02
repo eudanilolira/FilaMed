@@ -51,6 +51,7 @@ class RegisterViewController: UIViewController {
 
     func setupAdditionalConfiguration() {
         self.registerView.registerButton.addTarget(self, action: #selector(validateCredentials), for: .touchUpInside)
+        self.registerView.loginButton.addTarget(self, action: #selector(goToLogin), for: .touchUpInside)
     }
 
     @objc
@@ -60,6 +61,13 @@ class RegisterViewController: UIViewController {
         guard let password = registerView.passwordTextField.text else { return }
 
         self.createUser(name: name, email: email, password: password)
+    }
+
+    @objc
+    func goToLogin() {
+        let login = LoginViewController()
+        login.modalPresentationStyle = .fullScreen
+        self.present(login, animated: true)
     }
 
     func createUser(name: String, email: String, password: String) {

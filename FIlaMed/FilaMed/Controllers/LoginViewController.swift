@@ -45,7 +45,7 @@ class LoginViewController: UIViewController {
 
     func setupAdditionalConfiguration() {
         self.loginView.loginButton.addTarget(self, action: #selector(login), for: .touchUpInside)
-        self.loginView.goToRegisterButton.addTarget(self, action: #selector(goToRegister), for: .touchUpOutside)
+        self.loginView.goToRegisterButton.addTarget(self, action: #selector(goToRegister), for: .touchUpInside)
     }
 
     func showAppointments() {

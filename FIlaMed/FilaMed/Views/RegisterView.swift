@@ -8,6 +8,7 @@ class RegisterView: UIView, CodeView {
     let emailTextField = UITextField()
     let passwordTextField = UITextField()
     let registerButton = UIButton()
+    let loginButton = UIButton()
 
     public init() {
         super.init(frame: .zero)
@@ -26,6 +27,7 @@ class RegisterView: UIView, CodeView {
         self.addSubview(registerButton)
         self.addSubview(appNameLabel)
         self.addSubview(logoImageView)
+        self.addSubview(loginButton)
     }
 
     func setupContraints() {
@@ -36,6 +38,7 @@ class RegisterView: UIView, CodeView {
         self.emailTextField.translatesAutoresizingMaskIntoConstraints = false
         self.passwordTextField.translatesAutoresizingMaskIntoConstraints = false
         self.registerButton.translatesAutoresizingMaskIntoConstraints = false
+        self.loginButton.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
             self.bgImageView.heightAnchor.constraint(equalTo: self.heightAnchor),
@@ -84,6 +87,11 @@ class RegisterView: UIView, CodeView {
             self.registerButton.topAnchor.constraint(equalTo: self.passwordTextField.bottomAnchor, constant: 42),
             self.registerButton.heightAnchor.constraint(equalToConstant: 48)
         ])
+
+        NSLayoutConstraint.activate([
+            self.loginButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            self.loginButton.topAnchor.constraint(equalTo: self.registerButton.bottomAnchor, constant: 4)
+        ])
     }
 
     func setupAdditionalConfiguration() {
@@ -119,6 +127,10 @@ class RegisterView: UIView, CodeView {
         self.registerButton.layer.borderWidth = 1.25
         self.registerButton.layer.borderColor = color.cgColor
         self.registerButton.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
+
+        self.loginButton.setTitle("Já tem conta? Faça o login", for: .normal)
+        self.loginButton.setTitleColor(.white, for: .normal)
+        self.loginButton.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .regular)
 
     }
 
