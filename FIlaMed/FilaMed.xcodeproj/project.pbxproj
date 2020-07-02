@@ -48,6 +48,7 @@
 		0CAAE0FE24AB8C2F00B1561B /* TodayAppointmentsContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAAE0FD24AB8C2F00B1561B /* TodayAppointmentsContent.swift */; };
 		0CAAE10024AB8E3400B1561B /* ProfileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAAE0FF24AB8E3400B1561B /* ProfileInfo.swift */; };
 		0CAAE10224AB900C00B1561B /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAAE10124AB900C00B1561B /* ProfileHeader.swift */; };
+		0CD93D9E24AD79A000951F7D /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD93D9D24AD79A000951F7D /* Extension.swift */; };
 		0CEF397A24A604160023AC3E /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEF397924A604160023AC3E /* Doctor.swift */; };
 		775C034AAE73BE0F3F7F4E9B /* Pods_FilaMed_FilaMedUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FBD7167E042DDE04693EEA1 /* Pods_FilaMed_FilaMedUITests.framework */; };
 		89B00D6624A0E09500FEAD73 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B00D6524A0E09500FEAD73 /* TabBarController.swift */; };
@@ -134,6 +135,7 @@
 		0CAAE0FD24AB8C2F00B1561B /* TodayAppointmentsContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayAppointmentsContent.swift; sourceTree = "<group>"; };
 		0CAAE0FF24AB8E3400B1561B /* ProfileInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfo.swift; sourceTree = "<group>"; };
 		0CAAE10124AB900C00B1561B /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
+		0CD93D9D24AD79A000951F7D /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		0CEF397924A604160023AC3E /* Doctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
 		138CE11EEF5B0414B4D102BC /* Pods-FilaMed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaMed.release.xcconfig"; path = "Target Support Files/Pods-FilaMed/Pods-FilaMed.release.xcconfig"; sourceTree = "<group>"; };
 		1B87951F9371417927075268 /* Pods_FilaMed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FilaMed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -297,6 +299,7 @@
 				0C7458E924A38D4D007A0EEE /* Constants.swift */,
 				0C64230324ACFF4C0027DC44 /* GoogleService-Info.plist */,
 				0CAAE0F724AB84BB00B1561B /* Protocols.swift */,
+				0CD93D9D24AD79A000951F7D /* Extension.swift */,
 			);
 			name = Files;
 			sourceTree = "<group>";
@@ -675,6 +678,7 @@
 				0CAAE0FE24AB8C2F00B1561B /* TodayAppointmentsContent.swift in Sources */,
 				C1F90B3724A9247A00CCCDFA /* SeedDataBase.swift in Sources */,
 				0C7458EA24A38D4D007A0EEE /* Constants.swift in Sources */,
+				0CD93D9E24AD79A000951F7D /* Extension.swift in Sources */,
 				0CAAE0F824AB84BB00B1561B /* Protocols.swift in Sources */,
 				0C64230624AD16DD0027DC44 /* OutputButton.swift in Sources */,
 				0C7482E724A8E7650022F79C /* User.swift in Sources */,
