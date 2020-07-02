@@ -17,6 +17,9 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         self.view = self.loginView
         setupAdditionalConfiguration()
+
+        let tapped = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        self.view.addGestureRecognizer(tapped)
     }
 
     override func viewWillAppear(_ animated: Bool) {
