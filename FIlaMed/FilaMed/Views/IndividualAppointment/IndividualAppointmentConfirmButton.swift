@@ -35,7 +35,7 @@ class IndividualAppointmentConfirmButton: UIView, CodeView {
 
     func setupAdditionalConfiguration() {
         self.confirmButton.text = "Entrar na fila"
-        self.confirmButton.textColor = #colorLiteral(red: 0.3431656361, green: 0.7703325748, blue: 0.6791225672, alpha: 1)
+        self.confirmButton.textColor = GlobalStyle.TouchElementColor
         self.confirmButton.font = UIFont.systemFont(ofSize: 18, weight: .regular)
 
         self.backgroundColor = .white

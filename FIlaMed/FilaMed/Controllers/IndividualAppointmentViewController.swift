@@ -25,6 +25,7 @@ class IndividualAppointmentViewController: UIViewController {
         self.navigationItem.largeTitleDisplayMode = .never
         let callButton = UIBarButtonItem(image: UIImage(systemName: "phone"), style: .plain, target: self, action: #selector(self.callClinic(_:)))
         self.navigationItem.rightBarButtonItem = callButton
+        self.navigationController?.navigationBar.tintColor = GlobalStyle.TouchElementColor
     }
 
     @objc
