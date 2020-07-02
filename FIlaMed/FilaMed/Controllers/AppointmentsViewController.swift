@@ -16,7 +16,7 @@ class AppointmentsViewController: UIViewController, loggedViewController {
 
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationBar.backgroundColor = GlobalStyle.BackgroundColor
-        self.navigationController?.navigationBar.barTintColor = GlobalStyle.BackgroundColor
+        self.navigationController?.navigationBar.tintColor = GlobalStyle.TouchElementColor
 
         self.appointmentsView.appointmentsTable.dataSource = self
         self.appointmentsView.appointmentsTable.delegate = self
