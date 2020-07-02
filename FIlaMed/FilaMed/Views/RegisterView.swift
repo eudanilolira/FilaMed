@@ -9,6 +9,7 @@
 import UIKit
 
 class RegisterView: UIView, CodeView {
+    let bgImageView = UIImageView()
     let logoImageView = UIImageView()
     let appNameLabel = UILabel()
     let nameTextField = UITextField()
@@ -26,6 +27,7 @@ class RegisterView: UIView, CodeView {
     }
 
     func buildViewHierarchy() {
+        self.addSubview(bgImageView)
         self.addSubview(nameTextField)
         self.addSubview(emailTextField)
         self.addSubview(passwordTextField)
@@ -35,12 +37,18 @@ class RegisterView: UIView, CodeView {
     }
 
     func setupContraints() {
+        self.bgImageView.translatesAutoresizingMaskIntoConstraints = false
         self.logoImageView.translatesAutoresizingMaskIntoConstraints = false
         self.appNameLabel.translatesAutoresizingMaskIntoConstraints = false
         self.nameTextField.translatesAutoresizingMaskIntoConstraints = false
         self.emailTextField.translatesAutoresizingMaskIntoConstraints = false
         self.passwordTextField.translatesAutoresizingMaskIntoConstraints = false
         self.registerButton.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            self.bgImageView.heightAnchor.constraint(equalTo: self.heightAnchor),
+            self.bgImageView.widthAnchor.constraint(equalTo: self.widthAnchor)
+        ])
 
         NSLayoutConstraint.activate([
             self.logoImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
@@ -95,7 +103,7 @@ class RegisterView: UIView, CodeView {
         self.appNameLabel.font = UIFont.systemFont(ofSize: 36, weight: .medium)
 
         let bgImage = UIImage(named: "loginBackground.png")
-        self.backgroundColor = UIColor.init(patternImage: bgImage!)
+        self.bgImageView.image = bgImage
 
         self.nameTextField.backgroundColor = .white
         self.nameTextField.layer.cornerRadius = 8
