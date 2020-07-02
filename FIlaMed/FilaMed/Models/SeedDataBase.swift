@@ -13,12 +13,14 @@ struct SeedDataBase {
     static let shared = SeedDataBase()
     static var doctors: [Doctor?] = []
     static var appointments: [Appointment?] = []
-    static var clinics: [Clinic] = []
+    static var clinics: [Clinic?] = []
 
     func seed() {
 
         if AppointmentManager.shared.count() == 0 {
+            createClinics()
             createDoctors()
+
         } else {
             if let data = DoctorManager.shared.getAll() {
                 SeedDataBase.doctors = data
@@ -42,6 +44,14 @@ struct SeedDataBase {
             DoctorManager.shared.create(name: "Dr.Flávio Arrais", specialty: "Cardiologista", identifier: "2845679"),
             DoctorManager.shared.create(name: "Dr.João Ramos", specialty: "Psiquiatra", identifier: "7856790"),
             DoctorManager.shared.create(name: "Dr.Cléber Santos", specialty: "Neurologista", identifier: "7789790")
+        ]
+    }
+
+    func createClinics() {
+        SeedDataBase.clinics = [
+            ClinicManager.shared.create(name: "Clínica Sorriso", address: "Rua joão ramos, 45"),
+            ClinicManager.shared.create(name: "Clínica Coração", address: "Rua joão ramos, 160"),
+            ClinicManager.shared.create(name: "Hope", address: "R. Padre Carapuceiro, 777")
         ]
     }
 

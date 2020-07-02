@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if SessionManager.shared.isLogged() {
             window?.rootViewController = TabBarController()
         } else {
-            window?.rootViewController = LoginViewController()
+            window?.rootViewController = RegisterViewController()
         }
 
         return true

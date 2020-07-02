@@ -68,10 +68,6 @@ class IndividualAppointmentClinicInformation: UIView, CodeView, MKMapViewDelegat
         self.translatesAutoresizingMaskIntoConstraints = false
         self.layer.cornerRadius = 10
 
-        self.clinicName.text = "Clinica Sorriso"
-        self.specialty.text = "Dentista"
-        self.address.text = "Rua Guarujá, 729"
-
         self.specialty.textColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         self.address.textColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
 
