@@ -58,6 +58,7 @@
 		89E1AF5124ABAE5500CFCC7D /* ProgressStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E1AF5024ABAE5500CFCC7D /* ProgressStepView.swift */; };
 		89E1AF5324ABC59900CFCC7D /* ProgressStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E1AF5224ABC59900CFCC7D /* ProgressStackView.swift */; };
 		89E1AF5524ACAE3F00CFCC7D /* RoteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E1AF5424ACAE3E00CFCC7D /* RoteButton.swift */; };
+		89FBCA3F24AD21DC00211B5A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FBCA3E24AD21DC00211B5A /* Extensions.swift */; };
 		90A538048319308BC43D63FC /* Pods_FilaMedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FB996A824D54B5932C002B1 /* Pods_FilaMedTests.framework */; };
 		C1696AA024AD11A900103545 /* IndividualAppointmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1696A9F24AD11A900103545 /* IndividualAppointmentView.swift */; };
 		C1696AA224AD12E400103545 /* IndividualAppointmentStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1696AA124AD12E400103545 /* IndividualAppointmentStackView.swift */; };
@@ -147,6 +148,7 @@
 		89E1AF5024ABAE5500CFCC7D /* ProgressStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressStepView.swift; sourceTree = "<group>"; };
 		89E1AF5224ABC59900CFCC7D /* ProgressStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressStackView.swift; sourceTree = "<group>"; };
 		89E1AF5424ACAE3E00CFCC7D /* RoteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoteButton.swift; sourceTree = "<group>"; };
+		89FBCA3E24AD21DC00211B5A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		984E81D2C296E07D1CFC77F8 /* Pods-FilaMed-FilaMedUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaMed-FilaMedUITests.release.xcconfig"; path = "Target Support Files/Pods-FilaMed-FilaMedUITests/Pods-FilaMed-FilaMedUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9FB996A824D54B5932C002B1 /* Pods_FilaMedTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FilaMedTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAEDDA910582E6FA9C87C499 /* Pods-FilaMedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaMedTests.release.xcconfig"; path = "Target Support Files/Pods-FilaMedTests/Pods-FilaMedTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 				0C7458E924A38D4D007A0EEE /* Constants.swift */,
 				0C64230324ACFF4C0027DC44 /* GoogleService-Info.plist */,
 				0CAAE0F724AB84BB00B1561B /* Protocols.swift */,
+				89FBCA3E24AD21DC00211B5A /* Extensions.swift */,
 			);
 			name = Files;
 			sourceTree = "<group>";
@@ -679,6 +682,7 @@
 				0C64230624AD16DD0027DC44 /* OutputButton.swift in Sources */,
 				0C7482E724A8E7650022F79C /* User.swift in Sources */,
 				0C2EC30E24A0D3BF006E80C0 /* IndividualAppointmentViewController.swift in Sources */,
+				89FBCA3F24AD21DC00211B5A /* Extensions.swift in Sources */,
 				0C2EC31A24A0D612006E80C0 /* LoginView.swift in Sources */,
 				C1696AAA24AD133700103545 /* IndividualAppointmentCancelButton.swift in Sources */,
 				0C0175F8249CEA8A00FAA102 /* SceneDelegate.swift in Sources */,

@@ -1,6 +1,7 @@
 import UIKit
 
 class LoginView: UIView, CodeView {
+    let bgImageView = UIImageView()
     let logoImageView = UIImageView()
     let appNameLabel = UILabel()
     let emailTextField = UITextField()
@@ -19,6 +20,7 @@ class LoginView: UIView, CodeView {
     }
 
     func buildViewHierarchy() {
+        self.addSubview(bgImageView)
         self.addSubview(emailTextField)
         self.addSubview(passwordTextField)
         self.addSubview(loginButton)
@@ -29,6 +31,7 @@ class LoginView: UIView, CodeView {
     }
 
     func setupContraints() {
+        self.bgImageView.translatesAutoresizingMaskIntoConstraints = false
         self.logoImageView.translatesAutoresizingMaskIntoConstraints = false
         self.appNameLabel.translatesAutoresizingMaskIntoConstraints = false
         self.emailTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -36,6 +39,11 @@ class LoginView: UIView, CodeView {
         self.loginButton.translatesAutoresizingMaskIntoConstraints = false
         self.forgotPasswordButton.translatesAutoresizingMaskIntoConstraints = false
         self.goToRegisterButton.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            self.bgImageView.heightAnchor.constraint(equalTo: self.heightAnchor),
+            self.bgImageView.widthAnchor.constraint(equalTo: self.widthAnchor)
+        ])
 
         NSLayoutConstraint.activate([
             self.logoImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
@@ -92,7 +100,7 @@ class LoginView: UIView, CodeView {
         self.appNameLabel.font = UIFont.systemFont(ofSize: 36, weight: .medium)
 
         let bgImage = UIImage(named: "loginBackground.png")
-        self.backgroundColor = UIColor.init(patternImage: bgImage!)
+        self.bgImageView.image = bgImage
 
         self.emailTextField.backgroundColor = .white
         self.emailTextField.layer.cornerRadius = 8
@@ -107,12 +115,22 @@ class LoginView: UIView, CodeView {
         self.forgotPasswordButton.setTitleColor(.white, for: .normal)
         self.forgotPasswordButton.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .regular)
 
-        self.loginButton.backgroundColor = .systemGray
+        let color = #colorLiteral(red: 0.1921568627, green: 0.4588235294, blue: 0.4039215686, alpha: 1)
+        self.loginButton.backgroundColor = .white
         self.loginButton.layer.cornerRadius = 8
-        self.loginButton.setTitle("Entrar", for: .normal)
+        self.loginButton.setTitle("ENTRAR", for: .normal)
+        self.loginButton.setTitleColor(color, for: .normal)
+        self.loginButton.layer.borderWidth = 1.25
+        self.loginButton.layer.borderColor = color.cgColor
+        self.loginButton.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
+        self.loginButton.addTarget(self, action: #selector(touchedLoginButton), for: .touchUpInside)
 
         self.goToRegisterButton.setTitle("Não tenho uma conta. Fazer cadastro", for: .normal)
         self.goToRegisterButton.setTitleColor(.white, for: .normal)
         self.goToRegisterButton.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+    }
+
+    @IBAction func touchedLoginButton() {
+        self.loginButton.pulsate()
     }
 }
