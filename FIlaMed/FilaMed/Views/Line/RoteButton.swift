@@ -23,7 +23,7 @@ class RoteButton: UIButton {
         self.backgroundColor = .white
         self.layer.cornerRadius = 8
         self.setTitle("Visualizar trajeto", for: .normal)
-        self.setTitleColor(.systemBlue, for: .normal)
+        self.setTitleColor(GlobalStyle.TouchElementColor, for: .normal)
         self.frame.size = CGSize(width: 120, height: 50)
         self.titleEdgeInsets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
         self.contentHorizontalAlignment = .left

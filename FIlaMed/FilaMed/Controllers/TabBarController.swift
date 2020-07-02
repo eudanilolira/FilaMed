@@ -15,6 +15,7 @@ class TabBarController: UITabBarController {
 
         let appointmentsViewController = self.setupAppointmentsVC()
         let lineViewController = self.setupLineVC()
+        self.tabBar.tintColor = GlobalStyle.TouchElementColor
 
         self.viewControllers = [appointmentsViewController, lineViewController]
     }
@@ -23,7 +24,7 @@ class TabBarController: UITabBarController {
         let appointmentsViewController = AppointmentsViewController()
         let navigationController = UINavigationController(rootViewController: appointmentsViewController)
         appointmentsViewController.title = "Consultas"
-        let appointmentsItemImage = UIImage(systemName: "heart.circle.fill")
+        let appointmentsItemImage = UIImage(systemName: "heart")
         appointmentsViewController.tabBarItem.image = appointmentsItemImage
 
         return navigationController
