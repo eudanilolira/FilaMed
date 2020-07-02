@@ -28,8 +28,19 @@ class SessionManager {
     }
 
     func isLogged() -> Bool {
-        guard let _ = Auth.auth().currentUser else { return false }
-        guard let _ = SessionManager.user else { return false}
+        guard let fireBaseUser = Auth.auth().currentUser else { return false }
+
+        guard let _ = SessionManager.user else {
+            let optionalUser: User? = UserManager.shared.get(email: fireBaseUser.email!)
+
+            if let user = optionalUser {
+                SessionManager.user = user
+                return true
+            } else {
+                return false
+            }
+
+        }
 
         return true
     }

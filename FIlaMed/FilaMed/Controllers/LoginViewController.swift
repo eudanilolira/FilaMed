@@ -45,12 +45,20 @@ class LoginViewController: UIViewController {
 
     func setupAdditionalConfiguration() {
         self.loginView.loginButton.addTarget(self, action: #selector(login), for: .touchUpInside)
+        self.loginView.goToRegisterButton.addTarget(self, action: #selector(goToRegister), for: .touchUpOutside)
     }
 
     func showAppointments() {
         let tabBarNavigationController = TabBarController()
         tabBarNavigationController.modalPresentationStyle = .fullScreen
         self.present(tabBarNavigationController, animated: true)
+    }
+
+    @objc
+    func goToRegister() {
+        let register = RegisterViewController()
+        register.modalPresentationStyle = .fullScreen
+        self.present(register, animated: true)
     }
 
     @objc

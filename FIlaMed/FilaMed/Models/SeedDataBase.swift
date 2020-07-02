@@ -13,35 +13,39 @@ struct SeedDataBase {
     static let shared = SeedDataBase()
     static var doctors: [Doctor?] = []
     static var appointments: [Appointment?] = []
-    static var clinics: [Clinic] = []
+    static var clinics: [Clinic?] = []
 
     func seed() {
-
-        if AppointmentManager.shared.count() == 0 {
-            createDoctors()
-        } else {
-            if let data = DoctorManager.shared.getAll() {
-                SeedDataBase.doctors = data
-            }
-
-            if let data = AppointmentManager.shared.getAll() {
-                SeedDataBase.appointments = data
-            }
-
-            if let data = ClinicManager.shared.getAll() {
-                SeedDataBase.clinics = data
-            }
+        if let data = DoctorManager.shared.getAll() {
+            SeedDataBase.doctors = data.isEmpty ? SeedDataBase.shared.createDoctors() : data
         }
 
+        if let data = ClinicManager.shared.getAll() {
+            SeedDataBase.clinics = data.isEmpty ? SeedDataBase.shared.createClinics() : data
+        }
+
+        for doctor in SeedDataBase.doctors {
+            let list = SeedDataBase.clinics
+            let clinic = Int.random(in: ClosedRange(uncheckedBounds: (0, list.count-1)))
+            doctor?.works = list[clinic]
+        }
     }
 
-    func createDoctors() {
-        SeedDataBase.doctors = [
+    func createDoctors() -> [Doctor?] {
+        return [
             DoctorManager.shared.create(name: "Dra.Judith da Matta", specialty: "Ortodontista", identifier: "125464"),
             DoctorManager.shared.create(name: "Dra.Sylvia Lira", specialty: "Ortodontista", identifier: "625464"),
             DoctorManager.shared.create(name: "Dr.Flávio Arrais", specialty: "Cardiologista", identifier: "2845679"),
             DoctorManager.shared.create(name: "Dr.João Ramos", specialty: "Psiquiatra", identifier: "7856790"),
             DoctorManager.shared.create(name: "Dr.Cléber Santos", specialty: "Neurologista", identifier: "7789790")
+        ]
+    }
+
+    func createClinics() -> [Clinic?] {
+        return [
+            ClinicManager.shared.create(name: "Clínica Sorriso", address: "Rua joão ramos, 45"),
+            ClinicManager.shared.create(name: "Clínica Coração", address: "Rua joão ramos, 160"),
+            ClinicManager.shared.create(name: "Hope", address: "R. Padre Carapuceiro, 777")
         ]
     }
 

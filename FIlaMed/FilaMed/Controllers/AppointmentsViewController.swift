@@ -78,7 +78,7 @@ extension AppointmentsViewController: UITableViewDelegate, UITableViewDataSource
             return todayAppointments.count
         }
 
-        return futureAppointments.count - 1
+        return futureAppointments.count
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -86,7 +86,21 @@ extension AppointmentsViewController: UITableViewDelegate, UITableViewDataSource
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.navigationController?.pushViewController(IndividualAppointmentViewController(), animated: true)
+        let individualAppointment = IndividualAppointmentViewController()
+        var healthProfessional: Doctor
+        let index = indexPath.row
+
+        if indexPath.section == 0 {
+             healthProfessional = self.todayAppointments[index].realized!
+        } else {
+             healthProfessional = self.futureAppointments[index].realized!
+        }
+
+        individualAppointment.clinicName = healthProfessional.works?.name ?? ""
+        individualAppointment.address = healthProfessional.works?.address ?? ""
+        individualAppointment.specialty = healthProfessional.specialty!
+
+        self.navigationController?.pushViewController(individualAppointment, animated: true)
         self.imageView.isHidden = true
     }
 

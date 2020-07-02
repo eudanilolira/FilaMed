@@ -19,7 +19,7 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="specialty" optional="YES" attributeType="String"/>
         <relationship name="realizes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Appointment" inverseName="realized" inverseEntity="Appointment"/>
-        <relationship name="works" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="Clinic" inverseName="has" inverseEntity="Clinic"/>
+        <relationship name="works" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Clinic" inverseName="has" inverseEntity="Clinic"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
         <attribute name="cpf" optional="YES" attributeType="String"/>

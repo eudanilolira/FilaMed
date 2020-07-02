@@ -3,7 +3,7 @@ import CoreData
 struct ClinicManager {
     static let shared = ClinicManager()
 
-    func create(name: String) -> Clinic? {
+    func create(name: String, address: String) -> Clinic? {
 
         let clinicObject = NSEntityDescription.insertNewObject(forEntityName: "Clinic", into: coreDataContext)
 
@@ -12,6 +12,7 @@ struct ClinicManager {
         }
 
         clinic.name = name
+        clinic.address = address
 
         return self.save() ? clinic : nil
     }

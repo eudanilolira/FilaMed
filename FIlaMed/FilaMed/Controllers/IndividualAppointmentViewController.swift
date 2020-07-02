@@ -10,10 +10,14 @@ import UIKit
 
 class IndividualAppointmentViewController: UIViewController {
     var stackView = IndividualAppointmentView()
+    var clinicName: String = ""
+    var specialty: String = ""
+    var address: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view = stackView
+        self.loadData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -23,7 +27,14 @@ class IndividualAppointmentViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = callButton
     }
 
-    @objc func callClinic(_ sender: UIBarButtonItem) {
+    @objc
+    func callClinic(_ sender: UIBarButtonItem) {
         print("Calling...")
+    }
+
+    func loadData() {
+        self.stackView.stackView.clinicInformation.clinicName.text = self.clinicName
+        self.stackView.stackView.clinicInformation.specialty.text = self.specialty
+        self.stackView.stackView.clinicInformation.address.text = self.address
     }
 }
