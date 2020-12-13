@@ -8,7 +8,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/DaniloLira/FilaMed">
-    <img src="assets/Logo.png" alt="Logo" width="108.73" height="210">
+    <img src="assets/Logo.png" alt="Logo" width="180" height="180">
   </a>
 
   <h3 align="center">FilaMed</h3>
