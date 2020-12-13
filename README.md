@@ -44,9 +44,10 @@
 ## About The Project
 O FilaMed é um aplicativo iOS desenvolvido por estudantes da Apple Developer Academy (UFPE). Nosso objetivo com ele é facilitar o processo de fila em consultórios médicos visando evitar aglomerações e espera desnecessária. O aplicativo possui é uma fila digital que te avisa a melhor hora de sair de casa para chegar pontualmente no consultório, evitando atrasos e grande tempo de espera.
 
-<img src="assets/Login.png" alt="Login" width="187.5" height="406"> 
-<img src="assets/Consultas.png" alt="Consultas" width="187.5" height="406">
-<img src="assets/Fila.png" alt="Fila" width="187.5" height="406">
+| Login | Consultas | Fila |
+|----------|----------|----------|
+| <img src="assets/Login.png" alt="Login" width="180.5" height="406">  |  <img src="assets/Consultas.png" alt="Login" width="180.5" height="406">  |  <img src="assets/Fila.png" alt="Login" width="180.5" height="406">  |
+
 
 ### Built With
 Aqui listamos as tecnologias utilizadas para a construção deste projeto
